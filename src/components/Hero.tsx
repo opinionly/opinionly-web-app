@@ -198,7 +198,7 @@ export default function Hero() {
 
           {/* Phone screen */}
           <Image
-            src="/screens/screen_03_post_detail.png"
+            src="/screens/screen_03_post_details.png"
             alt="A question and anonymous replies in Opinionly"
             width={280}
             height={572}
