@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 interface Props {
   id?: string;
@@ -13,7 +14,17 @@ export default function EmailCaptureForm({ id }: Props) {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!email.trim()) return;
+
+    trackEvent("email_form_submit", {
+      form_id: id ?? "email_capture",
+      email_length: email.trim().length,
+      method: "hero_form",
+    });
+
     setSubmitted(true);
+    trackEvent("email_form_success", {
+      form_id: id ?? "email_capture",
+    });
   };
 
   return (
@@ -68,6 +79,11 @@ export default function EmailCaptureForm({ id }: Props) {
               boxShadow: "0 4px 12px rgba(28,27,24,0.18)",
               whiteSpace: "nowrap",
             }}
+            onClick={() =>
+              trackEvent("hero_cta_click", {
+                cta: "hero_get_early_access",
+              })
+            }
             onMouseOver={(e) => {
               e.currentTarget.style.background = "#3a3833";
             }}
