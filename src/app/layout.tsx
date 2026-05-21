@@ -1,3 +1,4 @@
+import Script from "next/script";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Instrument_Serif } from "next/font/google";
@@ -16,6 +17,8 @@ const instrumentSerif = Instrument_Serif({
   style: ["normal", "italic"],
   display: "swap",
 });
+
+const GA_MEASUREMENT_ID = "G-0LTL8FYB47";
 
 export const metadata: Metadata = {
   title: "Opinionly — The honest feedback you've been missing",
@@ -36,7 +39,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${instrumentSerif.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga-setup" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}', {
+              page_path: window.location.pathname,
+            });
+          `}
+        </Script>
+        {children}
+      </body>
     </html>
   );
 }
