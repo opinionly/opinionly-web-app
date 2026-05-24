@@ -7,20 +7,26 @@
 
 :root {
   --cream: #f6f2ea;
+  --paper: #fbf8f2;
   --peach: #fde4d0;
   --peach-deep: #f7c8a8;
   --coral: #f9a48a;
   --blue-soft: #e3edfb;
+  --blue-tint: #eef4fd;
   --blue: #2b7ef5;
   --blue-dark: #1f6ce0;
+  --blue-ink: #1b3a6b;
   --green-soft: #e3eee0;
   --green: #4c9a4a;
   --yellow-soft: #fdf4dc;
   --yellow-deep: #f9e3b6;
+  --amber: #f4a93a;
+  --rose: #e96a6a;
   --ink: #1c1b18;
   --ink-soft: #5a5852;
   --ink-faint: #8e8b83;
   --line: rgba(28, 27, 24, 0.08);
+  --line-strong: rgba(28, 27, 24, 0.14);
   --card: #ffffff;
   --shadow-sm: 0 1px 2px rgba(28, 27, 24, 0.04), 0 0 0 0.5px rgba(28, 27, 24, 0.06);
   --shadow-md: 0 4px 24px rgba(28, 27, 24, 0.06), 0 0 0 0.5px rgba(28, 27, 24, 0.04);
@@ -172,5 +178,102 @@ body {
 
   .nav-links-text {
     display: none !important;
+  }
+}
+
+/* -------- TEAMS PAGE RESPONSIVE -------- */
+@media (max-width: 1080px) {
+  .teams-hero h1 {
+    font-size: 56px !important;
+  }
+  .teams-preview-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .teams-pcard-lg,
+  .teams-pcard-md,
+  .teams-pcard-sm {
+    grid-column: span 2 !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .teams-nav {
+    padding: 18px 20px !important;
+  }
+  .teams-nav-links a:not(.teams-nav-cta) {
+    display: none !important;
+  }
+  .teams-hero {
+    grid-template-columns: 1fr !important;
+    padding: 32px 20px 80px !important;
+    gap: 48px !important;
+  }
+  .teams-hero h1 {
+    font-size: 42px !important;
+  }
+  .teams-hero-sub {
+    font-size: 18px !important;
+  }
+  .teams-dash-mock {
+    max-width: 100% !important;
+  }
+  .teams-mechanic,
+  .teams-preview,
+  .teams-privacy,
+  .teams-why {
+    padding: 80px 20px !important;
+  }
+  .teams-mechanic-head h2,
+  .teams-preview-head h2,
+  .teams-why-head h2 {
+    font-size: 34px !important;
+  }
+  .teams-privacy h2 {
+    font-size: 38px !important;
+  }
+  .teams-mechanic-flow {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .teams-flow-arrow {
+    transform: rotate(90deg) !important;
+    margin: 0 auto !important;
+  }
+  .teams-commitments {
+    grid-template-columns: 1fr !important;
+  }
+  .teams-why-row {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    padding: 24px 0 !important;
+  }
+  .teams-why-bad,
+  .teams-why-good {
+    font-size: 18px !important;
+  }
+  .teams-preview-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .teams-pcard-lg,
+  .teams-pcard-md,
+  .teams-pcard-sm {
+    grid-column: span 1 !important;
+  }
+  .teams-pilot-card {
+    grid-template-columns: 1fr !important;
+    padding: 48px 28px !important;
+    gap: 32px !important;
+  }
+  .teams-pilot-card h2 {
+    font-size: 30px !important;
+  }
+  .teams-footer-inner {
+    flex-direction: column !important;
+    gap: 16px !important;
+    align-items: flex-start !important;
+  }
+  .teams-footer-inner a {
+    margin-left: 0 !important;
+    margin-right: 18px !important;
   }
 }

@@ -23,12 +23,29 @@ const GA_MEASUREMENT_ID = "G-0LTL8FYB47";
 export const metadata: Metadata = {
   title: "Opinionly — The honest feedback you've been missing",
   description:
-    "Peer feedback from the people who actually know you. Ask in the moment, hear back while it still matters.",
+    "Honest feedback from the people who know you. Coming soon on iOS and Android.",
+  icons: {
+    icon: "/favicon.svg",
+  },
   openGraph: {
+    type: "website",
+    url: "https://opinionly.io",
     title: "Opinionly — The honest feedback you've been missing",
     description:
-      "Peer feedback from the people who actually know you. Ask in the moment, hear back while it still matters.",
-    type: "website",
+      "From the people who know you. Coming soon on iOS and Android.",
+    images: [
+      {
+        url: "https://opinionly.io/og-consumer.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Opinionly — The honest feedback you've been missing",
+    description: "From the people who know you. Coming soon on iOS and Android.",
+    images: ["https://opinionly.io/og-consumer.png"],
   },
 };
 
