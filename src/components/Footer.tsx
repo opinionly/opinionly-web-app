@@ -34,8 +34,10 @@ export default function Footer() {
           <FooterLink href="mailto:info@theshareon.com">
             info@theshareon.com
           </FooterLink>
-          <FooterLink href="#">Privacy</FooterLink>
-          <FooterLink href="#">Terms</FooterLink>
+          <FooterLink href="/privacy">Privacy</FooterLink>
+          <FooterLink href="/terms">Terms</FooterLink>
+          <FooterLink href="/cookies">Cookies</FooterLink>
+          <FooterLink href="/eula">EULA</FooterLink>
         </div>
       </div>
     </footer>

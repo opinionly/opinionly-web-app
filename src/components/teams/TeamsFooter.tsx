@@ -38,7 +38,7 @@ export default function TeamsFooter() {
             info@theshareon.com
           </a>
           <a
-            href="#"
+            href="/privacy"
             style={{
               color: "var(--ink-soft)",
               textDecoration: "none",
@@ -49,7 +49,7 @@ export default function TeamsFooter() {
             Privacy
           </a>
           <a
-            href="#"
+            href="/terms"
             style={{
               color: "var(--ink-soft)",
               textDecoration: "none",
@@ -58,6 +58,28 @@ export default function TeamsFooter() {
             }}
           >
             Terms
+          </a>
+          <a
+            href="/cookies"
+            style={{
+              color: "var(--ink-soft)",
+              textDecoration: "none",
+              marginLeft: 24,
+              transition: "color 0.15s",
+            }}
+          >
+            Cookies
+          </a>
+          <a
+            href="/eula"
+            style={{
+              color: "var(--ink-soft)",
+              textDecoration: "none",
+              marginLeft: 24,
+              transition: "color 0.15s",
+            }}
+          >
+            EULA
           </a>
         </div>
       </div>
