@@ -40,30 +40,6 @@ export default function Navbar() {
           className="nav-links-container"
         >
           <NavLink label="How it works" onClick={() => scrollTo("how")} />
-          <a
-            href="https://teams.opinionly.io"
-            className="nav-links-text"
-            style={{
-              fontSize: 14,
-              fontWeight: 500,
-              color: "var(--ink-soft)",
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-              padding: 0,
-              fontFamily: "inherit",
-              textDecoration: "none",
-              transition: "color 0.15s",
-            }}
-            onMouseOver={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.color = "var(--ink)";
-            }}
-            onMouseOut={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.color = "var(--ink-soft)";
-            }}
-          >
-            For teams
-          </a>
           <button
             onClick={() => scrollTo("waitlist")}
             style={{

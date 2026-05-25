@@ -27,17 +27,6 @@ export default function TeamsFooter() {
         </span>
         <div>
           <a
-            href="https://opinionly.io"
-            style={{
-              color: "var(--ink-soft)",
-              textDecoration: "none",
-              marginLeft: 24,
-              transition: "color 0.15s",
-            }}
-          >
-            For people
-          </a>
-          <a
             href="mailto:info@theshareon.com"
             style={{
               color: "var(--ink-soft)",
