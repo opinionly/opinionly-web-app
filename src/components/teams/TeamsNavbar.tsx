@@ -75,18 +75,6 @@ export default function TeamsNavbar() {
             Privacy
           </a>
           <a
-            href="https://opinionly.io"
-            style={{
-              fontSize: 14,
-              fontWeight: 500,
-              color: "var(--ink-soft)",
-              textDecoration: "none",
-              transition: "color 0.15s",
-            }}
-          >
-            For people
-          </a>
-          <a
             href="#pilot"
             className="teams-nav-cta"
             style={{
