@@ -1,4 +1,5 @@
 import Image from "next/image";
+import screen02Compose from "../../public/screens/screen_02_compose.png";
 
 export default function InTheMomentSection() {
   return (
@@ -21,21 +22,19 @@ export default function InTheMomentSection() {
         }}
       >
         {/* Phone (left) */}
-        <Image
-          src="/screens/screen_02_compose.png"
-          alt="Composing a post in Opinionly"
-          width={340}
-          height={694}
-          style={{
-            width: "100%",
-            maxWidth: 340,
-            height: "auto",
-            borderRadius: 36,
-            boxShadow: "var(--shadow-md)",
-            display: "block",
-            margin: "0 auto",
-          }}
-        />
+        <div style={{ maxWidth: 340, margin: "0 auto" }}>
+          <Image
+            src={screen02Compose}
+            alt="Composing a post in Opinionly"
+            style={{
+              width: "100%",
+              height: "auto",
+              borderRadius: 36,
+              boxShadow: "var(--shadow-md)",
+              display: "block",
+            }}
+          />
+        </div>
 
         {/* Copy (right) */}
         <div>
