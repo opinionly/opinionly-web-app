@@ -50,7 +50,10 @@ export default function MechanicFlipSection() {
               lineHeight: 1.55,
             }}
           >
-            Your team isn&apos;t filling out surveys. They&apos;re using Opinionly to ask their own questions and grow. You see the aggregate — the patterns underneath, in plain words, without ever seeing who said what.
+            Your team isn&apos;t filling out surveys. They&apos;re using
+            Opinionly to ask their own questions and grow. You see the aggregate
+            — the patterns underneath, in plain words, without ever seeing who
+            said what.
           </p>
         </div>
 
@@ -107,7 +110,9 @@ export default function MechanicFlipSection() {
                 marginBottom: 20,
               }}
             >
-              They ask their own questions of the people they actually trust. They give honest, anonymous replies to each other. They tend their own goals. It&apos;s their tool first.
+              They ask their own questions of the people they actually trust.
+              They give honest, anonymous replies to each other. They tend their
+              own goals. It&apos;s their tool first.
             </p>
             <div style={{ marginTop: "auto" }}>
               <div style={{ display: "flex", gap: 8, alignItems: "flex-end" }}>
@@ -166,8 +171,17 @@ export default function MechanicFlipSection() {
             >
               Aggregates
             </div>
-            <svg viewBox="0 0 64 24" fill="none" style={{ width: 64, height: 24 }}>
-              <path d="M2 12 L58 12" stroke="currentColor" strokeWidth="1.5" strokeDasharray="3 3" />
+            <svg
+              viewBox="0 0 64 24"
+              fill="none"
+              style={{ width: 64, height: 24 }}
+            >
+              <path
+                d="M2 12 L58 12"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeDasharray="3 3"
+              />
               <path
                 d="M52 6 L60 12 L52 18"
                 stroke="currentColor"
@@ -234,22 +248,35 @@ export default function MechanicFlipSection() {
                 marginBottom: 20,
               }}
             >
-              Sentiment trends. The themes people are circling around. Where things are improving and where they&apos;re not. Always in aggregate. Never tied to anyone.
+              Sentiment trends. The themes people are circling around. Where
+              things are improving and where they&apos;re not. Always in
+              aggregate. Never tied to anyone.
             </p>
             <div style={{ marginTop: "auto" }}>
               <div
                 style={{
-                  background: "linear-gradient(180deg, #fbfaf6 0%, var(--cream) 100%)",
+                  background:
+                    "linear-gradient(180deg, #fbfaf6 0%, var(--cream) 100%)",
                   borderRadius: 12,
                   padding: 14,
                   border: "1px solid var(--line)",
                 }}
               >
                 {[
-                  { k: "Overall sentiment", v: "+0.34", pill: "↑", warn: false },
+                  {
+                    k: "Overall sentiment",
+                    v: "+0.34",
+                    pill: "↑",
+                    warn: false,
+                  },
                   { k: "Engineering", v: "+0.41", pill: "↑", warn: false },
                   { k: "Product", v: "+0.22", pill: null, warn: false },
-                  { k: "Rising theme", v: "meeting load", pill: "!", warn: true },
+                  {
+                    k: "Rising theme",
+                    v: "meeting load",
+                    pill: "!",
+                    warn: true,
+                  },
                   { k: "Coverage", v: "87% active", pill: null, warn: false },
                 ].map((row, i, arr) => (
                   <div
@@ -271,7 +298,9 @@ export default function MechanicFlipSection() {
                         <span
                           style={{
                             display: "inline-block",
-                            background: row.warn ? "#fde9c8" : "var(--green-soft)",
+                            background: row.warn
+                              ? "#fde9c8"
+                              : "var(--green-soft)",
                             color: row.warn ? "#8a5a10" : "var(--green)",
                             fontSize: 10,
                             padding: "2px 6px",

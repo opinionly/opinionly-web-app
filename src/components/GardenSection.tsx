@@ -1,4 +1,5 @@
 import Image from "next/image";
+import screen04Garden from "../../public/screens/screen_04_garden.png";
 
 export default function GardenSection() {
   return (
@@ -66,20 +67,20 @@ export default function GardenSection() {
 
         {/* Phone */}
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <Image
-            src="/screens/screen_04_garden.png"
-            alt="The Garden in Opinionly"
-            width={260}
-            height={531}
-            style={{
-              width: "100%",
-              maxWidth: 260,
-              height: "auto",
-              borderRadius: 36,
-              boxShadow: "var(--shadow-md)",
-              display: "block",
-            }}
-          />
+          <div style={{ maxWidth: 260, width: "100%" }}>
+            <Image
+              src={screen04Garden}
+              alt="The Garden in Opinionly"
+              priority
+              style={{
+                width: "100%",
+                height: "auto",
+                borderRadius: 36,
+                boxShadow: "var(--shadow-md)",
+                display: "block",
+              }}
+            />
+          </div>
         </div>
       </div>
     </div>
