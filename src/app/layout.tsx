@@ -7,32 +7,28 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
   display: "swap",
+  subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 const instrumentSerif = Instrument_Serif({
-  variable: "--font-instrument-serif",
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
   display: "swap",
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  variable: "--font-instrument-serif",
+  weight: "400",
 });
 
 const GA_MEASUREMENT_ID = "G-0LTL8FYB47";
 
 export const metadata: Metadata = {
-  title: "Opinionly — The honest feedback you've been missing",
   description:
     "Honest feedback from the people who know you. Coming soon on iOS and Android.",
   icons: {
     icon: "/favicon.svg",
   },
   openGraph: {
-    type: "website",
-    url: "https://opinionly.io",
-    title: "Opinionly — The honest feedback you've been missing",
     description:
       "From the people who know you. Coming soon on iOS and Android.",
     images: [
@@ -42,13 +38,17 @@ export const metadata: Metadata = {
         height: 630,
       },
     ],
+    title: "Opinionly — The honest feedback you've been missing",
+    type: "website",
+    url: "https://opinionly.io",
   },
+  title: "Opinionly — The honest feedback you've been missing",
   twitter: {
     card: "summary_large_image",
-    title: "Opinionly — The honest feedback you've been missing",
     description:
       "From the people who know you. Coming soon on iOS and Android.",
     images: ["https://opinionly.io/og-consumer.png"],
+    title: "Opinionly — The honest feedback you've been missing",
   },
 };
 
@@ -59,8 +59,8 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
       className={`${inter.variable} ${instrumentSerif.variable}`}
+      lang="en"
       suppressHydrationWarning
     >
       <body suppressHydrationWarning>
