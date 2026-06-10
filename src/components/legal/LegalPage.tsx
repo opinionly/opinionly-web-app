@@ -5,6 +5,13 @@ interface LegalPage {
   title: string;
 }
 
+function formatDate(iso: string) {
+  return new Intl.DateTimeFormat("en-US", {
+    dateStyle: "long",
+    timeZone: "UTC",
+  }).format(new Date(iso));
+}
+
 export default function LegalPage(props: PropsWithChildren<LegalPage>) {
   const { children, lastUpdated, title } = props;
 
@@ -36,11 +43,11 @@ export default function LegalPage(props: PropsWithChildren<LegalPage>) {
       <p
         style={{
           color: "var(--ink-faint)",
-          fontSize: 14,
+          fontSize: "smaller",
           margin: "0 0 40px",
         }}
       >
-        Last updated {lastUpdated}
+        Revised: {formatDate(lastUpdated)}
       </p>
       {children}
     </div>
