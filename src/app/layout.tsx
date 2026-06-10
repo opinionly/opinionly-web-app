@@ -46,7 +46,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Opinionly — The honest feedback you've been missing",
-    description: "From the people who know you. Coming soon on iOS and Android.",
+    description:
+      "From the people who know you. Coming soon on iOS and Android.",
     images: ["https://opinionly.io/og-consumer.png"],
   },
 };
@@ -57,8 +58,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${instrumentSerif.variable}`}>
-      <body>
+    <html
+      lang="en"
+      className={`${inter.variable} ${instrumentSerif.variable}`}
+      suppressHydrationWarning
+    >
+      <body suppressHydrationWarning>
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
           strategy="afterInteractive"
