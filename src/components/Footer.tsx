@@ -13,41 +13,15 @@ export default function Footer() {
   ];
 
   return (
-    <footer style={{ background: "var(--cream)" }}>
-      <div
-        style={{
-          alignItems: "center",
-          borderTop: "1px solid var(--line)",
-          color: "var(--ink-faint)",
-          display: "flex",
-          flexWrap: "wrap",
-          fontSize: 13,
-          gap: 16,
-          justifyContent: "space-between",
-          margin: "0 auto",
-          maxWidth: 1140,
-          padding: "32px 32px 64px",
-        }}
-      >
+    <footer className="bg-[var(--cream)]">
+      <div className="items-center border-t border-[var(--line)] text-[var(--ink-faint)] flex flex-wrap text-[13px] gap-4 justify-between mx-auto max-w-[1140px] px-8 pt-8 pb-16">
         <span
-          style={{
-            color: "var(--ink)",
-            fontFamily:
-              "var(--font-instrument-serif), Georgia, 'Times New Roman', serif",
-            fontSize: 20,
-            fontStyle: "italic",
-          }}
+          className="text-[var(--ink)] [font-family:var(--font-instrument-serif),Georgia,'Times_New_Roman',serif] text-[20px] italic"
         >
           Opinionly
         </span>
-        <div
-          style={{
-            alignItems: "center",
-            display: "flex",
-            flexWrap: "wrap",
-            gap: 4,
-          }}
-        >
+
+        <div className="items-center flex flex-wrap gap-1">
           {footerLinks.map((l) => (
             <NextLink
               key={l.href.toString()}
