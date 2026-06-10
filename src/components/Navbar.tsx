@@ -1,107 +1,73 @@
 "use client";
 
+import { ComponentProps, CSSProperties } from "react";
+import NextLink from "next/link";
+import { usePathname } from "next/navigation";
+
 export default function Navbar() {
-  const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+  const pathname = usePathname();
+  const logoStyles: CSSProperties = {
+    color: "var(--ink)",
+    fontFamily: "var(--font-instrument-serif), Georgia, serif",
+    fontSize: 26,
+    fontStyle: "italic",
+    fontWeight: 400,
+    letterSpacing: "-0.01em",
   };
 
   return (
-    <div style={{ position: "relative", zIndex: 10 }}>
-      <nav
-        style={{
-          maxWidth: 1200,
-          margin: "0 auto",
-          padding: "24px 32px",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        {/* Logo */}
-        <div
-          style={{
-            fontFamily: "var(--font-instrument-serif), Georgia, serif",
-            fontWeight: 400,
-            fontStyle: "italic",
-            fontSize: 26,
-            letterSpacing: "-0.01em",
-            color: "var(--ink)",
-            cursor: "default",
-            userSelect: "none",
-          }}
-        >
+    <nav
+      style={{
+        display: "flex",
+        fontSize: 14,
+        justifyContent: "space-between",
+        padding: "24px 32px",
+        userSelect: "none",
+      }}
+    >
+      {/* Logo */}
+      {pathname === "/" ? (
+        <span style={logoStyles}>Opinionly</span>
+      ) : (
+        <NextLink href="/" style={logoStyles}>
           Opinionly
-        </div>
-
-        {/* Nav links */}
-        <div
-          style={{ display: "flex", gap: 28, alignItems: "center" }}
-          className="nav-links-container"
-        >
-          <NavLink label="How it works" onClick={() => scrollTo("how")} />
-          <button
-            onClick={() => scrollTo("waitlist")}
+        </NextLink>
+      )}
+      {/* Nav links */}
+      {pathname === "/" && (
+        <div style={{ alignItems: "center", display: "flex", gap: 28 }}>
+          <NavLink href="#how">How it works</NavLink>
+          <NavLink
+            href="#waitlist"
             style={{
               background: "var(--ink)",
-              color: "white",
-              padding: "9px 18px",
               borderRadius: 999,
-              fontSize: 13,
-              fontWeight: 500,
-              border: "none",
-              cursor: "pointer",
-              fontFamily: "inherit",
-              transition: "background 0.15s",
+              color: "white",
               lineHeight: 1,
-            }}
-            onMouseOver={(e) => {
-              (e.currentTarget as HTMLButtonElement).style.background =
-                "#3a3833";
-            }}
-            onMouseOut={(e) => {
-              (e.currentTarget as HTMLButtonElement).style.background =
-                "var(--ink)";
+              padding: "9px 18px",
+              transition: "background 0.15s",
             }}
           >
             Join waitlist
-          </button>
+          </NavLink>
         </div>
-      </nav>
-    </div>
+      )}
+    </nav>
   );
 }
 
-function NavLink({
-  label,
-  onClick,
-}: {
-  label: string;
-  onClick: () => void;
-}) {
+function NavLink(props: ComponentProps<typeof NextLink>) {
+  const { style, ...restProps } = props;
+
   return (
-    <button
-      onClick={onClick}
-      className="nav-links-text"
+    <NextLink
       style={{
-        fontSize: 14,
-        fontWeight: 500,
         color: "var(--ink-soft)",
-        background: "none",
-        border: "none",
-        cursor: "pointer",
-        padding: 0,
-        fontFamily: "inherit",
+        fontWeight: 500,
         transition: "color 0.15s",
+        ...style,
       }}
-      onMouseOver={(e) => {
-        (e.currentTarget as HTMLButtonElement).style.color = "var(--ink)";
-      }}
-      onMouseOut={(e) => {
-        (e.currentTarget as HTMLButtonElement).style.color = "var(--ink-soft)";
-      }}
-    >
-      {label}
-    </button>
+      {...restProps}
+    />
   );
 }
