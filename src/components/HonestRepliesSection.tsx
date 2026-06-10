@@ -1,4 +1,5 @@
 import Image from "next/image";
+import screen01Feed from "../../public/screens/screen_posts@2x.png";
 
 export default function HonestRepliesSection() {
   return (
@@ -75,21 +76,19 @@ export default function HonestRepliesSection() {
         </div>
 
         {/* Phone */}
-        <Image
-          src="/screens/screen_01_feed.png"
-          alt="The Opinionly feed"
-          width={340}
-          height={694}
-          style={{
-            width: "100%",
-            maxWidth: 340,
-            height: "auto",
-            borderRadius: 36,
-            boxShadow: "var(--shadow-md)",
-            display: "block",
-            margin: "0 auto",
-          }}
-        />
+        <div style={{ maxWidth: 340, margin: "0 auto" }}>
+          <Image
+            src={screen01Feed}
+            alt="The Opinionly feed"
+            style={{
+              width: "100%",
+              height: "auto",
+              borderRadius: 36,
+              boxShadow: "var(--shadow-md)",
+              display: "block",
+            }}
+          />
+        </div>
       </div>
     </section>
   );

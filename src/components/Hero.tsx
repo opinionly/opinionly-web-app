@@ -8,11 +8,11 @@ const repliers = [
 ];
 
 const charWrapBase = {
-  width: 80,
-  height: 110,
-  display: "flex",
   alignItems: "flex-end",
+  display: "flex",
+  height: 110,
   justifyContent: "center",
+  width: 80,
 } as const;
 
 export default function Hero() {
@@ -31,69 +31,69 @@ export default function Hero() {
       <div
         className="hero-grid"
         style={{
-          maxWidth: 1200,
-          margin: "0 auto",
-          padding: "48px 32px 96px",
-          display: "grid",
-          gridTemplateColumns: "1.05fr 1fr",
-          gap: 32,
           alignItems: "center",
+          display: "grid",
+          gap: 32,
+          gridTemplateColumns: "1.05fr 1fr",
+          margin: "0 auto",
+          maxWidth: 1200,
           minHeight: 600,
+          padding: "48px 32px 96px",
         }}
       >
         {/* ── Left: Copy ── */}
         <div>
           <div
             style={{
-              display: "inline-flex",
               alignItems: "center",
-              gap: 8,
+              backdropFilter: "blur(8px)",
+              background: "rgba(255,255,255,0.7)",
+              borderRadius: 999,
+              boxShadow: "var(--shadow-sm)",
+              color: "var(--ink-soft)",
+              display: "inline-flex",
               fontSize: 13,
               fontWeight: 500,
-              color: "var(--ink-soft)",
-              background: "rgba(255,255,255,0.7)",
-              backdropFilter: "blur(8px)",
-              padding: "7px 14px",
-              borderRadius: 999,
+              gap: 8,
               marginBottom: 28,
-              boxShadow: "var(--shadow-sm)",
+              padding: "7px 14px",
             }}
           >
             <span
               style={{
-                width: 6,
-                height: 6,
-                borderRadius: "50%",
                 background: "var(--coral)",
+                borderRadius: "50%",
                 display: "inline-block",
                 flexShrink: 0,
+                height: 6,
+                width: 6,
               }}
             />
-            Coming soon · iOS and Android
+            Coming soon &middot; iOS and Android
           </div>
 
           <h1
             style={{
+              color: "var(--ink)",
               fontSize: "clamp(44px, 5.5vw, 68px)",
               fontWeight: 700,
-              lineHeight: 1.02,
               letterSpacing: "-0.035em",
-              color: "var(--ink)",
+              lineHeight: 1.02,
               marginBottom: 20,
               maxWidth: 540,
             }}
           >
-            The honest feedback you&apos;ve been missing.
+            The honest feedback you&rsquo;ve been missing.
           </h1>
 
           <p
             style={{
-              fontSize: 22,
-              lineHeight: 1.4,
               color: "var(--ink-soft)",
-              maxWidth: 460,
-              marginBottom: 36,
+              fontSize: 22,
               fontWeight: 400,
+              lineHeight: 1.4,
+              marginBottom: 36,
+              maxWidth: 460,
             }}
           >
             From the people who know you.
@@ -116,52 +116,53 @@ export default function Hero() {
         <div
           className="hero-visual"
           style={{
-            position: "relative",
-            height: 600,
-            display: "flex",
             alignItems: "center",
+            display: "flex",
+            height: 600,
             justifyContent: "center",
+            position: "relative",
           }}
         >
           <div
             className="hero-stage"
             style={{
+              alignItems: "center",
+              display: "flex",
+              height: 600,
+              justifyContent: "center",
+              maxWidth: 480,
               position: "relative",
               width: "100%",
-              maxWidth: 480,
-              height: 600,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
             }}
           >
             {/* Asker: avatar + name pill + Alex cartoon body */}
             <div
               className="hero-asker"
               style={{
-                position: "absolute",
-                left: 0,
-                top: 36,
+                alignItems: "center",
+                animation:
+                  "fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both",
                 display: "flex",
                 flexDirection: "column",
-                alignItems: "center",
                 gap: 10,
+                left: 0,
+                position: "absolute",
+                top: 36,
                 zIndex: 5,
-                animation: "fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both",
               }}
             >
               <div
                 style={{
-                  width: 56,
-                  height: 56,
-                  borderRadius: "50%",
-                  background: "linear-gradient(135deg, #fde0c8, #f9a48a)",
-                  display: "flex",
                   alignItems: "center",
+                  background: "linear-gradient(135deg, #fde0c8, #f9a48a)",
+                  border: "2px solid #fff",
+                  borderRadius: "50%",
+                  boxShadow: "var(--shadow-md)",
+                  display: "flex",
+                  height: 56,
                   justifyContent: "center",
                   overflow: "hidden",
-                  boxShadow: "var(--shadow-md)",
-                  border: "2px solid #fff",
+                  width: 56,
                 }}
               >
                 <svg
@@ -191,29 +192,28 @@ export default function Hero() {
 
               <div
                 style={{
-                  background: "var(--card)",
-                  padding: "5px 12px",
-                  borderRadius: 999,
-                  fontSize: 12,
-                  fontWeight: 600,
-                  color: "var(--ink)",
-                  boxShadow: "var(--shadow-sm)",
-                  whiteSpace: "nowrap",
-                  display: "flex",
                   alignItems: "center",
-                  gap: 6,
+                  background: "var(--card)",
+                  borderRadius: "999px",
+                  boxShadow: "var(--shadow-sm)",
+                  color: "var(--ink)",
+                  display: "flex",
+                  fontSize: "12px",
+                  fontWeight: 600,
+                  gap: "4px",
+                  lineHeight: "normal",
+                  padding: "6px 9px 6px 6px",
+                  whiteSpace: "nowrap",
                 }}
               >
                 <span
                   style={{
-                    background: "rgba(249, 117, 76, 0.15)",
-                    color: "#c14a1f",
-                    padding: "1px 6px",
-                    borderRadius: 4,
-                    fontSize: 10,
-                    fontWeight: 700,
-                    textTransform: "uppercase",
-                    letterSpacing: "0.04em",
+                    background: "#00C0E8",
+                    borderRadius: "0.5rem",
+                    color: "white",
+                    fontSize: "smaller",
+                    fontWeight: 600,
+                    padding: "2px 6px",
                   }}
                 >
                   You
@@ -235,11 +235,36 @@ export default function Hero() {
                 <svg
                   viewBox="0 0 80 120"
                   xmlns="http://www.w3.org/2000/svg"
-                  style={{ width: "100%", height: "100%", display: "block", overflow: "visible" }}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    display: "block",
+                    overflow: "visible",
+                  }}
                 >
-                  <ellipse cx="40" cy="117" rx="22" ry="2.5" fill="rgba(28,27,24,0.14)" />
-                  <rect x="31" y="86" width="7" height="28" rx="2" fill="#2a2a2a" />
-                  <rect x="42" y="86" width="7" height="28" rx="2" fill="#2a2a2a" />
+                  <ellipse
+                    cx="40"
+                    cy="117"
+                    rx="22"
+                    ry="2.5"
+                    fill="rgba(28,27,24,0.14)"
+                  />
+                  <rect
+                    x="31"
+                    y="86"
+                    width="7"
+                    height="28"
+                    rx="2"
+                    fill="#2a2a2a"
+                  />
+                  <rect
+                    x="42"
+                    y="86"
+                    width="7"
+                    height="28"
+                    rx="2"
+                    fill="#2a2a2a"
+                  />
                   <ellipse cx="34" cy="114" rx="5" ry="2" fill="#1c1b18" />
                   <ellipse cx="46" cy="114" rx="5" ry="2" fill="#1c1b18" />
                   <path
@@ -260,8 +285,22 @@ export default function Hero() {
                     strokeLinecap="round"
                     fill="none"
                   />
-                  <rect x="30" y="70" width="20" height="24" rx="3" fill="#1c1b18" />
-                  <rect x="32.5" y="73" width="15" height="17" rx="1.5" fill="#cfe0fb" />
+                  <rect
+                    x="30"
+                    y="70"
+                    width="20"
+                    height="24"
+                    rx="3"
+                    fill="#1c1b18"
+                  />
+                  <rect
+                    x="32.5"
+                    y="73"
+                    width="15"
+                    height="17"
+                    rx="1.5"
+                    fill="#cfe0fb"
+                  />
                   <circle cx="29" cy="78" r="4" fill="#f0bf9c" />
                   <circle cx="51" cy="78" r="4" fill="#f0bf9c" />
                   <rect x="36" y="42" width="8" height="10" fill="#f0bf9c" />
@@ -285,24 +324,21 @@ export default function Hero() {
 
             {/* Phone screen */}
             <Image
-              src="/screens/screen_03_post_detail.png"
               alt="A question and anonymous replies in Opinionly"
-              width={280}
-              height={572}
-              priority
               className="hero-phone-img"
+              height={572}
+              loading="eager"
+              priority
+              src="/screens/screen_posts@2x.png"
               style={{
-                borderRadius: 38,
-                boxShadow: "var(--shadow-lg)",
-                display: "block",
+                filter: "drop-shadow(2px 4px 6px var(--ink-faint))",
+                left: "50%",
                 position: "absolute",
                 top: 30,
-                left: "50%",
                 transform: "translateX(-50%)",
-                zIndex: 2,
                 width: 250,
-                height: "auto",
               }}
+              width={280}
             />
 
             {/* Replier pills with silhouette avatars */}
@@ -322,15 +358,15 @@ export default function Hero() {
                 <div
                   key={r.alias}
                   style={{
-                    display: "flex",
                     alignItems: "center",
-                    gap: 10,
-                    background: "var(--card)",
-                    padding: "8px 14px 8px 8px",
-                    borderRadius: 999,
-                    boxShadow: "var(--shadow-md)",
-                    transform: r.nudge ? `translateX(${r.nudge}px)` : undefined,
                     animation: `fadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) ${r.delay} both`,
+                    background: "var(--card)",
+                    borderRadius: "1rem",
+                    boxShadow: "var(--shadow-md)",
+                    display: "flex",
+                    gap: 10,
+                    padding: "8px 14px 8px 8px",
+                    transform: r.nudge ? `translateX(${r.nudge}px)` : undefined,
                   }}
                 >
                   <div
@@ -347,7 +383,10 @@ export default function Hero() {
                   >
                     <svg viewBox="0 0 28 28" fill="none" width={20} height={20}>
                       <circle cx="14" cy="11" r="4.5" fill="#fff" />
-                      <path d="M5 24 Q 5 16 14 16 Q 23 16 23 24 Z" fill="#fff" />
+                      <path
+                        d="M5 24 Q 5 16 14 16 Q 23 16 23 24 Z"
+                        fill="#fff"
+                      />
                     </svg>
                   </div>
                   <div
@@ -407,11 +446,36 @@ export default function Hero() {
                   <svg
                     viewBox="0 0 80 120"
                     xmlns="http://www.w3.org/2000/svg"
-                    style={{ width: "100%", height: "100%", display: "block", overflow: "visible" }}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      display: "block",
+                      overflow: "visible",
+                    }}
                   >
-                    <ellipse cx="40" cy="117" rx="22" ry="2.5" fill="rgba(28,27,24,0.14)" />
-                    <rect x="32" y="86" width="7" height="28" rx="2" fill="#3a4a5a" />
-                    <rect x="41" y="86" width="7" height="28" rx="2" fill="#3a4a5a" />
+                    <ellipse
+                      cx="40"
+                      cy="117"
+                      rx="22"
+                      ry="2.5"
+                      fill="rgba(28,27,24,0.14)"
+                    />
+                    <rect
+                      x="32"
+                      y="86"
+                      width="7"
+                      height="28"
+                      rx="2"
+                      fill="#3a4a5a"
+                    />
+                    <rect
+                      x="41"
+                      y="86"
+                      width="7"
+                      height="28"
+                      rx="2"
+                      fill="#3a4a5a"
+                    />
                     <ellipse cx="35" cy="114" rx="5" ry="2" fill="#1c1b18" />
                     <ellipse cx="45" cy="114" rx="5" ry="2" fill="#1c1b18" />
                     <path
@@ -427,8 +491,8 @@ export default function Hero() {
                     />
                     <path
                       d="M58 62 Q 64 76 58 90"
-                      stroke="#2b7ef5"
-                      strokeWidth="9"
+                      stroke="#e6b58e"
+                      strokeWidth="6"
                       strokeLinecap="round"
                       fill="none"
                     />
@@ -438,9 +502,30 @@ export default function Hero() {
                       d="M26 24 Q 30 14 40 14 Q 50 14 54 24 Q 48 20 40 20 Q 32 20 26 24 Z"
                       fill="#1c1b18"
                     />
-                    <circle cx="34" cy="33" r="3.6" fill="#fff" stroke="#1c1b18" strokeWidth="1.2" />
-                    <circle cx="46" cy="33" r="3.6" fill="#fff" stroke="#1c1b18" strokeWidth="1.2" />
-                    <line x1="37.6" y1="33" x2="42.4" y2="33" stroke="#1c1b18" strokeWidth="1.2" />
+                    <circle
+                      cx="34"
+                      cy="33"
+                      r="3.6"
+                      fill="#fff"
+                      stroke="#1c1b18"
+                      strokeWidth="1.2"
+                    />
+                    <circle
+                      cx="46"
+                      cy="33"
+                      r="3.6"
+                      fill="#fff"
+                      stroke="#1c1b18"
+                      strokeWidth="1.2"
+                    />
+                    <line
+                      x1="37.6"
+                      y1="33"
+                      x2="42.4"
+                      y2="33"
+                      stroke="#1c1b18"
+                      strokeWidth="1.2"
+                    />
                     <circle cx="34" cy="33" r="0.9" fill="#1c1b18" />
                     <circle cx="46" cy="33" r="0.9" fill="#1c1b18" />
                     <path
@@ -465,11 +550,36 @@ export default function Hero() {
                   <svg
                     viewBox="0 0 80 120"
                     xmlns="http://www.w3.org/2000/svg"
-                    style={{ width: "100%", height: "100%", display: "block", overflow: "visible" }}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      display: "block",
+                      overflow: "visible",
+                    }}
                   >
-                    <ellipse cx="40" cy="117" rx="22" ry="2.5" fill="rgba(28,27,24,0.14)" />
-                    <rect x="32" y="86" width="7" height="28" rx="2" fill="#6b4a2a" />
-                    <rect x="41" y="86" width="7" height="28" rx="2" fill="#6b4a2a" />
+                    <ellipse
+                      cx="40"
+                      cy="117"
+                      rx="22"
+                      ry="2.5"
+                      fill="rgba(28,27,24,0.14)"
+                    />
+                    <rect
+                      x="32"
+                      y="86"
+                      width="7"
+                      height="28"
+                      rx="2"
+                      fill="#6b4a2a"
+                    />
+                    <rect
+                      x="41"
+                      y="86"
+                      width="7"
+                      height="28"
+                      rx="2"
+                      fill="#6b4a2a"
+                    />
                     <ellipse cx="35" cy="114" rx="5" ry="2" fill="#1c1b18" />
                     <ellipse cx="45" cy="114" rx="5" ry="2" fill="#1c1b18" />
                     <path
@@ -478,8 +588,8 @@ export default function Hero() {
                     />
                     <path
                       d="M22 62 Q 16 76 22 90"
-                      stroke="#f4a93a"
-                      strokeWidth="9"
+                      stroke="#f0c2a0"
+                      strokeWidth="6"
                       strokeLinecap="round"
                       fill="none"
                     />
@@ -497,7 +607,10 @@ export default function Hero() {
                       d="M26 28 Q 26 14 40 14 Q 54 14 54 28 L 54 36 Q 48 28 40 28 Q 32 28 26 36 Z"
                       fill="#7c4a1f"
                     />
-                    <path d="M52 26 Q 62 30 62 44 Q 58 38 53 36 Z" fill="#7c4a1f" />
+                    <path
+                      d="M52 26 Q 62 30 62 44 Q 58 38 53 36 Z"
+                      fill="#7c4a1f"
+                    />
                     <path
                       d="M33 33 Q 35 31 37 33"
                       stroke="#1c1b18"
@@ -519,8 +632,20 @@ export default function Hero() {
                       fill="none"
                       strokeLinecap="round"
                     />
-                    <circle cx="32" cy="38" r="1.8" fill="#f9a48a" opacity="0.55" />
-                    <circle cx="48" cy="38" r="1.8" fill="#f9a48a" opacity="0.55" />
+                    <circle
+                      cx="32"
+                      cy="38"
+                      r="1.8"
+                      fill="#f9a48a"
+                      opacity="0.55"
+                    />
+                    <circle
+                      cx="48"
+                      cy="38"
+                      r="1.8"
+                      fill="#f9a48a"
+                      opacity="0.55"
+                    />
                   </svg>
                 </div>
               </div>
@@ -537,11 +662,36 @@ export default function Hero() {
                   <svg
                     viewBox="0 0 80 120"
                     xmlns="http://www.w3.org/2000/svg"
-                    style={{ width: "100%", height: "100%", display: "block", overflow: "visible" }}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      display: "block",
+                      overflow: "visible",
+                    }}
                   >
-                    <ellipse cx="40" cy="117" rx="22" ry="2.5" fill="rgba(28,27,24,0.14)" />
-                    <rect x="32" y="86" width="7" height="28" rx="2" fill="#2f3a3a" />
-                    <rect x="41" y="86" width="7" height="28" rx="2" fill="#2f3a3a" />
+                    <ellipse
+                      cx="40"
+                      cy="117"
+                      rx="22"
+                      ry="2.5"
+                      fill="rgba(28,27,24,0.14)"
+                    />
+                    <rect
+                      x="32"
+                      y="86"
+                      width="7"
+                      height="28"
+                      rx="2"
+                      fill="#2f3a3a"
+                    />
+                    <rect
+                      x="41"
+                      y="86"
+                      width="7"
+                      height="28"
+                      rx="2"
+                      fill="#2f3a3a"
+                    />
                     <ellipse cx="35" cy="114" rx="5" ry="2" fill="#1c1b18" />
                     <ellipse cx="45" cy="114" rx="5" ry="2" fill="#1c1b18" />
                     <path
@@ -568,7 +718,10 @@ export default function Hero() {
                       d="M25 24 Q 25 12 40 12 Q 55 12 55 24 L 55 28 L 25 28 Z"
                       fill="#3a5856"
                     />
-                    <path d="M25 28 Q 25 31 28 31 L 52 31 Q 55 31 55 28 Z" fill="#2a4844" />
+                    <path
+                      d="M25 28 Q 25 31 28 31 L 52 31 Q 55 31 55 28 Z"
+                      fill="#2a4844"
+                    />
                     <circle cx="35" cy="34" r="1.2" fill="#1c1b18" />
                     <circle cx="45" cy="34" r="1.2" fill="#1c1b18" />
                     <path

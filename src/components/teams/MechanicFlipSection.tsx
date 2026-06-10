@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const phoneScreens = [
-  { src: "/screens/screen_01_feed.png", alt: "Opinionly feed" },
+  { src: "/screens/screen_posts@2x.png", alt: "Opinionly feed" },
   { src: "/screens/screen_03_post_detail.png", alt: "A post with replies" },
   { src: "/screens/screen_04_garden.png", alt: "The Garden" },
   { src: "/screens/screen_05a_profile_self.png", alt: "Your profile" },
