@@ -1,73 +1,62 @@
 "use client";
 
+import { PropsWithChildren } from "react";
+import NextLink, { type LinkProps } from "next/link";
+
 export default function Footer() {
+  const footerLinks: Required<PropsWithChildren<Pick<LinkProps, "href">>>[] = [
+    { children: "info@theshareon.com", href: "mailto:info@theshareon.com" },
+    { children: "Privacy", href: "/privacy" },
+    { children: "Terms", href: "/terms" },
+    { children: "Cookies", href: "/cookies" },
+    { children: "EULA", href: "/eula" },
+  ];
+
   return (
     <footer style={{ background: "var(--cream)" }}>
       <div
         style={{
-          maxWidth: 1140,
-          margin: "0 auto",
-          padding: "32px 32px 64px",
-          borderTop: "1px solid var(--line)",
-          display: "flex",
-          justifyContent: "space-between",
           alignItems: "center",
-          flexWrap: "wrap",
-          gap: 16,
-          fontSize: 13,
+          borderTop: "1px solid var(--line)",
           color: "var(--ink-faint)",
+          display: "flex",
+          flexWrap: "wrap",
+          fontSize: 13,
+          gap: 16,
+          justifyContent: "space-between",
+          margin: "0 auto",
+          maxWidth: 1140,
+          padding: "32px 32px 64px",
         }}
       >
         <span
           style={{
+            color: "var(--ink)",
             fontFamily:
               "var(--font-instrument-serif), Georgia, 'Times New Roman', serif",
-            fontStyle: "italic",
             fontSize: 20,
-            color: "var(--ink)",
+            fontStyle: "italic",
           }}
         >
           Opinionly
         </span>
-
-        <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: 4 }}>
-          <FooterLink href="mailto:info@theshareon.com">
-            info@theshareon.com
-          </FooterLink>
-          <FooterLink href="/privacy">Privacy</FooterLink>
-          <FooterLink href="/terms">Terms</FooterLink>
-          <FooterLink href="/cookies">Cookies</FooterLink>
-          <FooterLink href="/eula">EULA</FooterLink>
+        <div
+          style={{
+            alignItems: "center",
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 4,
+          }}
+        >
+          {footerLinks.map((l) => (
+            <NextLink
+              key={l.href.toString()}
+              className="ml-6 no-underline transition-colors duration-150 text-[var(--ink-soft)] hover:text-[var(--ink)]"
+              {...l}
+            />
+          ))}
         </div>
       </div>
     </footer>
-  );
-}
-
-function FooterLink({
-  href,
-  children,
-}: {
-  href: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <a
-      href={href}
-      style={{
-        color: "var(--ink-soft)",
-        textDecoration: "none",
-        marginLeft: 24,
-        transition: "color 0.15s",
-      }}
-      onMouseOver={(e) => {
-        (e.currentTarget as HTMLAnchorElement).style.color = "var(--ink)";
-      }}
-      onMouseOut={(e) => {
-        (e.currentTarget as HTMLAnchorElement).style.color = "var(--ink-soft)";
-      }}
-    >
-      {children}
-    </a>
   );
 }
