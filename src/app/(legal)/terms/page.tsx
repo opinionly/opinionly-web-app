@@ -1,19 +1,8 @@
-import type { Metadata } from "next";
-import LegalPage from "@/components/legal/LegalPage";
 import Content, { frontmatter } from "./terms.md";
+import { createLegalPage } from "@/components/legal/createLegalPage";
 
-export const metadata: Metadata = {
-  title: frontmatter.title,
-  description: frontmatter.description,
-};
+const { metadata: _meta, Page } = createLegalPage(Content, frontmatter);
 
-export default function TermsOfServicePage() {
-  return (
-    <LegalPage
-      title={frontmatter.title}
-      lastUpdated={frontmatter.lastUpdatedOn}
-    >
-      <Content components={{ h1: () => null }} />
-    </LegalPage>
-  );
-}
+export const metadata = _meta;
+
+export default Page;
