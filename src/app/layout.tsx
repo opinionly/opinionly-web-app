@@ -5,6 +5,8 @@ import { Instrument_Serif } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 const inter = Inter({
   display: "swap",
@@ -78,7 +80,9 @@ export default function RootLayout({
             });
           `}
         </Script>
+        <Navbar />
         {children}
+        <Footer />
         <Analytics />
         <SpeedInsights />
       </body>
