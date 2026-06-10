@@ -5,7 +5,7 @@ import NextLink, { type LinkProps } from "next/link";
 
 export default function Footer() {
   const footerLinks: Required<PropsWithChildren<Pick<LinkProps, "href">>>[] = [
-    { children: "info@theshareon.com", href: "mailto:info@theshareon.com" },
+    { children: "hello@opinionly.io", href: "mailto:hello@opinionly.io" },
     { children: "Privacy", href: "/privacy" },
     { children: "Terms", href: "/terms" },
     { children: "Cookies", href: "/cookies" },
