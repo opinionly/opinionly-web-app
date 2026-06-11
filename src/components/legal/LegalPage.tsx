@@ -1,5 +1,7 @@
 import { PropsWithChildren } from "react";
 
+import LocalDate from "./LocalDate";
+
 interface LegalPage {
   lastUpdated: string;
   title: string;
@@ -36,11 +38,14 @@ export default function LegalPage(props: PropsWithChildren<LegalPage>) {
       <p
         style={{
           color: "var(--ink-faint)",
-          fontSize: 14,
+          fontSize: "smaller",
           margin: "0 0 40px",
         }}
       >
-        Last updated {lastUpdated}
+        Revised{" "}
+        <span style={{ fontWeight: 600 }}>
+          <LocalDate iso={lastUpdated} />
+        </span>
       </p>
       {children}
     </div>
