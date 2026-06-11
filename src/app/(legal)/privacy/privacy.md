@@ -6,10 +6,12 @@ lastUpdatedOn: "2026-06-10T06:18:28-05:00"
 
 # Privacy Policy
 
-This Privacy Notice for **Opinionly LLC** (“**we**,” “**us**,” or “**our**”), describes how and why we might access, collect, store, use, and/or share (“**process**”) your personal information when you use our services (“**Services**”), including when you:
+This Privacy Notice for Opinionly LLC (“**we**,” “**us**,” or “**our**”), describes how and why we might access, collect, store, use, and/or share (“**process**”) your personal information when you use our services (“**Services**”), including when you:
 
-- Download and use our mobile application (Opinionly), or any other application of ours that links to this Privacy Notice
+- Download and use our mobile application (“**Opinionly**”), or any other application of ours that links to this Privacy Notice
+
 - Use Opinionly. Opinionly is a mobile app designed to help individuals receive anonymous feedback from their peers, fostering personal and professional growth in a constructive and supportive manner. The app leverages AI to filter and moderate feedback, ensuring that it remains positive and actionable. Each piece of feedback is reconstructed, providing users with clear and concise insights that support their growth objectives. Initially targeted towards MBA students and professional environments, Opinionly aims to enhance communication, improve self-awareness, and contribute to a more supportive community culture.
+
 - Engage with us in other related ways, including any sales, marketing, or events
 
 **Questions or concerns?** Reading this Privacy Notice will help you understand your privacy rights and choices. We are responsible for making decisions about how your personal information is processed. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us at [hello@opinionly.io](mailto:hello@opinionly.io).
@@ -80,10 +82,15 @@ The information we collect includes:
 **We process your personal information for a variety of reasons, depending on how you interact with our Services, including:**
 
 - **To facilitate account creation and authentication and otherwise manage user accounts.** We may process your information so you can create and log in to your account, as well as keep your account in working order.
+
 - **To enable user-to-user communications.** We may process your information if you choose to use any of our offerings that allow for communication with another user.
+
 - **To request feedback.** We may process your information when necessary to request feedback and to contact you about your use of our Services.
+
 - **To protect our Services.** We may process your information as part of our efforts to keep our Services safe and secure, including fraud monitoring and prevention.
+
 - **To identify usage trends.** We may process information about how you use our Services to better understand how they are being used so we can improve them.
+
 - **To save or protect an individual’s vital interest.** We may process your information when necessary to save or protect an individual’s vital interest, such as to prevent harm.
 
 ## 3. What Legal Bases Do We Rely on to Process Your Personal Information?
