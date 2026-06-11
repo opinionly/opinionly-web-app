@@ -1,15 +1,10 @@
 import { PropsWithChildren } from "react";
 
+import LocalDate from "./LocalDate";
+
 interface LegalPage {
   lastUpdated: string;
   title: string;
-}
-
-function formatDate(iso: string) {
-  return new Intl.DateTimeFormat("en-US", {
-    dateStyle: "long",
-    timeZone: "UTC",
-  }).format(new Date(iso));
 }
 
 export default function LegalPage(props: PropsWithChildren<LegalPage>) {
@@ -47,7 +42,10 @@ export default function LegalPage(props: PropsWithChildren<LegalPage>) {
           margin: "0 0 40px",
         }}
       >
-        Revised: {formatDate(lastUpdated)}
+        Revised{" "}
+        <span style={{ fontWeight: 600 }}>
+          <LocalDate iso={lastUpdated} />
+        </span>
       </p>
       {children}
     </div>
