@@ -178,7 +178,7 @@ As part of our Services, we offer products, features, or tools powered by artifi
 
 ### Use of AI Technologies
 
-We provide the AI Products through third-party service providers (“**AI Service Providers**”), including OpenAI and Google Cloud AI. As outlined in this Privacy Notice, your input, output, and personal information will be shared with and processed by these AI Service Providers to enable your use of our AI Products for purposes outlined in the [What Legal Bases Do We Rely on to Process Your Personal Information?](#3-what-legal-bases-do-we-rely-on-to-process-your-personal-information) You must not use the AI Products in any way that violates the terms or policies of any AI Service Provider.
+We provide the AI Products through third-party service providers (“**AI Service Providers**”), including Google Cloud AI. As outlined in this Privacy Notice, your input, output, and personal information will be shared with and processed by these AI Service Providers to enable your use of our AI Products for purposes outlined in the [What Legal Bases Do We Rely on to Process Your Personal Information?](#3-what-legal-bases-do-we-rely-on-to-process-your-personal-information) You must not use the AI Products in any way that violates the terms or policies of any AI Service Provider.
 
 ### Our AI Products
 

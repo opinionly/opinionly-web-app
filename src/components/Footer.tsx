@@ -8,6 +8,7 @@ export default function Footer() {
     { children: "hello@opinionly.io", href: "mailto:hello@opinionly.io" },
     { children: "Privacy", href: "/privacy" },
     { children: "Terms", href: "/terms" },
+    { children: "Guidelines", href: "/guidelines" },
     { children: "Cookies", href: "/cookies" },
     { children: "EULA", href: "/eula" },
   ];
