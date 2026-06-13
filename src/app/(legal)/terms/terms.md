@@ -130,7 +130,7 @@ As a user of the Services, you agree not to:
 
 ## 7. User Generated Contributions
 
-The Services does not offer users to submit or post content. We may provide you with the opportunity to create, submit, post, display, transmit, perform, publish, distribute, or broadcast content and materials to us or on the Services, including but not limited to text, writings, video, audio, photographs, graphics, comments, suggestions, or personal information or other material (collectively, “Contributions”). Contributions may be viewable by other users of the Services and through third-party websites. As such, any Contributions you transmit may be treated in accordance with the Services’ Privacy Policy.
+We may provide you with the opportunity to create, submit, post, display, transmit, perform, publish, distribute, or broadcast content and materials to us or on the Services, including but not limited to text, writings, video, audio, photographs, graphics, comments, suggestions, or personal information or other material (collectively, “Contributions”). Contributions may be viewable by other users of the Services and through third-party websites. As such, any Contributions you transmit may be treated in accordance with the Services’ Privacy Policy.
 
 When you create or make available any Contributions, you thereby represent and warrant that:
 
@@ -149,6 +149,8 @@ When you create or make available any Contributions, you thereby represent and w
 - Your Contributions do not otherwise violate, or link to material that violates, any provision of these Legal Terms, or any applicable law or regulation.
 
 Any use of the Services in violation of the foregoing violates these Legal Terms and may result in, among other things, termination or suspension of your rights to use the Services.
+
+We have zero tolerance for objectionable content or abusive users. You can report content or block a user from within the app. We review reports and will remove violating content and may eject the responsible user, typically within 24 hours.
 
 ## 8. Contribution License
 
