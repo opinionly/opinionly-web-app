@@ -46,8 +46,9 @@ export async function GET(request: NextRequest) {
   if (!isLegalDoc(type)) {
     return Response.json(
       {
-        error:
-          "Invalid type. Must be one of: cookies, eula, guidelines, privacy, terms.",
+        error: "Invalid type. Must be one of: cookies, eula, guidelines, privacy, terms.",
+        ok: false,
+        status: 400,
       },
       { status: 400 },
     );
@@ -60,7 +61,10 @@ export async function GET(request: NextRequest) {
       "utf-8",
     );
   } catch {
-    return Response.json({ error: "Document not found." }, { status: 404 });
+    return Response.json(
+      { error: "Document not found.", ok: false, status: 404 },
+      { status: 404 },
+    );
   }
 
   const { markdown, lastUpdatedOn } = parseFrontmatter(raw);
