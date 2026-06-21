@@ -33,8 +33,8 @@ export interface LegalContent {
 }
 
 interface Frontmatter {
+  dateRevised: string | null;
   description: string | null;
-  lastUpdatedOn: string | null;
   markdown: string;
   title: string | null;
 }
@@ -44,8 +44,8 @@ function parseFrontmatter(raw: string): Frontmatter {
 
   if (!match)
     return {
+      dateRevised: null,
       description: null,
-      lastUpdatedOn: null,
       markdown: raw.trim(),
       title: null,
     };
@@ -55,12 +55,13 @@ function parseFrontmatter(raw: string): Frontmatter {
 
   const extract = (key: string): string | null => {
     const m = yaml.match(new RegExp(`^${key}:\\s*"?([^"\\n]+)"?`, "m"));
+
     return m ? m[1].trim() : null;
   };
 
   return {
+    dateRevised: extract("dateRevised"),
     description: extract("description"),
-    lastUpdatedOn: extract("lastUpdatedOn"),
     markdown,
     title: extract("title"),
   };
@@ -78,13 +79,13 @@ export async function getLegalContent(type: LegalDoc): Promise<LegalContent> {
     "utf-8",
   );
 
-  const { description, lastUpdatedOn, markdown, title } = parseFrontmatter(raw);
+  const { dateRevised, description, markdown, title } = parseFrontmatter(raw);
   const content = String(await processor.process(markdown));
 
   return {
     content,
     metadata: {
-      dateRevised: lastUpdatedOn,
+      dateRevised,
       description,
       legalDoc: type,
       title,

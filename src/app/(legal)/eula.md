@@ -1,7 +1,7 @@
 ---
-title: "End-User License Agreement"
+dateRevised: "2026-06-10T02:21:42-05:00"
 description: "Terms governing your installation and use of the Opinionly mobile application."
-lastUpdatedOn: "2026-06-10T02:21:42-05:00"
+title: "End-User License Agreement"
 ---
 
 # End-User License Agreement
