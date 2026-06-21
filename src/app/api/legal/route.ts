@@ -67,8 +67,14 @@ export async function GET(request: NextRequest) {
   const content = String(await processor.process(markdown));
 
   return Response.json({
-    content,
-    dateRevised: lastUpdatedOn,
-    legalDoc: type,
+    data: {
+      content,
+      metadata: {
+        dateRevised: lastUpdatedOn,
+        legalDoc: type,
+      },
+    },
+    ok: true,
+    status: 200,
   });
 }
