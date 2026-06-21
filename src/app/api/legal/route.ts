@@ -23,15 +23,31 @@ function isLegalDoc(value: unknown): value is LegalDoc {
   return LEGAL_DOCS.includes(value as LegalDoc);
 }
 
-function parseFrontmatter(raw: string): { markdown: string; lastUpdatedOn: string } {
+interface Frontmatter {
+  description: string;
+  lastUpdatedOn: string;
+  markdown: string;
+  title: string;
+}
+
+function parseFrontmatter(raw: string): Frontmatter {
   const match = raw.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
-  if (!match) return { markdown: raw.trim(), lastUpdatedOn: "" };
+  if (!match) return { description: "", lastUpdatedOn: "", markdown: raw.trim(), title: "" };
 
   const yaml = match[1];
   const markdown = match[2].trim();
-  const dateMatch = yaml.match(/^lastUpdatedOn:\s*"?([^"\n]+)"?/m);
 
-  return { markdown, lastUpdatedOn: dateMatch ? dateMatch[1].trim() : "" };
+  const extract = (key: string) => {
+    const m = yaml.match(new RegExp(`^${key}:\\s*"?([^"\\n]+)"?`, "m"));
+    return m ? m[1].trim() : "";
+  };
+
+  return {
+    description: extract("description"),
+    lastUpdatedOn: extract("lastUpdatedOn"),
+    markdown,
+    title: extract("title"),
+  };
 }
 
 const processor = unified()
@@ -67,7 +83,7 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  const { markdown, lastUpdatedOn } = parseFrontmatter(raw);
+  const { description, lastUpdatedOn, markdown, title } = parseFrontmatter(raw);
   const content = String(await processor.process(markdown));
 
   return Response.json({
@@ -75,7 +91,9 @@ export async function GET(request: NextRequest) {
       content,
       metadata: {
         dateRevised: lastUpdatedOn,
+        description,
         legalDoc: type,
+        title,
       },
     },
     ok: true,
