@@ -24,22 +24,30 @@ function isLegalDoc(value: unknown): value is LegalDoc {
 }
 
 interface Frontmatter {
-  description: string;
-  lastUpdatedOn: string;
+  description: string | null;
+  lastUpdatedOn: string | null;
   markdown: string;
-  title: string;
+  title: string | null;
 }
 
 function parseFrontmatter(raw: string): Frontmatter {
   const match = raw.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
-  if (!match) return { description: "", lastUpdatedOn: "", markdown: raw.trim(), title: "" };
+
+  if (!match)
+    return {
+      description: null,
+      lastUpdatedOn: null,
+      markdown: raw.trim(),
+      title: null,
+    };
 
   const yaml = match[1];
   const markdown = match[2].trim();
 
-  const extract = (key: string) => {
+  const extract = (key: string): string | null => {
     const m = yaml.match(new RegExp(`^${key}:\\s*"?([^"\\n]+)"?`, "m"));
-    return m ? m[1].trim() : "";
+
+    return m ? m[1].trim() : null;
   };
 
   return {
@@ -62,7 +70,8 @@ export async function GET(request: NextRequest) {
   if (!isLegalDoc(type)) {
     return Response.json(
       {
-        error: "Invalid type. Must be one of: cookies, eula, guidelines, privacy, terms.",
+        error:
+          "Invalid type. Must be one of: cookies, eula, guidelines, privacy, terms.",
         ok: false,
         status: 400,
       },
