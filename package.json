@@ -26,11 +26,13 @@
     "typescript": "^5"
   },
   "name": "opinionly-landing",
+  "packageManager": "pnpm@11.8.0",
   "private": true,
   "scripts": {
     "build": "next build",
     "dev": "next dev",
     "lint": "eslint",
+    "preinstall": "npx only-allow pnpm",
     "start": "next start"
   },
   "version": "0.1.0"
