@@ -1,7 +1,7 @@
 ---
-title: "Privacy Policy"
+dateRevised: "2026-06-10T06:18:28-05:00"
 description: "How Opinionly collects, uses, and shares your personal information."
-lastUpdatedOn: "2026-06-10T06:18:28-05:00"
+title: "Privacy Policy"
 ---
 
 # Privacy Policy

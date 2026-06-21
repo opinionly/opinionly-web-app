@@ -1,7 +1,7 @@
 ---
-title: "Community Guidelines"
+dateRevised: "2026-06-13T00:00:00-05:00"
 description: "The standards every member agrees to when giving and receiving feedback on Opinionly."
-lastUpdatedOn: "2026-06-13T00:00:00-05:00"
+title: "Community Guidelines"
 ---
 
 # Community Guidelines

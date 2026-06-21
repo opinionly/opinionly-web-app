@@ -1,7 +1,7 @@
 ---
-title: "Cookie Policy"
+dateRevised: "2026-05-04T00:00:00Z"
 description: "How Opinionly uses cookies and similar technologies."
-lastUpdatedOn: "2026-05-04T00:00:00Z"
+title: "Cookie Policy"
 ---
 
 # Cookie Policy

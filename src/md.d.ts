@@ -5,9 +5,9 @@ declare module "*.md" {
   const MDXComponent: FC<MDXProps>;
 
   export const frontmatter: {
+    dateRevised: string;
     description: string;
     lastUpdatedBy?: string;
-    lastUpdatedOn: string;
     title: string;
   };
 

@@ -1,7 +1,7 @@
 ---
 title: "Terms of Service"
 description: "The legal agreement between you and Opinionly LLC governing your use of the Services."
-lastUpdatedOn: "2026-06-10T02:16:11-05:00"
+dateRevised: "2026-06-10T02:16:11-05:00"
 ---
 
 # Terms of Service

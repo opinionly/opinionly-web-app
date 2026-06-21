@@ -1,25 +1,12 @@
 import type { Metadata } from "next";
-import { createLegalPage } from "@/components/legal/createLegalPage";
+import { getLegalContent, LEGAL_DOCS } from "@/lib/legal";
+import type { LegalDoc } from "@/lib/legal";
+import LegalPage from "@/components/legal/LegalPage";
 
-import CookiesContent, { frontmatter as cookiesFm } from "../cookies.md";
-import EulaContent, { frontmatter as eulaFm } from "../eula.md";
-import GuidelinesContent, { frontmatter as guidelinesFm } from "../guidelines.md";
-import PrivacyContent, { frontmatter as privacyFm } from "../privacy.md";
-import TermsContent, { frontmatter as termsFm } from "../terms.md";
-
-const pages = {
-  cookies: createLegalPage(CookiesContent, cookiesFm),
-  eula: createLegalPage(EulaContent, eulaFm),
-  guidelines: createLegalPage(GuidelinesContent, guidelinesFm),
-  privacy: createLegalPage(PrivacyContent, privacyFm),
-  terms: createLegalPage(TermsContent, termsFm),
-};
-
-type Slug = keyof typeof pages;
 type Params = Promise<{ slug: string }>;
 
 export function generateStaticParams() {
-  return (Object.keys(pages) as Slug[]).map((slug) => ({ slug }));
+  return LEGAL_DOCS.map((slug) => ({ slug }));
 }
 
 export const dynamicParams = false;
@@ -30,13 +17,14 @@ export async function generateMetadata({
   params: Params;
 }): Promise<Metadata> {
   const { slug } = await params;
+  const { metadata } = await getLegalContent(slug as LegalDoc);
 
-  return pages[slug as Slug].metadata;
+  return { description: metadata.description, title: metadata.title };
 }
 
 export default async function Page({ params }: { params: Params }) {
   const { slug } = await params;
-  const { Page: LegalPage } = pages[slug as Slug];
+  const { content, metadata } = await getLegalContent(slug as LegalDoc);
 
-  return <LegalPage />;
+  return <LegalPage {...{ content, metadata }} />;
 }
