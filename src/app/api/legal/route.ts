@@ -1,6 +1,11 @@
 import type { NextRequest } from "next/server";
 import { readFileSync } from "fs";
 import { join } from "path";
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkGfm from "remark-gfm";
+import remarkRehype from "remark-rehype";
+import rehypeStringify from "rehype-stringify";
 
 export const runtime = "nodejs";
 
@@ -18,16 +23,22 @@ function isLegalDoc(value: unknown): value is LegalDoc {
   return LEGAL_DOCS.includes(value as LegalDoc);
 }
 
-function parseFrontmatter(raw: string): { content: string; lastUpdatedOn: string } {
+function parseFrontmatter(raw: string): { markdown: string; lastUpdatedOn: string } {
   const match = raw.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
-  if (!match) return { content: raw.trim(), lastUpdatedOn: "" };
+  if (!match) return { markdown: raw.trim(), lastUpdatedOn: "" };
 
   const yaml = match[1];
-  const content = match[2].trim();
+  const markdown = match[2].trim();
   const dateMatch = yaml.match(/^lastUpdatedOn:\s*"?([^"\n]+)"?/m);
 
-  return { content, lastUpdatedOn: dateMatch ? dateMatch[1].trim() : "" };
+  return { markdown, lastUpdatedOn: dateMatch ? dateMatch[1].trim() : "" };
 }
+
+const processor = unified()
+  .use(remarkParse)
+  .use(remarkGfm)
+  .use(remarkRehype)
+  .use(rehypeStringify);
 
 export async function GET(request: NextRequest) {
   const type = request.nextUrl.searchParams.get("type");
@@ -52,7 +63,8 @@ export async function GET(request: NextRequest) {
     return Response.json({ error: "Document not found." }, { status: 404 });
   }
 
-  const { content, lastUpdatedOn } = parseFrontmatter(raw);
+  const { markdown, lastUpdatedOn } = parseFrontmatter(raw);
+  const content = String(await processor.process(markdown));
 
   return Response.json({
     content,
