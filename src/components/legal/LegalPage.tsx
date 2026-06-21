@@ -1,14 +1,13 @@
-import { PropsWithChildren } from "react";
-
+import { LegalContent } from "@/lib/legal";
 import LocalDate from "./LocalDate";
 
-interface LegalPage {
-  lastUpdated: string;
-  title: string;
-}
+type LegalPageProps = LegalContent;
 
-export default function LegalPage(props: PropsWithChildren<LegalPage>) {
-  const { children, lastUpdated, title } = props;
+export default function LegalPage(props: LegalPageProps) {
+  const {
+    content,
+    metadata: { dateRevised, title },
+  } = props;
 
   return (
     <div
@@ -35,19 +34,21 @@ export default function LegalPage(props: PropsWithChildren<LegalPage>) {
       >
         {title}
       </h1>
-      <p
-        style={{
-          color: "var(--ink-faint)",
-          fontSize: "smaller",
-          margin: "0 0 40px",
-        }}
-      >
-        Revised{" "}
-        <span style={{ fontWeight: 600 }}>
-          <LocalDate iso={lastUpdated} />
-        </span>
-      </p>
-      {children}
+      {dateRevised && (
+        <p
+          style={{
+            color: "var(--ink-faint)",
+            fontSize: "smaller",
+            margin: "0 0 40px",
+          }}
+        >
+          Revised{" "}
+          <span style={{ fontWeight: 600 }}>
+            <LocalDate iso={dateRevised} />
+          </span>
+        </p>
+      )}
+      <div dangerouslySetInnerHTML={{ __html: content }} />
     </div>
   );
 }
