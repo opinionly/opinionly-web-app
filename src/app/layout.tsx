@@ -27,9 +27,6 @@ const GA_MEASUREMENT_ID = "G-0LTL8FYB47";
 export const metadata: Metadata = {
   description:
     "Honest feedback from the people who know you. Coming soon on iOS and Android.",
-  icons: {
-    icon: "/favicon.svg",
-  },
   openGraph: {
     description:
       "From the people who know you. Coming soon on iOS and Android.",
