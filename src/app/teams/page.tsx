@@ -6,7 +6,7 @@ import DashboardPreviewSection from "@/components/teams/DashboardPreviewSection"
 import PrivacySection from "@/components/teams/PrivacySection";
 import WhyItWorksSection from "@/components/teams/WhyItWorksSection";
 import PilotCloseSection from "@/components/teams/PilotCloseSection";
-import TeamsFooter from "@/components/teams/TeamsFooter";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Opinionly for teams — An honest read on your team",
@@ -46,7 +46,7 @@ export default function TeamsPage() {
         <WhyItWorksSection />
         <PilotCloseSection />
       </main>
-      <TeamsFooter />
+      <Footer />
     </>
   );
 }
