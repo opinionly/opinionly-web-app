@@ -40,5 +40,5 @@
     "preinstall": "npx only-allow pnpm",
     "start": "next start"
   },
-  "version": "0.1.0"
+  "version": "0.2.0"
 }
