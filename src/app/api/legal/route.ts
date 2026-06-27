@@ -1,5 +1,6 @@
 import type { NextRequest } from "next/server";
-import { getLegalContent, isLegalDoc } from "@/lib/legal";
+import { isLegalDoc } from "@/lib/legal";
+import { getLegalContent } from "@/lib/legal-server";
 
 export const runtime = "nodejs";
 
@@ -10,7 +11,7 @@ export async function GET(request: NextRequest) {
     return Response.json(
       {
         error:
-          "Invalid type. Must be one of: cookies, eula, guidelines, privacy, terms.",
+          "Invalid type. Must be one of: cookies, eula, guidelines, privacy, terms-service.",
         ok: false,
         status: 400,
       },
