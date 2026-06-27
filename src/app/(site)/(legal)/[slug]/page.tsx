@@ -1,15 +1,13 @@
+import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getLegalContent, LEGAL_DOCS } from "@/lib/legal";
+import { isLegalDoc } from "@/lib/legal";
 import type { LegalDoc } from "@/lib/legal";
-import LegalPage from "@/components/legal/LegalPage";
+import { getLegalContent } from "@/lib/legal-server";
+import { LegalPageLoader } from "@/components/legal/LegalPageLoader";
 
 type Params = Promise<{ slug: string }>;
 
-export function generateStaticParams() {
-  return LEGAL_DOCS.map((slug) => ({ slug }));
-}
-
-export const dynamicParams = false;
+export const revalidate = 300;
 
 export async function generateMetadata({
   params,
@@ -17,14 +15,16 @@ export async function generateMetadata({
   params: Params;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const { metadata } = await getLegalContent(slug as LegalDoc);
-
+  if (!isLegalDoc(slug)) return {};
+  const { metadata } = await getLegalContent(slug);
   return { description: metadata.description, title: metadata.title };
 }
 
 export default async function Page({ params }: { params: Params }) {
   const { slug } = await params;
-  const { content, metadata } = await getLegalContent(slug as LegalDoc);
+  if (!isLegalDoc(slug)) notFound();
 
-  return <LegalPage {...{ content, metadata }} />;
+  const initialData = await getLegalContent(slug as LegalDoc);
+
+  return <LegalPageLoader slug={slug as LegalDoc} initialData={initialData} />;
 }

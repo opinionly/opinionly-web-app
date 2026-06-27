@@ -7,7 +7,7 @@ const TEAMS_HOSTS = new Set([
 
 const SHARED_PATHS = new Set([
   "/privacy",
-  "/terms",
+  "/terms-service",
   "/cookies",
   "/eula",
 ]);

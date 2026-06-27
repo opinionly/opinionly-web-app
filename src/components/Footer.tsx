@@ -7,7 +7,7 @@ export default function Footer() {
   const footerLinks: Required<PropsWithChildren<Pick<LinkProps, "href">>>[] = [
     { children: "hello@opinionly.io", href: "mailto:hello@opinionly.io" },
     { children: "Privacy", href: "/privacy" },
-    { children: "Terms", href: "/terms" },
+    { children: "Terms", href: "/terms-service" },
     { children: "Guidelines", href: "/guidelines" },
     { children: "Cookies", href: "/cookies" },
     { children: "EULA", href: "/eula" },
