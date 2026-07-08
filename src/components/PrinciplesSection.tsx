@@ -46,7 +46,7 @@ const principles = [
       </svg>
     ),
     title: "In the moment",
-    body: "Ask while the context is fresh. Reply while it matters. Not a quarterly survey, not a yearly review.",
+    body: "Ask while the context is fresh. Reply while it matters.",
   },
   {
     icon: (
@@ -69,8 +69,8 @@ const principles = [
         />
       </svg>
     ),
-    title: "Growth, not performance",
-    body: "Goals are plants. Feedback is water. No metrics, no leaderboards, no quarterly reviews to dread.",
+    title: "Growth, not scorekeeping",
+    body: "Goals are plants. Feedback is water. No scores, no streaks, nothing to keep count of.",
   },
 ];
 

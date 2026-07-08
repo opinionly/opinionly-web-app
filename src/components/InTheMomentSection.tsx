@@ -48,7 +48,7 @@ export default function InTheMomentSection() {
               marginBottom: 18,
             }}
           >
-            Continuous, not quarterly
+            When it&apos;s fresh, not weeks later
           </div>
           <h2
             className="section-h2"
@@ -72,8 +72,8 @@ export default function InTheMomentSection() {
             }}
           >
             Most feedback arrives too late, from the wrong people, in the wrong
-            tone. Opinionly is built for the small moments — the meeting that
-            felt off, the message you weren&apos;t sure about, the thing you
+            tone. Opinionly is built for the small moments — the conversation
+            that felt off, the message you weren&apos;t sure about, the thing you
             can&apos;t stop thinking about on the walk home.
           </p>
           <p
