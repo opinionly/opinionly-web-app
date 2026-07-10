@@ -324,13 +324,14 @@ export default function Hero() {
 
             {/* Phone screen */}
             <Image
-              alt="A question and anonymous replies in Opinionly"
+              alt="The Opinionly feed — honest questions from people who know you"
               className="hero-phone-img"
-              height={572}
+              height={609}
               loading="eager"
               priority
-              src="/screens/screen_posts@2x.png"
+              src="/screens/screen_feed.png"
               style={{
+                borderRadius: 30,
                 filter: "drop-shadow(2px 4px 6px var(--ink-faint))",
                 left: "50%",
                 position: "absolute",

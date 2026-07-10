@@ -1,12 +1,11 @@
 import Image from "next/image";
-import screenThread from "../../public/screens/screen_post_thread.png";
+import screenInsights from "../../public/screens/screen_insights.png";
 
-export default function HonestRepliesSection() {
+export default function InsightsSection() {
   return (
     <section
-      id="how"
       style={{
-        background: "var(--blue-soft)",
+        background: "var(--blue-tint)",
         padding: "112px 32px",
       }}
       className="section-padding"
@@ -34,7 +33,7 @@ export default function HonestRepliesSection() {
               marginBottom: 18,
             }}
           >
-            Honest replies, every time
+            Insights, private to you
           </div>
           <h2
             className="section-h2"
@@ -47,7 +46,7 @@ export default function HonestRepliesSection() {
               color: "var(--ink)",
             }}
           >
-            You ask. They reply, anonymously.
+            See how you actually come across.
           </h2>
           <p
             style={{
@@ -57,9 +56,9 @@ export default function HonestRepliesSection() {
               maxWidth: 460,
             }}
           >
-            Post a question to the people who actually know you. They see your
-            name. You don&apos;t see theirs. That asymmetry is the whole trick —
-            it&apos;s what makes the feedback honest enough to actually use.
+            Every honest reply quietly adds up. Opinionly turns them into a
+            private picture — sentiment over time, the themes people keep
+            noticing, and how you show up when you give feedback back.
           </p>
           <p
             style={{
@@ -70,16 +69,16 @@ export default function HonestRepliesSection() {
               marginTop: 14,
             }}
           >
-            You hear what they really think. Not the polite version they&apos;d
-            tell you to your face.
+            Only you ever see it. No scores to perform for — just a clearer sense
+            of how you land.
           </p>
         </div>
 
         {/* Phone */}
         <div style={{ maxWidth: 340, margin: "0 auto" }}>
           <Image
-            src={screenThread}
-            alt="A named post with an anonymous reply in Opinionly"
+            src={screenInsights}
+            alt="A private view of how you're perceived over time in Opinionly"
             style={{
               width: "100%",
               height: "auto",
