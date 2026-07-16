@@ -62,7 +62,7 @@ export async function POST(request: Request) {
       );
     }
 
-    console.log("waitlist: signup", { email });
+    console.log("waitlist: signup");
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error("waitlist: unexpected error", err);
