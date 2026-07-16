@@ -68,7 +68,7 @@ export async function POST(request: Request) {
       );
     }
 
-    console.log("pilot: signup", { company, email, formId });
+    console.log("pilot: signup", { company, formId });
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error("pilot: unexpected error", err);
