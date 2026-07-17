@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import { trackEvent } from "@/lib/analytics";
+import { trackEvent, trackPixel } from "@/lib/analytics";
 
 interface Props {
   id?: string;
@@ -53,6 +53,7 @@ export default function EmailCaptureForm({ id }: Props) {
       trackEvent("email_form_success", {
         form_id: id ?? "email_capture",
       });
+      trackPixel("Lead");
     } catch {
       setStatus("error");
       setErrorMsg("Network error. Try again.");

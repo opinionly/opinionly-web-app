@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import { trackEvent } from "@/lib/analytics";
+import { trackEvent, trackPixel } from "@/lib/analytics";
 
 interface Props {
   id: string;
@@ -59,6 +59,7 @@ export default function TeamsCaptureForm({
 
       setStatus("success");
       trackEvent("pilot_form_success", { form_id: id });
+      trackPixel("Lead");
     } catch {
       setStatus("error");
       setErrorMsg("Network error. Try again.");
