@@ -1,63 +1,41 @@
+const pcardBase =
+  "min-w-0 rounded-[20px] border border-line bg-card px-5 pt-[26px] pb-7 shadow-(--shadow-sm) sm:px-[26px]";
+const pcardLabel =
+  "mb-2.5 text-[11px] font-semibold tracking-[0.08em] text-ink-faint uppercase";
+const pcardTitle = "mb-1 text-[17px] font-semibold tracking-[-0.01em] text-ink";
+const pcardSub = "text-[13px] text-ink-faint";
+const pcardValue =
+  "mb-2 text-4xl leading-none font-bold tracking-[-0.025em] text-ink";
+
 export default function DashboardPreviewSection() {
   return (
-    <section
-      className="teams-preview"
-      style={{ background: "var(--paper)", padding: "120px 32px" }}
-    >
-      <div style={{ maxWidth: 1080, margin: "0 auto" }}>
-        <div
-          className="teams-preview-head"
-          style={{ textAlign: "center", maxWidth: 720, margin: "0 auto 64px" }}
-        >
-          <div
-            style={{
-              fontSize: 12,
-              fontWeight: 700,
-              textTransform: "uppercase",
-              letterSpacing: "0.12em",
-              color: "var(--blue)",
-              marginBottom: 18,
-            }}
-          >
+    <section className="bg-paper px-5 py-20 md:px-8 md:py-30">
+      <div className="mx-auto max-w-[1080px]">
+        <div className="mx-auto mb-16 max-w-[720px] text-center">
+          <div className="mb-[18px] text-xs font-bold tracking-[0.12em] text-blue uppercase">
             What&apos;s in the dashboard
           </div>
-          <h2
-            style={{
-              fontSize: 48,
-              fontWeight: 700,
-              lineHeight: 1.05,
-              letterSpacing: "-0.03em",
-              marginBottom: 16,
-              color: "var(--ink)",
-            }}
-          >
+          <h2 className="mb-4 text-[34px] leading-[1.05] font-bold tracking-[-0.03em] text-ink md:text-[48px]">
             Built around the questions you&apos;d actually ask.
           </h2>
-          <p style={{ fontSize: 18, color: "var(--ink-soft)", lineHeight: 1.55 }}>
+          <p className="text-lg leading-[1.55] text-ink-soft">
             Not vanity metrics. Not engagement scores no one trusts. The patterns under the surface, in plain words.
           </p>
         </div>
 
-        <div
-          className="teams-preview-grid"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: 20,
-          }}
-        >
+        <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
           {/* Big sentiment card */}
-          <div className="teams-pcard-lg" style={{ ...pcardBase, gridColumn: "span 3" }}>
-            <div style={pcardLabel}>Headline</div>
-            <div style={pcardTitle}>Team sentiment is trending up.</div>
-            <div style={{ ...pcardSub, marginBottom: 0 }}>
+          <div className={`${pcardBase} lg:col-span-3`}>
+            <div className={pcardLabel}>Headline</div>
+            <div className={pcardTitle}>Team sentiment is trending up.</div>
+            <div className={pcardSub}>
               +0.08 over the last 30 days, driven by the engineering org.
             </div>
-            <div style={{ marginTop: 8 }}>
+            <div className="mt-2">
               <svg
                 viewBox="0 0 600 140"
                 preserveAspectRatio="none"
-                style={{ width: "100%", height: "auto", display: "block" }}
+                className="block h-auto w-full"
               >
                 <defs>
                   <linearGradient id="pg1" x1="0" y1="0" x2="0" y2="1">
@@ -87,10 +65,10 @@ export default function DashboardPreviewSection() {
           </div>
 
           {/* Themes card */}
-          <div className="teams-pcard-md" style={{ ...pcardBase, gridColumn: "span 2" }}>
-            <div style={pcardLabel}>Top themes this month</div>
-            <div style={{ ...pcardTitle, marginBottom: 14 }}>What people are talking about.</div>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+          <div className={`${pcardBase} lg:col-span-2`}>
+            <div className={pcardLabel}>Top themes this month</div>
+            <div className={`${pcardTitle} mb-3.5`}>What people are talking about.</div>
+            <div className="flex flex-wrap gap-2">
               {[
                 { label: "meeting load", count: "+42%", rising: true },
                 { label: "growth", count: "128", rising: false },
@@ -101,25 +79,15 @@ export default function DashboardPreviewSection() {
               ].map((t) => (
                 <span
                   key={t.label}
-                  style={{
-                    background: t.rising ? "#fde9c8" : "var(--cream)",
-                    padding: "7px 12px",
-                    borderRadius: 999,
-                    fontSize: 13,
-                    fontWeight: 500,
-                    color: t.rising ? "#6a4310" : "var(--ink-soft)",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: 6,
-                  }}
+                  className={`inline-flex items-center gap-1.5 rounded-full px-3 py-[7px] text-[13px] font-medium ${
+                    t.rising ? "bg-[#fde9c8] text-[#6a4310]" : "bg-cream text-ink-soft"
+                  }`}
                 >
                   {t.label}
                   <span
-                    style={{
-                      color: t.rising ? "#a06a10" : "var(--ink-faint)",
-                      fontSize: 11,
-                      fontWeight: 600,
-                    }}
+                    className={`text-[11px] font-semibold ${
+                      t.rising ? "text-[#a06a10]" : "text-ink-faint"
+                    }`}
                   >
                     {t.count}
                   </span>
@@ -129,52 +97,28 @@ export default function DashboardPreviewSection() {
           </div>
 
           {/* Coverage */}
-          <div className="teams-pcard-sm" style={{ ...pcardBase, gridColumn: "span 1" }}>
-            <div style={pcardLabel}>Coverage</div>
-            <div style={pcardValue}>
+          <div className={`${pcardBase} lg:col-span-1`}>
+            <div className={pcardLabel}>Coverage</div>
+            <div className={pcardValue}>
               87
-              <span style={{ fontSize: 18, color: "var(--ink-faint)", fontWeight: 500 }}>%</span>
+              <span className="text-lg font-medium text-ink-faint">%</span>
             </div>
-            <div style={{ ...pcardSub, marginBottom: 14 }}>Active employees, last 30d</div>
-            <div
-              style={{
-                height: 6,
-                background: "var(--cream)",
-                borderRadius: 3,
-                overflow: "hidden",
-                marginTop: 6,
-              }}
-            >
-              <div
-                style={{
-                  height: "100%",
-                  background: "var(--blue)",
-                  borderRadius: 3,
-                  width: "87%",
-                }}
-              />
+            <div className={`${pcardSub} mb-3.5`}>Active employees, last 30d</div>
+            <div className="mt-1.5 h-1.5 overflow-hidden rounded-[3px] bg-cream">
+              <div className="h-full w-[87%] rounded-[3px] bg-blue" />
             </div>
           </div>
 
           {/* Rising concern */}
-          <div className="teams-pcard-md" style={{ ...pcardBase, gridColumn: "span 2" }}>
-            <div style={pcardLabel}>Watch this</div>
-            <div style={pcardTitle}>Meeting load is the rising concern.</div>
-            <div style={{ ...pcardSub, marginBottom: 18 }}>
+          <div className={`${pcardBase} lg:col-span-2`}>
+            <div className={pcardLabel}>Watch this</div>
+            <div className={pcardTitle}>Meeting load is the rising concern.</div>
+            <div className={`${pcardSub} mb-[18px]`}>
               Up 42% in the last two weeks. Most of the signal is from product and design.
             </div>
-            <div style={{ display: "flex", alignItems: "baseline", gap: 12 }}>
-              <div style={{ ...pcardValue, fontSize: 28 }}>42%</div>
-              <div
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 4,
-                  fontSize: 12,
-                  fontWeight: 600,
-                  color: "var(--rose)",
-                }}
-              >
+            <div className="flex items-baseline gap-3">
+              <div className={`${pcardValue} text-[28px]`}>42%</div>
+              <div className="inline-flex items-center gap-1 text-xs font-semibold text-rose">
                 <svg width="10" height="10" viewBox="0 0 10 10">
                   <path
                     d="M2 3 L5 7 L8 3"
@@ -191,85 +135,32 @@ export default function DashboardPreviewSection() {
           </div>
 
           {/* Org breakdown */}
-          <div className="teams-pcard-sm" style={{ ...pcardBase, gridColumn: "span 1" }}>
-            <div style={pcardLabel}>By team</div>
-            <div style={{ ...pcardTitle, marginBottom: 12 }}>Sentiment</div>
+          <div className={`${pcardBase} lg:col-span-1`}>
+            <div className={pcardLabel}>By team</div>
+            <div className={`${pcardTitle} mb-3`}>Sentiment</div>
             {[
-              { name: "Engineering", v: "+0.41", color: "var(--green)" },
-              { name: "Product", v: "+0.22", color: "var(--ink)" },
-              { name: "Sales", v: "+0.12", color: "var(--ink-soft)" },
-              { name: "Operations", v: "−0.08", color: "var(--rose)" },
+              { name: "Engineering", v: "+0.41", color: "text-green" },
+              { name: "Product", v: "+0.22", color: "text-ink" },
+              { name: "Sales", v: "+0.12", color: "text-ink-soft" },
+              { name: "Operations", v: "−0.08", color: "text-rose" },
             ].map((row, i) => (
               <div
                 key={row.name}
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  padding: "10px 0",
-                  fontSize: 14,
-                  borderTop: i === 0 ? "none" : "1px solid var(--line)",
-                }}
+                className={`flex items-center justify-between py-2.5 text-sm ${
+                  i === 0 ? "" : "border-t border-line"
+                }`}
               >
-                <span style={{ color: "var(--ink)", fontWeight: 500 }}>{row.name}</span>
-                <span style={{ color: row.color, fontWeight: 600, fontSize: 12 }}>{row.v}</span>
+                <span className="font-medium text-ink">{row.name}</span>
+                <span className={`text-xs font-semibold ${row.color}`}>{row.v}</span>
               </div>
             ))}
           </div>
         </div>
 
-        <p
-          style={{
-            textAlign: "center",
-            marginTop: 40,
-            fontSize: 13,
-            color: "var(--ink-faint)",
-            fontStyle: "italic",
-          }}
-        >
+        <p className="mt-10 text-center text-[13px] text-ink-faint italic">
           An early sketch. We&apos;re building the real thing with our pilot partners — what you see here will change.
         </p>
       </div>
     </section>
   );
 }
-
-const pcardBase: React.CSSProperties = {
-  background: "var(--card)",
-  borderRadius: 20,
-  padding: "26px 26px 28px",
-  boxShadow: "var(--shadow-sm)",
-  border: "1px solid var(--line)",
-};
-
-const pcardLabel: React.CSSProperties = {
-  fontSize: 11,
-  fontWeight: 600,
-  textTransform: "uppercase",
-  letterSpacing: "0.08em",
-  color: "var(--ink-faint)",
-  marginBottom: 10,
-};
-
-const pcardTitle: React.CSSProperties = {
-  fontSize: 17,
-  fontWeight: 600,
-  color: "var(--ink)",
-  marginBottom: 4,
-  letterSpacing: "-0.01em",
-};
-
-const pcardSub: React.CSSProperties = {
-  fontSize: 13,
-  color: "var(--ink-faint)",
-  marginBottom: 18,
-};
-
-const pcardValue: React.CSSProperties = {
-  fontSize: 36,
-  fontWeight: 700,
-  color: "var(--ink)",
-  letterSpacing: "-0.025em",
-  lineHeight: 1,
-  marginBottom: 8,
-};

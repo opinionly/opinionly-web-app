@@ -50,128 +50,43 @@ const commitments = [
 
 export default function PrivacySection() {
   return (
-    <section
-      id="privacy"
-      className="teams-privacy"
-      style={{ background: "var(--ink)", color: "white", padding: "128px 32px" }}
-    >
-      <div style={{ maxWidth: 1080, margin: "0 auto" }}>
-        <div style={{ maxWidth: 760, marginBottom: 64 }}>
-          <div
-            style={{
-              fontSize: 12,
-              fontWeight: 700,
-              textTransform: "uppercase",
-              letterSpacing: "0.12em",
-              color: "rgba(255,255,255,0.55)",
-              marginBottom: 22,
-            }}
-          >
+    <section id="privacy" className="bg-ink px-5 py-20 text-white md:px-8 md:py-32">
+      <div className="mx-auto max-w-[1080px]">
+        <div className="mb-16 max-w-[760px]">
+          <div className="mb-[22px] text-xs font-bold tracking-[0.12em] text-white/55 uppercase">
             Privacy
           </div>
-          <h2
-            style={{
-              fontSize: 56,
-              fontWeight: 700,
-              lineHeight: 1.02,
-              letterSpacing: "-0.035em",
-              color: "white",
-              marginBottom: 24,
-            }}
-          >
+          <h2 className="mb-6 text-[38px] leading-[1.02] font-bold tracking-[-0.035em] text-white md:text-[56px]">
             You will{" "}
-            <em
-              style={{
-                fontFamily: "var(--font-instrument-serif), serif",
-                fontStyle: "italic",
-                fontWeight: 400,
-                color: "#f9c8a8",
-              }}
-            >
+            <em className="font-serif font-normal text-[#f9c8a8] italic">
               never
             </em>{" "}
             see what any one person said.
           </h2>
-          <p
-            style={{
-              fontSize: 19,
-              lineHeight: 1.55,
-              color: "rgba(255,255,255,0.72)",
-              maxWidth: 620,
-            }}
-          >
+          <p className="max-w-[620px] text-[19px] leading-[1.55] text-white/72">
             A dashboard like this only works if your team trusts it. If they suspect their manager is reading their replies, they stop being honest. So we don&apos;t let you read them. Not the manager, not the CEO, not the HR lead. No one.
           </p>
         </div>
 
-        <div
-          className="teams-commitments"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: 20,
-            marginBottom: 40,
-          }}
-        >
+        <div className="mb-10 grid grid-cols-1 gap-5 md:grid-cols-3">
           {commitments.map((c) => (
             <div
               key={c.title}
-              style={{
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                padding: "28px 26px",
-                borderRadius: 18,
-              }}
+              className="rounded-[18px] border border-white/8 bg-white/4 px-[26px] py-7"
             >
-              <div
-                style={{
-                  width: 36,
-                  height: 36,
-                  background: "rgba(255,255,255,0.06)",
-                  borderRadius: 10,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  marginBottom: 18,
-                }}
-              >
-                <span style={{ width: 20, height: 20, display: "inline-flex" }}>{c.icon}</span>
+              <div className="mb-[18px] flex size-9 items-center justify-center rounded-[10px] bg-white/6">
+                <span className="inline-flex size-5">{c.icon}</span>
               </div>
-              <h3
-                style={{
-                  fontSize: 17,
-                  fontWeight: 600,
-                  color: "white",
-                  marginBottom: 8,
-                  letterSpacing: "-0.01em",
-                }}
-              >
+              <h3 className="mb-2 text-[17px] font-semibold tracking-[-0.01em] text-white">
                 {c.title}
               </h3>
-              <p
-                style={{
-                  fontSize: 14,
-                  lineHeight: 1.55,
-                  color: "rgba(255,255,255,0.62)",
-                }}
-              >
-                {c.body}
-              </p>
+              <p className="text-sm leading-[1.55] text-white/62">{c.body}</p>
             </div>
           ))}
         </div>
 
-        <div
-          style={{
-            fontSize: 13,
-            color: "rgba(255,255,255,0.45)",
-            lineHeight: 1.6,
-            maxWidth: 640,
-            borderLeft: "2px solid rgba(255,255,255,0.15)",
-            paddingLeft: 16,
-          }}
-        >
-          <strong style={{ color: "rgba(255,255,255,0.7)", fontWeight: 600 }}>
+        <div className="max-w-[640px] border-l-2 border-white/15 pl-4 text-[13px] leading-[1.6] text-white/45">
+          <strong className="font-semibold text-white/70">
             Where we are honest:
           </strong>{" "}
           these are early commitments. We&apos;re working out the specific policies — minimum-N thresholds, opt-out flows, retention rules — alongside our pilot partners, because the people whose trust matters most are the ones who&apos;ll be living with it. If this matters to you, that&apos;s a feature, not a bug.

@@ -69,7 +69,7 @@ export default function EmailCaptureForm({ id }: Props) {
       <form
         id={id}
         onSubmit={handleSubmit}
-        style={{ display: "flex", gap: 8, maxWidth: 440, flexWrap: "wrap" }}
+        className="flex max-w-[440px] flex-wrap gap-2"
       >
         {status !== "success" ? (
           <>
@@ -80,98 +80,29 @@ export default function EmailCaptureForm({ id }: Props) {
               placeholder="your@email.com"
               required
               disabled={status === "submitting"}
-              style={{
-                flex: 1,
-                minWidth: 160,
-                background: "white",
-                border: "none",
-                outline: "none",
-                padding: "15px 20px",
-                borderRadius: 999,
-                fontFamily: "inherit",
-                fontSize: 15,
-                color: "var(--ink)",
-                boxShadow: "var(--shadow-sm)",
-                transition: "box-shadow 0.15s",
-                opacity: status === "submitting" ? 0.6 : 1,
-              }}
-              onFocus={(e) => {
-                e.currentTarget.style.boxShadow =
-                  "0 0 0 2px var(--blue), var(--shadow-sm)";
-              }}
-              onBlur={(e) => {
-                e.currentTarget.style.boxShadow = "var(--shadow-sm)";
-              }}
+              className="min-w-[160px] flex-1 rounded-full border-none bg-white px-5 py-3.5 font-[inherit] text-base text-ink shadow-(--shadow-sm) outline-none transition-shadow duration-150 focus:[box-shadow:0_0_0_2px_var(--blue),var(--shadow-sm)] disabled:opacity-60"
             />
             <button
               type="submit"
               disabled={status === "submitting"}
-              style={{
-                background: "var(--ink)",
-                color: "white",
-                border: "none",
-                padding: "15px 26px",
-                borderRadius: 999,
-                fontFamily: "inherit",
-                fontSize: 15,
-                fontWeight: 600,
-                cursor: status === "submitting" ? "wait" : "pointer",
-                transition: "background 0.15s, transform 0.1s",
-                boxShadow: "0 4px 12px rgba(28,27,24,0.18)",
-                whiteSpace: "nowrap",
-                opacity: status === "submitting" ? 0.7 : 1,
-              }}
+              className="cursor-pointer rounded-full border-none bg-ink px-[26px] py-3.5 font-[inherit] text-base font-semibold whitespace-nowrap text-white shadow-[0_4px_12px_rgba(28,27,24,0.18)] transition-[background-color,transform] duration-150 hover:bg-[#3a3833] active:translate-y-px disabled:cursor-wait disabled:opacity-70 disabled:hover:bg-ink"
               onClick={() =>
                 trackEvent("hero_cta_click", {
                   cta: "hero_get_early_access",
                 })
               }
-              onMouseOver={(e) => {
-                if (status !== "submitting") {
-                  e.currentTarget.style.background = "#3a3833";
-                }
-              }}
-              onMouseOut={(e) => {
-                e.currentTarget.style.background = "var(--ink)";
-              }}
-              onMouseDown={(e) => {
-                if (status !== "submitting") {
-                  e.currentTarget.style.transform = "translateY(1px)";
-                }
-              }}
-              onMouseUp={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-              }}
             >
               {status === "submitting" ? "Sending…" : "Get early access"}
             </button>
           </>
         ) : (
-          <div
-            style={{
-              background: "var(--green)",
-              color: "white",
-              padding: "15px 26px",
-              borderRadius: 999,
-              fontSize: 15,
-              fontWeight: 600,
-              boxShadow: "0 4px 12px rgba(76,154,74,0.25)",
-            }}
-          >
+          <div className="rounded-full bg-green px-[26px] py-3.5 text-base font-semibold text-white shadow-[0_4px_12px_rgba(76,154,74,0.25)]">
             You&apos;re on the list ✓
           </div>
         )}
       </form>
       {status === "error" && errorMsg && (
-        <p
-          role="alert"
-          style={{
-            marginTop: 10,
-            fontSize: 13,
-            color: "#c14a1f",
-            maxWidth: 440,
-          }}
-        >
+        <p role="alert" className="mt-2.5 max-w-[440px] text-[13px] text-[#c14a1f]">
           {errorMsg}
         </p>
       )}

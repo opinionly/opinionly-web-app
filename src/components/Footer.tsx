@@ -14,19 +14,17 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[var(--cream)]">
-      <div className="items-center border-t border-[var(--line)] text-[var(--ink-faint)] flex flex-wrap text-[13px] gap-4 justify-between mx-auto max-w-[1140px] px-8 pt-8 pb-16">
-        <span
-          className="text-[var(--ink)] [font-family:var(--font-instrument-serif),Georgia,'Times_New_Roman',serif] text-[20px] italic"
-        >
+    <footer className="bg-cream">
+      <div className="mx-auto flex max-w-[1140px] flex-wrap items-center justify-between gap-4 border-t border-line px-5 pt-8 pb-16 text-[13px] text-ink-faint sm:px-8">
+        <span className="font-serif text-[20px] text-ink italic">
           Opinionly
         </span>
 
-        <div className="items-center flex flex-wrap gap-1">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
           {footerLinks.map((l) => (
             <NextLink
               key={l.href.toString()}
-              className="ml-6 no-underline transition-colors duration-150 text-[var(--ink-soft)] hover:text-[var(--ink)]"
+              className="text-ink-soft no-underline transition-colors duration-150 hover:text-ink"
               {...l}
             />
           ))}

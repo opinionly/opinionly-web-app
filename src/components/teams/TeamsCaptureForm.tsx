@@ -11,6 +11,9 @@ interface Props {
 
 type Status = "idle" | "submitting" | "error" | "success";
 
+const inputClasses =
+  "rounded-full border-none bg-white px-5 py-3.5 font-[inherit] text-base text-ink shadow-(--shadow-sm) outline-none transition-shadow duration-150 focus:[box-shadow:0_0_0_2px_var(--blue),var(--shadow-sm)] disabled:opacity-60";
+
 export default function TeamsCaptureForm({
   id,
   buttonLabel = "Request pilot access",
@@ -67,19 +70,6 @@ export default function TeamsCaptureForm({
     }
   };
 
-  const inputStyle: React.CSSProperties = {
-    background: "white",
-    border: "none",
-    outline: "none",
-    padding: "15px 20px",
-    borderRadius: 999,
-    fontFamily: "inherit",
-    fontSize: 15,
-    color: "var(--ink)",
-    boxShadow: "var(--shadow-sm)",
-    transition: "box-shadow 0.15s",
-  };
-
   const submitting = status === "submitting";
 
   return (
@@ -87,13 +77,7 @@ export default function TeamsCaptureForm({
       <form
         id={id}
         onSubmit={handleSubmit}
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: 8,
-          maxWidth: 460,
-          marginBottom: 10,
-        }}
+        className="mb-2.5 flex max-w-[460px] flex-col gap-2"
       >
         {status !== "success" ? (
           <>
@@ -105,16 +89,9 @@ export default function TeamsCaptureForm({
               placeholder="Your company"
               required
               disabled={submitting}
-              style={{ ...inputStyle, width: "100%", opacity: submitting ? 0.6 : 1 }}
-              onFocus={(e) => {
-                e.currentTarget.style.boxShadow =
-                  "0 0 0 2px var(--blue), var(--shadow-sm)";
-              }}
-              onBlur={(e) => {
-                e.currentTarget.style.boxShadow = "var(--shadow-sm)";
-              }}
+              className={`w-full ${inputClasses}`}
             />
-            <div style={{ display: "flex", gap: 8 }}>
+            <div className="flex flex-wrap gap-2">
               <input
                 type="email"
                 name="email"
@@ -123,94 +100,31 @@ export default function TeamsCaptureForm({
                 placeholder="you@company.com"
                 required
                 disabled={submitting}
-                style={{ ...inputStyle, flex: 1, minWidth: 0, opacity: submitting ? 0.6 : 1 }}
-                onFocus={(e) => {
-                  e.currentTarget.style.boxShadow =
-                    "0 0 0 2px var(--blue), var(--shadow-sm)";
-                }}
-                onBlur={(e) => {
-                  e.currentTarget.style.boxShadow = "var(--shadow-sm)";
-                }}
+                className={`min-w-0 flex-1 ${inputClasses}`}
               />
               <button
                 type="submit"
                 disabled={submitting}
-                style={{
-                  background: "var(--ink)",
-                  color: "white",
-                  border: "none",
-                  padding: "15px 26px",
-                  borderRadius: 999,
-                  fontFamily: "inherit",
-                  fontSize: 15,
-                  fontWeight: 600,
-                  cursor: submitting ? "wait" : "pointer",
-                  transition: "background 0.15s, transform 0.1s",
-                  boxShadow: "0 4px 12px rgba(28,27,24,0.18)",
-                  whiteSpace: "nowrap",
-                  opacity: submitting ? 0.7 : 1,
-                }}
-                onClick={() =>
-                  trackEvent("pilot_cta_click", { cta: id })
-                }
-                onMouseOver={(e) => {
-                  if (!submitting) e.currentTarget.style.background = "#3a3833";
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.background = "var(--ink)";
-                }}
-                onMouseDown={(e) => {
-                  if (!submitting) e.currentTarget.style.transform = "translateY(1px)";
-                }}
-                onMouseUp={(e) => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                }}
+                className="cursor-pointer rounded-full border-none bg-ink px-[26px] py-3.5 font-[inherit] text-base font-semibold whitespace-nowrap text-white shadow-[0_4px_12px_rgba(28,27,24,0.18)] transition-[background-color,transform] duration-150 hover:bg-[#3a3833] active:translate-y-px disabled:cursor-wait disabled:opacity-70 disabled:hover:bg-ink"
+                onClick={() => trackEvent("pilot_cta_click", { cta: id })}
               >
                 {submitting ? "Sending…" : buttonLabel}
               </button>
             </div>
           </>
         ) : (
-          <div
-            style={{
-              background: "var(--green)",
-              color: "white",
-              padding: "15px 26px",
-              borderRadius: 999,
-              fontSize: 15,
-              fontWeight: 600,
-              boxShadow: "0 4px 12px rgba(76,154,74,0.25)",
-              textAlign: "center",
-            }}
-          >
+          <div className="rounded-full bg-green px-[26px] py-3.5 text-center text-base font-semibold text-white shadow-[0_4px_12px_rgba(76,154,74,0.25)]">
             You&apos;re on the list ✓
           </div>
         )}
       </form>
       {status === "error" && errorMsg && (
-        <p
-          role="alert"
-          style={{
-            marginTop: 0,
-            marginBottom: 10,
-            fontSize: 13,
-            color: "#c14a1f",
-            maxWidth: 460,
-          }}
-        >
+        <p role="alert" className="mt-0 mb-2.5 max-w-[460px] text-[13px] text-[#c14a1f]">
           {errorMsg}
         </p>
       )}
       {finePrint && status !== "error" && (
-        <p
-          style={{
-            fontSize: 13,
-            color: "var(--ink-faint)",
-            maxWidth: 460,
-          }}
-        >
-          {finePrint}
-        </p>
+        <p className="max-w-[460px] text-[13px] text-ink-faint">{finePrint}</p>
       )}
     </>
   );

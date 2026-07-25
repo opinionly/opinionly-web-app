@@ -76,103 +76,35 @@ const principles = [
 
 export default function PrinciplesSection() {
   return (
-    <section
-      style={{
-        background: "var(--green-soft)",
-        padding: "112px 32px",
-      }}
-      className="section-padding"
-    >
-      <div style={{ maxWidth: 1140, margin: "0 auto" }}>
+    <section className="bg-green-soft px-5 py-[72px] sm:px-8 sm:py-28">
+      <div className="mx-auto max-w-[1140px]">
         {/* Header */}
-        <div
-          style={{
-            textAlign: "center",
-            maxWidth: 680,
-            margin: "0 auto 56px",
-          }}
-        >
-          <div
-            style={{
-              fontSize: 12,
-              fontWeight: 700,
-              textTransform: "uppercase",
-              letterSpacing: "0.12em",
-              color: "var(--green)",
-              marginBottom: 14,
-            }}
-          >
+        <div className="mx-auto mb-14 max-w-[680px] text-center">
+          <div className="mb-3.5 text-xs font-bold tracking-[0.12em] text-green uppercase">
             What makes it different
           </div>
-          <h2
-            className="section-h2"
-            style={{
-              fontSize: 48,
-              fontWeight: 700,
-              lineHeight: 1.05,
-              letterSpacing: "-0.03em",
-              marginBottom: 16,
-              color: "var(--ink)",
-            }}
-          >
+          <h2 className="mb-4 text-[34px] leading-[1.05] font-bold tracking-[-0.03em] text-ink md:text-[48px]">
             Built on three ideas.
           </h2>
-          <p style={{ fontSize: 18, color: "var(--ink-soft)" }}>
+          <p className="text-lg text-ink-soft">
             The simple commitments that shape how Opinionly works.
           </p>
         </div>
 
         {/* Cards */}
-        <div
-          className="principles-grid"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: 24,
-          }}
-        >
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
           {principles.map((p) => (
             <div
               key={p.title}
-              style={{
-                padding: "36px 32px",
-                background: "var(--card)",
-                borderRadius: 24,
-                boxShadow: "var(--shadow-sm)",
-              }}
+              className="rounded-3xl bg-card px-8 py-9 shadow-(--shadow-sm)"
             >
-              <div
-                style={{
-                  width: 52,
-                  height: 52,
-                  background: "var(--green-soft)",
-                  borderRadius: 14,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  marginBottom: 24,
-                }}
-              >
+              <div className="mb-6 flex size-[52px] items-center justify-center rounded-[14px] bg-green-soft">
                 {p.icon}
               </div>
-              <h3
-                style={{
-                  fontSize: 20,
-                  fontWeight: 700,
-                  marginBottom: 12,
-                  letterSpacing: "-0.01em",
-                  color: "var(--ink)",
-                }}
-              >
+              <h3 className="mb-3 text-xl font-bold tracking-[-0.01em] text-ink">
                 {p.title}
               </h3>
-              <p
-                style={{
-                  fontSize: 15,
-                  lineHeight: 1.55,
-                  color: "var(--ink-soft)",
-                }}
-              >
+              <p className="text-[15px] leading-[1.55] text-ink-soft">
                 {p.body}
               </p>
             </div>

@@ -7,168 +7,59 @@ const repliers = [
   { alias: "Wry-Oak", delay: "1.7s", nudge: -12 },
 ];
 
-const charWrapBase = {
-  alignItems: "flex-end",
-  display: "flex",
-  height: 110,
-  justifyContent: "center",
-  width: 80,
-} as const;
+const charWrap = "flex h-[110px] w-20 items-end justify-center";
 
 export default function Hero() {
   return (
     <section
+      className="relative overflow-hidden"
       style={{
         background: `
           radial-gradient(ellipse 1200px 600px at 30% 0%, rgba(253, 228, 208, 0.6) 0%, transparent 60%),
           radial-gradient(ellipse 800px 500px at 80% 30%, rgba(249, 164, 138, 0.25) 0%, transparent 60%),
           var(--cream)
         `,
-        overflow: "hidden",
-        position: "relative",
       }}
     >
-      <div
-        className="hero-grid"
-        style={{
-          alignItems: "center",
-          display: "grid",
-          gap: 32,
-          gridTemplateColumns: "1.05fr 1fr",
-          margin: "0 auto",
-          maxWidth: 1200,
-          minHeight: 600,
-          padding: "48px 32px 96px",
-        }}
-      >
+      <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-8 px-5 pt-8 pb-16 sm:px-8 sm:pt-12 sm:pb-24 lg:min-h-[600px] lg:grid-cols-[1.05fr_1fr]">
         {/* ── Left: Copy ── */}
-        <div>
-          <div
-            style={{
-              alignItems: "center",
-              backdropFilter: "blur(8px)",
-              background: "rgba(255,255,255,0.7)",
-              borderRadius: 999,
-              boxShadow: "var(--shadow-sm)",
-              color: "var(--ink-soft)",
-              display: "inline-flex",
-              fontSize: 13,
-              fontWeight: 500,
-              gap: 8,
-              marginBottom: 28,
-              padding: "7px 14px",
-            }}
-          >
-            <span
-              style={{
-                background: "var(--coral)",
-                borderRadius: "50%",
-                display: "inline-block",
-                flexShrink: 0,
-                height: 6,
-                width: 6,
-              }}
-            />
+        <div className="min-w-0">
+          <div className="mb-7 inline-flex items-center gap-2 rounded-full bg-white/70 px-3.5 py-[7px] text-[13px] font-medium text-ink-soft shadow-(--shadow-sm) backdrop-blur-[8px]">
+            <span className="inline-block size-1.5 shrink-0 rounded-full bg-coral" />
             Coming soon &middot; iOS and Android
           </div>
 
-          <h1
-            style={{
-              color: "var(--ink)",
-              fontSize: "clamp(44px, 5.5vw, 68px)",
-              fontWeight: 700,
-              letterSpacing: "-0.035em",
-              lineHeight: 1.02,
-              marginBottom: 20,
-              maxWidth: 540,
-            }}
-          >
+          <h1 className="mb-5 max-w-[540px] text-[clamp(44px,5.5vw,68px)] leading-[1.02] font-bold tracking-[-0.035em] text-ink">
             The honest feedback you&rsquo;ve been missing.
           </h1>
 
-          <p
-            style={{
-              color: "var(--ink-soft)",
-              fontSize: 22,
-              fontWeight: 400,
-              lineHeight: 1.4,
-              marginBottom: 36,
-              maxWidth: 460,
-            }}
-          >
+          <p className="mb-9 max-w-[460px] text-xl leading-[1.4] font-normal text-ink-soft lg:text-[22px]">
             From the people who know you.
           </p>
 
           <EmailCaptureForm id="waitlist" />
 
-          <p
-            style={{
-              fontSize: 13,
-              color: "var(--ink-faint)",
-              marginTop: 14,
-            }}
-          >
+          <p className="mt-3.5 text-[13px] text-ink-faint">
             We write infrequently. No spam. Unsubscribe anytime.
           </p>
         </div>
 
         {/* ── Right: Visual ── */}
-        <div
-          className="hero-visual"
-          style={{
-            alignItems: "center",
-            display: "flex",
-            height: 600,
-            justifyContent: "center",
-            position: "relative",
-          }}
-        >
-          <div
-            className="hero-stage"
-            style={{
-              alignItems: "center",
-              display: "flex",
-              height: 600,
-              justifyContent: "center",
-              maxWidth: 480,
-              position: "relative",
-              width: "100%",
-            }}
-          >
+        <div className="relative flex h-[540px] items-center justify-center sm:h-[560px] lg:h-[600px]">
+          <div className="relative flex h-full w-full max-w-[440px] items-center justify-center lg:max-w-[480px]">
             {/* Asker: avatar + name pill + Alex cartoon body */}
             <div
-              className="hero-asker"
+              className="absolute top-9 left-0 z-[5] flex flex-col items-center gap-2.5"
               style={{
-                alignItems: "center",
                 animation:
                   "fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both",
-                display: "flex",
-                flexDirection: "column",
-                gap: 10,
-                left: 0,
-                position: "absolute",
-                top: 36,
-                zIndex: 5,
               }}
             >
-              <div
-                style={{
-                  alignItems: "center",
-                  background: "linear-gradient(135deg, #fde0c8, #f9a48a)",
-                  border: "2px solid #fff",
-                  borderRadius: "50%",
-                  boxShadow: "var(--shadow-md)",
-                  display: "flex",
-                  height: 56,
-                  justifyContent: "center",
-                  overflow: "hidden",
-                  width: 56,
-                }}
-              >
+              <div className="flex size-14 items-center justify-center overflow-hidden rounded-full border-2 border-white bg-[linear-gradient(135deg,#fde0c8,#f9a48a)] shadow-(--shadow-md)">
                 <svg
                   viewBox="0 0 56 56"
                   xmlns="http://www.w3.org/2000/svg"
-                  style={{ width: "100%", height: "100%", display: "block" }}
+                  className="block h-full w-full"
                 >
                   <rect width="56" height="56" fill="#fde0c8" />
                   <ellipse cx="28" cy="32" rx="18" ry="19" fill="#f0bf9c" />
@@ -190,57 +81,18 @@ export default function Hero() {
                 </svg>
               </div>
 
-              <div
-                style={{
-                  alignItems: "center",
-                  background: "var(--card)",
-                  borderRadius: "999px",
-                  boxShadow: "var(--shadow-sm)",
-                  color: "var(--ink)",
-                  display: "flex",
-                  fontSize: "12px",
-                  fontWeight: 600,
-                  gap: "4px",
-                  lineHeight: "normal",
-                  padding: "6px 9px 6px 6px",
-                  whiteSpace: "nowrap",
-                }}
-              >
-                <span
-                  style={{
-                    background: "#00C0E8",
-                    borderRadius: "0.5rem",
-                    color: "white",
-                    fontSize: "smaller",
-                    fontWeight: 600,
-                    padding: "2px 6px",
-                  }}
-                >
+              <div className="flex items-center gap-1 rounded-full bg-card py-1.5 pr-[9px] pl-1.5 text-xs leading-normal font-semibold whitespace-nowrap text-ink shadow-(--shadow-sm)">
+                <span className="rounded-lg bg-[#00C0E8] px-1.5 py-0.5 text-[smaller] font-semibold text-white">
                   You
                 </span>
                 Alex
               </div>
 
-              <div
-                className="asker-char"
-                style={{
-                  width: 100,
-                  height: 130,
-                  display: "flex",
-                  alignItems: "flex-end",
-                  justifyContent: "center",
-                  marginTop: 4,
-                }}
-              >
+              <div className="mt-1 hidden h-[130px] w-[100px] items-end justify-center sm:flex">
                 <svg
                   viewBox="0 0 80 120"
                   xmlns="http://www.w3.org/2000/svg"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    display: "block",
-                    overflow: "visible",
-                  }}
+                  className="block h-full w-full overflow-visible"
                 >
                   <ellipse
                     cx="40"
@@ -325,63 +177,26 @@ export default function Hero() {
             {/* Phone screen */}
             <Image
               alt="The Opinionly feed — honest questions from people who know you"
-              className="hero-phone-img"
+              className="absolute top-[30px] left-1/2 h-auto w-[230px] -translate-x-1/2 rounded-[30px] drop-shadow-[2px_4px_6px_var(--ink-faint)] lg:w-[250px]"
               height={609}
               loading="eager"
               priority
               src="/screens/screen_feed.png"
-              style={{
-                borderRadius: 30,
-                filter: "drop-shadow(2px 4px 6px var(--ink-faint))",
-                left: "50%",
-                position: "absolute",
-                top: 30,
-                transform: "translateX(-50%)",
-                width: 250,
-              }}
               width={280}
             />
 
             {/* Replier pills with silhouette avatars */}
-            <div
-              className="hero-repliers"
-              style={{
-                position: "absolute",
-                right: 0,
-                top: 50,
-                display: "flex",
-                flexDirection: "column",
-                gap: 10,
-                zIndex: 5,
-              }}
-            >
+            <div className="absolute top-[50px] right-0 z-[5] flex flex-col gap-2.5">
               {repliers.map((r) => (
                 <div
                   key={r.alias}
+                  className="flex items-center gap-2.5 rounded-2xl bg-card py-2 pr-3.5 pl-2 shadow-(--shadow-md)"
                   style={{
-                    alignItems: "center",
                     animation: `fadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) ${r.delay} both`,
-                    background: "var(--card)",
-                    borderRadius: "1rem",
-                    boxShadow: "var(--shadow-md)",
-                    display: "flex",
-                    gap: 10,
-                    padding: "8px 14px 8px 8px",
                     transform: r.nudge ? `translateX(${r.nudge}px)` : undefined,
                   }}
                 >
-                  <div
-                    style={{
-                      width: 36,
-                      height: 36,
-                      borderRadius: 10,
-                      background: "#1c1b18",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flexShrink: 0,
-                    }}
-                  >
+                  <div className="flex size-9 shrink-0 items-center justify-center rounded-[10px] bg-[#1c1b18]">
                     <svg viewBox="0 0 28 28" fill="none" width={20} height={20}>
                       <circle cx="14" cy="11" r="4.5" fill="#fff" />
                       <path
@@ -390,30 +205,11 @@ export default function Hero() {
                       />
                     </svg>
                   </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: 2,
-                    }}
-                  >
-                    <span
-                      style={{
-                        fontSize: 13,
-                        fontWeight: 600,
-                        color: "var(--ink)",
-                        lineHeight: 1,
-                      }}
-                    >
+                  <div className="flex flex-col gap-0.5">
+                    <span className="text-[13px] leading-none font-semibold text-ink">
                       {r.alias}
                     </span>
-                    <span
-                      style={{
-                        fontSize: 11,
-                        color: "var(--ink-faint)",
-                        lineHeight: 1,
-                      }}
-                    >
+                    <span className="text-[11px] leading-none text-ink-faint">
                       replied honestly
                     </span>
                   </div>
@@ -423,23 +219,14 @@ export default function Hero() {
 
             {/* Cluster of full-body replier characters (bottom-right) */}
             <div
-              className="replier-cluster"
+              className="absolute -right-1 bottom-0 z-[5] hidden items-end sm:flex lg:-right-2"
               aria-hidden="true"
-              style={{
-                position: "absolute",
-                right: -8,
-                bottom: 0,
-                display: "flex",
-                alignItems: "flex-end",
-                gap: 0,
-                zIndex: 5,
-              }}
             >
               {/* Calm-Reed: glasses, blue sweater */}
-              <div style={{ transform: "translateX(10px)", zIndex: 1 }}>
+              <div className="z-[1] translate-x-2.5">
                 <div
+                  className={charWrap}
                   style={{
-                    ...charWrapBase,
                     animation:
                       "riseInChar 0.7s cubic-bezier(0.22, 1.25, 0.36, 1) 1.0s both",
                   }}
@@ -447,12 +234,7 @@ export default function Hero() {
                   <svg
                     viewBox="0 0 80 120"
                     xmlns="http://www.w3.org/2000/svg"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      display: "block",
-                      overflow: "visible",
-                    }}
+                    className="block h-full w-full overflow-visible"
                   >
                     <ellipse
                       cx="40"
@@ -540,10 +322,10 @@ export default function Hero() {
               </div>
 
               {/* Brave-Lark: amber sweater, waving */}
-              <div style={{ zIndex: 3 }}>
+              <div className="z-[3]">
                 <div
+                  className={charWrap}
                   style={{
-                    ...charWrapBase,
                     animation:
                       "riseInChar 0.7s cubic-bezier(0.22, 1.25, 0.36, 1) 1.3s both",
                   }}
@@ -551,12 +333,7 @@ export default function Hero() {
                   <svg
                     viewBox="0 0 80 120"
                     xmlns="http://www.w3.org/2000/svg"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      display: "block",
-                      overflow: "visible",
-                    }}
+                    className="block h-full w-full overflow-visible"
                   >
                     <ellipse
                       cx="40"
@@ -652,10 +429,10 @@ export default function Hero() {
               </div>
 
               {/* Wry-Oak: beanie, teal sweater, arms crossed */}
-              <div style={{ transform: "translateX(-10px)", zIndex: 2 }}>
+              <div className="z-[2] -translate-x-2.5">
                 <div
+                  className={charWrap}
                   style={{
-                    ...charWrapBase,
                     animation:
                       "riseInChar 0.7s cubic-bezier(0.22, 1.25, 0.36, 1) 1.6s both",
                   }}
@@ -663,12 +440,7 @@ export default function Hero() {
                   <svg
                     viewBox="0 0 80 120"
                     xmlns="http://www.w3.org/2000/svg"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      display: "block",
-                      overflow: "visible",
-                    }}
+                    className="block h-full w-full overflow-visible"
                   >
                     <ellipse
                       cx="40"

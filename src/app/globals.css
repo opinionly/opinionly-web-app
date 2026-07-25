@@ -2,7 +2,29 @@
 
 @theme inline {
   --font-sans: var(--font-inter);
-  --font-serif: var(--font-instrument-serif);
+  --font-serif: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
+  --color-cream: var(--cream);
+  --color-paper: var(--paper);
+  --color-peach: var(--peach);
+  --color-peach-deep: var(--peach-deep);
+  --color-coral: var(--coral);
+  --color-blue-soft: var(--blue-soft);
+  --color-blue-tint: var(--blue-tint);
+  --color-blue: var(--blue);
+  --color-blue-dark: var(--blue-dark);
+  --color-blue-ink: var(--blue-ink);
+  --color-green-soft: var(--green-soft);
+  --color-green: var(--green);
+  --color-yellow-soft: var(--yellow-soft);
+  --color-yellow-deep: var(--yellow-deep);
+  --color-amber: var(--amber);
+  --color-rose: var(--rose);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-card: var(--card);
 }
 
 :root {
@@ -82,199 +104,6 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-/* -------- RESPONSIVE OVERRIDES -------- */
-@media (max-width: 980px) {
-  .hero-grid {
-    grid-template-columns: 1fr !important;
-    min-height: unset !important;
-  }
-
-  .hero-grid h1 {
-    font-size: 44px !important;
-  }
-
-  .hero-visual {
-    height: 560px !important;
-  }
-
-  .hero-stage {
-    max-width: 440px !important;
-    height: 560px !important;
-  }
-
-  .hero-phone-img {
-    width: 230px !important;
-  }
-
-  .hero-asker {
-    left: 0 !important;
-  }
-
-  .hero-repliers {
-    right: 0 !important;
-  }
-
-  .replier-cluster {
-    right: -4px !important;
-  }
-
-  .section-inner {
-    grid-template-columns: 1fr !important;
-    gap: 48px !important;
-  }
-
-  .section-h2 {
-    font-size: 34px !important;
-  }
-
-  .garden-card {
-    grid-template-columns: 1fr !important;
-    gap: 48px !important;
-    padding: 48px 32px !important;
-  }
-
-  .garden-blockquote {
-    font-size: 28px !important;
-  }
-
-  .principles-grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  .pilot-card {
-    grid-template-columns: 1fr !important;
-    gap: 40px !important;
-    padding: 48px 32px !important;
-  }
-
-  .pilot-h2 {
-    font-size: 30px !important;
-  }
-}
-
-@media (max-width: 640px) {
-  .hero-grid {
-    padding: 32px 20px 64px !important;
-  }
-
-  .hero-visual {
-    display: none !important;
-  }
-
-  .section-padding {
-    padding: 72px 20px !important;
-  }
-
-  .garden-card {
-    padding: 40px 24px !important;
-  }
-
-  nav {
-    padding: 20px !important;
-  }
-
-  .nav-links-text {
-    display: none !important;
-  }
-}
-
-/* -------- TEAMS PAGE RESPONSIVE -------- */
-@media (max-width: 1080px) {
-  .teams-hero h1 {
-    font-size: 56px !important;
-  }
-  .teams-preview-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-  .teams-pcard-lg,
-  .teams-pcard-md,
-  .teams-pcard-sm {
-    grid-column: span 2 !important;
-  }
-}
-
-@media (max-width: 760px) {
-  .teams-nav {
-    padding: 18px 20px !important;
-  }
-  .teams-nav-links a:not(.teams-nav-cta) {
-    display: none !important;
-  }
-  .teams-hero {
-    grid-template-columns: 1fr !important;
-    padding: 32px 20px 80px !important;
-    gap: 48px !important;
-  }
-  .teams-hero h1 {
-    font-size: 42px !important;
-  }
-  .teams-hero-sub {
-    font-size: 18px !important;
-  }
-  .teams-dash-mock {
-    max-width: 100% !important;
-  }
-  .teams-mechanic,
-  .teams-preview,
-  .teams-privacy,
-  .teams-why {
-    padding: 80px 20px !important;
-  }
-  .teams-mechanic-head h2,
-  .teams-preview-head h2,
-  .teams-why-head h2 {
-    font-size: 34px !important;
-  }
-  .teams-privacy h2 {
-    font-size: 38px !important;
-  }
-  .teams-mechanic-flow {
-    grid-template-columns: 1fr !important;
-    gap: 16px !important;
-  }
-  .teams-flow-arrow {
-    transform: rotate(90deg) !important;
-    margin: 0 auto !important;
-  }
-  .teams-commitments {
-    grid-template-columns: 1fr !important;
-  }
-  .teams-why-row {
-    grid-template-columns: 1fr !important;
-    gap: 16px !important;
-    padding: 24px 0 !important;
-  }
-  .teams-why-bad,
-  .teams-why-good {
-    font-size: 18px !important;
-  }
-  .teams-preview-grid {
-    grid-template-columns: 1fr !important;
-  }
-  .teams-pcard-lg,
-  .teams-pcard-md,
-  .teams-pcard-sm {
-    grid-column: span 1 !important;
-  }
-  .teams-pilot-card {
-    grid-template-columns: 1fr !important;
-    padding: 48px 28px !important;
-    gap: 32px !important;
-  }
-  .teams-pilot-card h2 {
-    font-size: 30px !important;
-  }
-  .teams-footer-inner {
-    flex-direction: column !important;
-    gap: 16px !important;
-    align-items: flex-start !important;
-  }
-  .teams-footer-inner a {
-    margin-left: 0 !important;
-    margin-right: 18px !important;
   }
 }
 
@@ -369,5 +198,11 @@ body {
 @media (max-width: 640px) {
   .legal-page h2 {
     font-size: 20px;
+  }
+
+  /* Wide tables scroll within the page instead of stretching it */
+  .legal-page table {
+    display: block;
+    overflow-x: auto;
   }
 }

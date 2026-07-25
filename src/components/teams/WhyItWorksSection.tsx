@@ -18,97 +18,36 @@ const rows = [
 
 export default function WhyItWorksSection() {
   return (
-    <section
-      className="teams-why"
-      style={{ background: "var(--cream)", padding: "120px 32px" }}
-    >
-      <div style={{ maxWidth: 1080, margin: "0 auto" }}>
-        <div
-          className="teams-why-head"
-          style={{ maxWidth: 720, margin: "0 auto 64px", textAlign: "center" }}
-        >
-          <div
-            style={{
-              fontSize: 12,
-              fontWeight: 700,
-              textTransform: "uppercase",
-              letterSpacing: "0.12em",
-              color: "var(--blue)",
-              marginBottom: 18,
-            }}
-          >
+    <section className="bg-cream px-5 py-20 md:px-8 md:py-30">
+      <div className="mx-auto max-w-[1080px]">
+        <div className="mx-auto mb-16 max-w-[720px] text-center">
+          <div className="mb-[18px] text-xs font-bold tracking-[0.12em] text-blue uppercase">
             Why this works
           </div>
-          <h2
-            style={{
-              fontSize: 48,
-              fontWeight: 700,
-              lineHeight: 1.05,
-              letterSpacing: "-0.03em",
-              marginBottom: 16,
-              color: "var(--ink)",
-            }}
-          >
+          <h2 className="mb-4 text-[34px] leading-[1.05] font-bold tracking-[-0.03em] text-ink md:text-[48px]">
             Three things most tools get wrong.
           </h2>
-          <p style={{ fontSize: 18, color: "var(--ink-soft)", lineHeight: 1.55 }}>
+          <p className="text-lg leading-[1.55] text-ink-soft">
             We didn&apos;t build Opinionly to be another engagement platform. We built it because the existing approach quietly stopped working a decade ago.
           </p>
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
+        <div className="flex flex-col gap-8">
           {rows.map((r, i, arr) => (
             <div
               key={r.bad}
-              className="teams-why-row"
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: 48,
-                alignItems: "center",
-                padding: "32px 8px",
-                borderTop: "1px solid var(--line)",
-                borderBottom:
-                  i === arr.length - 1 ? "1px solid var(--line)" : undefined,
-              }}
+              className={`grid grid-cols-1 items-center gap-4 border-t border-line py-6 md:grid-cols-2 md:gap-12 md:px-2 md:py-8 ${
+                i === arr.length - 1 ? "border-b border-b-line" : ""
+              }`}
             >
-              <div
-                className="teams-why-bad"
-                style={{
-                  color: "var(--ink-faint)",
-                  textDecoration: "line-through",
-                  textDecorationColor: "var(--rose)",
-                  textDecorationThickness: "2px",
-                  fontSize: 22,
-                  fontWeight: 500,
-                  letterSpacing: "-0.01em",
-                }}
-              >
+              <div className="text-lg font-medium tracking-[-0.01em] text-ink-faint line-through decoration-rose decoration-2 md:text-[22px]">
                 {r.bad}
               </div>
-              <div
-                className="teams-why-good"
-                style={{
-                  fontSize: 22,
-                  fontWeight: 600,
-                  color: "var(--ink)",
-                  letterSpacing: "-0.015em",
-                  lineHeight: 1.3,
-                }}
-              >
-                <span style={{ color: "var(--blue)", fontWeight: 700, marginRight: 8 }}>→</span>
+              <div className="text-lg leading-[1.3] font-semibold tracking-[-0.015em] text-ink md:text-[22px]">
+                <span className="mr-2 font-bold text-blue">→</span>
                 {r.good}
               </div>
-              <p
-                style={{
-                  gridColumn: "1 / -1",
-                  fontSize: 15,
-                  color: "var(--ink-soft)",
-                  lineHeight: 1.55,
-                  marginTop: 6,
-                  maxWidth: 760,
-                }}
-              >
+              <p className="col-span-full mt-1.5 max-w-[760px] text-[15px] leading-[1.55] text-ink-soft">
                 {r.body}
               </p>
             </div>

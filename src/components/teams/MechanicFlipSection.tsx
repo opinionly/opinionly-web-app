@@ -9,47 +9,16 @@ const phoneScreens = [
 
 export default function MechanicFlipSection() {
   return (
-    <section
-      id="how"
-      className="teams-mechanic"
-      style={{ background: "var(--cream)", padding: "120px 32px" }}
-    >
-      <div style={{ maxWidth: 1080, margin: "0 auto" }}>
-        <div
-          className="teams-mechanic-head"
-          style={{ textAlign: "center", maxWidth: 680, margin: "0 auto 64px" }}
-        >
-          <div
-            style={{
-              fontSize: 12,
-              fontWeight: 700,
-              textTransform: "uppercase",
-              letterSpacing: "0.12em",
-              color: "var(--blue)",
-              marginBottom: 18,
-            }}
-          >
+    <section id="how" className="bg-cream px-5 py-20 md:px-8 md:py-30">
+      <div className="mx-auto max-w-[1080px]">
+        <div className="mx-auto mb-16 max-w-[680px] text-center">
+          <div className="mb-[18px] text-xs font-bold tracking-[0.12em] text-blue uppercase">
             How it works
           </div>
-          <h2
-            style={{
-              fontSize: 48,
-              fontWeight: 700,
-              lineHeight: 1.05,
-              letterSpacing: "-0.03em",
-              marginBottom: 16,
-              color: "var(--ink)",
-            }}
-          >
+          <h2 className="mb-4 text-[34px] leading-[1.05] font-bold tracking-[-0.03em] text-ink md:text-[48px]">
             The data is real because the app is.
           </h2>
-          <p
-            style={{
-              fontSize: 18,
-              color: "var(--ink-soft)",
-              lineHeight: 1.55,
-            }}
-          >
+          <p className="text-lg leading-[1.55] text-ink-soft">
             Your team isn&apos;t filling out surveys. They&apos;re using
             Opinionly to ask their own questions and grow. You see the aggregate
             — the patterns underneath, in plain words, without ever seeing who
@@ -57,84 +26,28 @@ export default function MechanicFlipSection() {
           </p>
         </div>
 
-        <div
-          className="teams-mechanic-flow"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr auto 1fr",
-            gap: 40,
-            alignItems: "center",
-          }}
-        >
+        <div className="grid grid-cols-1 items-center gap-4 md:grid-cols-[1fr_auto_1fr] md:gap-10">
           {/* Left: inside the company */}
-          <div
-            style={{
-              background: "var(--card)",
-              borderRadius: 24,
-              padding: "36px 32px",
-              boxShadow: "var(--shadow-md)",
-              minHeight: 360,
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            <div
-              style={{
-                fontSize: 11,
-                fontWeight: 700,
-                textTransform: "uppercase",
-                letterSpacing: "0.1em",
-                color: "var(--ink-faint)",
-                marginBottom: 16,
-              }}
-            >
+          <div className="flex min-h-[360px] min-w-0 flex-col rounded-3xl bg-card px-6 py-9 shadow-(--shadow-md) sm:px-8">
+            <div className="mb-4 text-[11px] font-bold tracking-[0.1em] text-ink-faint uppercase">
               Inside the company
             </div>
-            <h3
-              style={{
-                fontSize: 24,
-                fontWeight: 700,
-                letterSpacing: "-0.02em",
-                lineHeight: 1.2,
-                marginBottom: 12,
-                color: "var(--ink)",
-              }}
-            >
+            <h3 className="mb-3 text-2xl leading-[1.2] font-bold tracking-[-0.02em] text-ink">
               Your team uses the app to grow.
             </h3>
-            <p
-              style={{
-                fontSize: 14,
-                lineHeight: 1.55,
-                color: "var(--ink-soft)",
-                marginBottom: 20,
-              }}
-            >
+            <p className="mb-5 text-sm leading-[1.55] text-ink-soft">
               They ask their own questions of the people they actually trust.
               They give honest, anonymous replies to each other. They tend their
               own goals. It&apos;s their tool first.
             </p>
-            <div style={{ marginTop: "auto" }}>
-              <div style={{ display: "flex", gap: 8, alignItems: "flex-end" }}>
+            <div className="mt-auto">
+              <div className="flex items-end gap-2">
                 {phoneScreens.map((s, i) => (
                   <div
                     key={s.src}
-                    style={{
-                      flex: 1,
-                      aspectRatio: "9 / 16",
-                      background: "var(--cream)",
-                      borderRadius: 14,
-                      border: "1px solid var(--line)",
-                      overflow: "hidden",
-                      position: "relative",
-                      maxWidth: 80,
-                      transform:
-                        i === 1
-                          ? "translateY(-8px)"
-                          : i === 3
-                            ? "translateY(-4px)"
-                            : undefined,
-                    }}
+                    className={`relative aspect-[9/16] max-w-[80px] flex-1 overflow-hidden rounded-[14px] border border-line bg-cream ${
+                      i === 1 ? "-translate-y-2" : i === 3 ? "-translate-y-1" : ""
+                    }`}
                   >
                     <Image
                       src={s.src}
@@ -150,31 +63,14 @@ export default function MechanicFlipSection() {
           </div>
 
           {/* Arrow */}
-          <div
-            className="teams-flow-arrow"
-            style={{
-              width: 80,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: 8,
-              color: "var(--ink-faint)",
-            }}
-          >
-            <div
-              style={{
-                fontSize: 11,
-                fontWeight: 600,
-                textTransform: "uppercase",
-                letterSpacing: "0.08em",
-              }}
-            >
+          <div className="mx-auto flex w-20 flex-col items-center gap-2 text-ink-faint md:mx-0">
+            <div className="text-[11px] font-semibold tracking-[0.08em] uppercase">
               Aggregates
             </div>
             <svg
               viewBox="0 0 64 24"
               fill="none"
-              style={{ width: 64, height: 24 }}
+              className="my-2 h-6 w-16 rotate-90 md:my-0 md:rotate-0"
             >
               <path
                 d="M2 12 L58 12"
@@ -191,77 +87,26 @@ export default function MechanicFlipSection() {
                 fill="none"
               />
             </svg>
-            <div
-              style={{
-                fontSize: 11,
-                fontWeight: 600,
-                textTransform: "uppercase",
-                letterSpacing: "0.08em",
-                opacity: 0.6,
-              }}
-            >
+            <div className="text-[11px] font-semibold tracking-[0.08em] uppercase opacity-60">
               Anonymously
             </div>
           </div>
 
           {/* Right: inside the dashboard */}
-          <div
-            style={{
-              background: "var(--card)",
-              borderRadius: 24,
-              padding: "36px 32px",
-              boxShadow: "var(--shadow-md)",
-              minHeight: 360,
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            <div
-              style={{
-                fontSize: 11,
-                fontWeight: 700,
-                textTransform: "uppercase",
-                letterSpacing: "0.1em",
-                color: "var(--ink-faint)",
-                marginBottom: 16,
-              }}
-            >
+          <div className="flex min-h-[360px] min-w-0 flex-col rounded-3xl bg-card px-6 py-9 shadow-(--shadow-md) sm:px-8">
+            <div className="mb-4 text-[11px] font-bold tracking-[0.1em] text-ink-faint uppercase">
               Inside the dashboard
             </div>
-            <h3
-              style={{
-                fontSize: 24,
-                fontWeight: 700,
-                letterSpacing: "-0.02em",
-                lineHeight: 1.2,
-                marginBottom: 12,
-                color: "var(--ink)",
-              }}
-            >
+            <h3 className="mb-3 text-2xl leading-[1.2] font-bold tracking-[-0.02em] text-ink">
               You see how the company is doing.
             </h3>
-            <p
-              style={{
-                fontSize: 14,
-                lineHeight: 1.55,
-                color: "var(--ink-soft)",
-                marginBottom: 20,
-              }}
-            >
+            <p className="mb-5 text-sm leading-[1.55] text-ink-soft">
               Sentiment trends. The themes people are circling around. Where
               things are improving and where they&apos;re not. Always in
               aggregate. Never tied to anyone.
             </p>
-            <div style={{ marginTop: "auto" }}>
-              <div
-                style={{
-                  background:
-                    "linear-gradient(180deg, #fbfaf6 0%, var(--cream) 100%)",
-                  borderRadius: 12,
-                  padding: 14,
-                  border: "1px solid var(--line)",
-                }}
-              >
+            <div className="mt-auto">
+              <div className="rounded-xl border border-line bg-[linear-gradient(180deg,#fbfaf6_0%,var(--cream)_100%)] p-3.5">
                 {[
                   {
                     k: "Overall sentiment",
@@ -281,33 +126,20 @@ export default function MechanicFlipSection() {
                 ].map((row, i, arr) => (
                   <div
                     key={row.k}
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      padding: "6px 0",
-                      fontSize: 12,
-                      borderBottom:
-                        i === arr.length - 1 ? "none" : "1px solid var(--line)",
-                    }}
+                    className={`flex items-center justify-between py-1.5 text-xs ${
+                      i === arr.length - 1 ? "" : "border-b border-line"
+                    }`}
                   >
-                    <span style={{ color: "var(--ink-soft)" }}>{row.k}</span>
-                    <span style={{ fontWeight: 600, color: "var(--ink)" }}>
+                    <span className="text-ink-soft">{row.k}</span>
+                    <span className="font-semibold text-ink">
                       {row.v}
                       {row.pill && (
                         <span
-                          style={{
-                            display: "inline-block",
-                            background: row.warn
-                              ? "#fde9c8"
-                              : "var(--green-soft)",
-                            color: row.warn ? "#8a5a10" : "var(--green)",
-                            fontSize: 10,
-                            padding: "2px 6px",
-                            borderRadius: 4,
-                            marginLeft: 4,
-                            fontWeight: 700,
-                          }}
+                          className={`ml-1 inline-block rounded px-1.5 py-0.5 text-[10px] font-bold ${
+                            row.warn
+                              ? "bg-[#fde9c8] text-[#8a5a10]"
+                              : "bg-green-soft text-green"
+                          }`}
                         >
                           {row.pill}
                         </span>
