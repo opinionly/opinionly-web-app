@@ -1,52 +1,37 @@
 "use client";
 
-import { ComponentProps, CSSProperties } from "react";
+import { ComponentProps } from "react";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
 
+const logoClasses =
+  "font-serif text-[26px] font-normal tracking-[-0.01em] text-ink italic";
+
 export default function Navbar() {
   const pathname = usePathname();
-  const logoStyles: CSSProperties = {
-    color: "var(--ink)",
-    fontFamily: "var(--font-instrument-serif), Georgia, serif",
-    fontSize: 26,
-    fontStyle: "italic",
-    fontWeight: 400,
-    letterSpacing: "-0.01em",
-  };
 
   return (
-    <nav
-      style={{
-        display: "flex",
-        fontSize: 14,
-        justifyContent: "space-between",
-        padding: "24px 32px",
-        userSelect: "none",
-      }}
-    >
+    <nav className="flex items-center justify-between p-5 text-sm select-none sm:px-8 sm:py-6">
       {/* Logo */}
       {pathname === "/" ? (
-        <span style={logoStyles}>Opinionly</span>
+        <span className={logoClasses}>Opinionly</span>
       ) : (
-        <NextLink href="/" style={logoStyles}>
+        <NextLink href="/" className={logoClasses}>
           Opinionly
         </NextLink>
       )}
       {/* Nav links */}
       {pathname === "/" && (
-        <div style={{ alignItems: "center", display: "flex", gap: 28 }}>
-          <NavLink href="#how">How it works</NavLink>
+        <div className="flex items-center gap-7">
+          <NavLink
+            href="#how"
+            className="hidden text-ink-soft hover:text-ink sm:inline"
+          >
+            How it works
+          </NavLink>
           <NavLink
             href="#waitlist"
-            style={{
-              background: "var(--ink)",
-              borderRadius: 999,
-              color: "white",
-              lineHeight: 1,
-              padding: "9px 18px",
-              transition: "background 0.15s",
-            }}
+            className="rounded-full bg-ink px-[18px] py-[9px] leading-none text-white hover:bg-[#3a3833]"
           >
             Join waitlist
           </NavLink>
@@ -57,16 +42,11 @@ export default function Navbar() {
 }
 
 function NavLink(props: ComponentProps<typeof NextLink>) {
-  const { style, ...restProps } = props;
+  const { className, ...restProps } = props;
 
   return (
     <NextLink
-      style={{
-        color: "var(--ink-soft)",
-        fontWeight: 500,
-        transition: "color 0.15s",
-        ...style,
-      }}
+      className={`font-medium transition-colors duration-150 ${className ?? ""}`}
       {...restProps}
     />
   );

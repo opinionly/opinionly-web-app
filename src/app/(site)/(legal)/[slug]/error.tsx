@@ -8,45 +8,17 @@ export default function LegalError({
   reset: () => void;
 }) {
   return (
-    <div
-      style={{
-        alignItems: "center",
-        background: "var(--cream)",
-        display: "flex",
-        flexDirection: "column",
-        gap: 16,
-        justifyContent: "center",
-        minHeight: "100vh",
-      }}
-    >
-      <p style={{ color: "var(--ink-soft)", fontSize: 15 }}>
+    <div className="flex min-h-screen flex-col items-center justify-center gap-4 bg-cream px-5">
+      <p className="text-[15px] text-ink-soft">
         Something went wrong loading this page.
       </p>
-      <pre
-        style={{
-          background: "var(--line)",
-          borderRadius: 6,
-          color: "var(--ink-soft)",
-          fontSize: 12,
-          maxWidth: 560,
-          padding: "12px 16px",
-          whiteSpace: "pre-wrap",
-          wordBreak: "break-word",
-        }}
-      >
+      <pre className="max-w-[560px] rounded-md bg-line px-4 py-3 text-xs break-words whitespace-pre-wrap text-ink-soft">
         {error.message}
         {error.digest && `\ndigest: ${error.digest}`}
       </pre>
       <button
         onClick={reset}
-        style={{
-          background: "var(--ink)",
-          borderRadius: 6,
-          color: "var(--cream)",
-          cursor: "pointer",
-          fontSize: 13,
-          padding: "8px 16px",
-        }}
+        className="cursor-pointer rounded-md bg-ink px-4 py-2 text-[13px] text-cream"
       >
         Try again
       </button>

@@ -3,88 +3,32 @@ import screen02Compose from "../../public/screens/screen_02_compose.png";
 
 export default function InTheMomentSection() {
   return (
-    <section
-      style={{
-        background: "var(--cream)",
-        padding: "112px 32px",
-      }}
-      className="section-padding"
-    >
-      <div
-        className="section-inner"
-        style={{
-          maxWidth: 1140,
-          margin: "0 auto",
-          display: "grid",
-          gridTemplateColumns: "420px 1fr",
-          gap: 80,
-          alignItems: "center",
-        }}
-      >
+    <section className="bg-cream px-5 py-[72px] sm:px-8 sm:py-28">
+      <div className="mx-auto grid max-w-[1140px] grid-cols-1 items-center gap-12 lg:grid-cols-[420px_1fr] lg:gap-20">
         {/* Phone (left) */}
-        <div style={{ maxWidth: 340, margin: "0 auto" }}>
+        <div className="mx-auto w-full max-w-[340px]">
           <Image
             src={screen02Compose}
             alt="Composing a post in Opinionly"
-            style={{
-              width: "100%",
-              height: "auto",
-              borderRadius: 36,
-              boxShadow: "var(--shadow-md)",
-              display: "block",
-            }}
+            className="block h-auto w-full rounded-[36px] shadow-(--shadow-md)"
           />
         </div>
 
         {/* Copy (right) */}
-        <div>
-          <div
-            style={{
-              fontSize: 12,
-              fontWeight: 700,
-              textTransform: "uppercase",
-              letterSpacing: "0.12em",
-              color: "#c14a1f",
-              marginBottom: 18,
-            }}
-          >
+        <div className="min-w-0">
+          <div className="mb-[18px] text-xs font-bold tracking-[0.12em] text-[#c14a1f] uppercase">
             When it&apos;s fresh, not weeks later
           </div>
-          <h2
-            className="section-h2"
-            style={{
-              fontSize: 48,
-              fontWeight: 700,
-              lineHeight: 1.05,
-              letterSpacing: "-0.03em",
-              marginBottom: 22,
-              color: "var(--ink)",
-            }}
-          >
+          <h2 className="mb-[22px] text-[34px] leading-[1.05] font-bold tracking-[-0.03em] text-ink md:text-[48px]">
             Ask in the moment. Hear back while it still matters.
           </h2>
-          <p
-            style={{
-              fontSize: 18,
-              lineHeight: 1.55,
-              color: "var(--ink-soft)",
-              maxWidth: 460,
-            }}
-          >
+          <p className="max-w-[460px] text-lg leading-[1.55] text-ink-soft">
             Most feedback arrives too late, from the wrong people, in the wrong
             tone. Opinionly is built for the small moments — the conversation
             that felt off, the message you weren&apos;t sure about, the thing you
             can&apos;t stop thinking about on the walk home.
           </p>
-          <p
-            style={{
-              fontSize: 18,
-              lineHeight: 1.55,
-              color: "var(--ink-soft)",
-              maxWidth: 460,
-              marginTop: 14,
-            }}
-          >
+          <p className="mt-3.5 max-w-[460px] text-lg leading-[1.55] text-ink-soft">
             Ask the question. Get real answers. Move on.
           </p>
         </div>

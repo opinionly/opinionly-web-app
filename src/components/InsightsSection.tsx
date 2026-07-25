@@ -3,89 +3,33 @@ import screenInsights from "../../public/screens/screen_insights.png";
 
 export default function InsightsSection() {
   return (
-    <section
-      style={{
-        background: "var(--blue-tint)",
-        padding: "112px 32px",
-      }}
-      className="section-padding"
-    >
-      <div
-        className="section-inner"
-        style={{
-          maxWidth: 1140,
-          margin: "0 auto",
-          display: "grid",
-          gridTemplateColumns: "1fr 420px",
-          gap: 80,
-          alignItems: "center",
-        }}
-      >
+    <section className="bg-blue-tint px-5 py-[72px] sm:px-8 sm:py-28">
+      <div className="mx-auto grid max-w-[1140px] grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_420px] lg:gap-20">
         {/* Copy */}
-        <div>
-          <div
-            style={{
-              fontSize: 12,
-              fontWeight: 700,
-              textTransform: "uppercase",
-              letterSpacing: "0.12em",
-              color: "var(--blue)",
-              marginBottom: 18,
-            }}
-          >
+        <div className="min-w-0">
+          <div className="mb-[18px] text-xs font-bold tracking-[0.12em] text-blue uppercase">
             Insights, private to you
           </div>
-          <h2
-            className="section-h2"
-            style={{
-              fontSize: 48,
-              fontWeight: 700,
-              lineHeight: 1.05,
-              letterSpacing: "-0.03em",
-              marginBottom: 22,
-              color: "var(--ink)",
-            }}
-          >
+          <h2 className="mb-[22px] text-[34px] leading-[1.05] font-bold tracking-[-0.03em] text-ink md:text-[48px]">
             See how you actually come across.
           </h2>
-          <p
-            style={{
-              fontSize: 18,
-              lineHeight: 1.55,
-              color: "var(--ink-soft)",
-              maxWidth: 460,
-            }}
-          >
+          <p className="max-w-[460px] text-lg leading-[1.55] text-ink-soft">
             Every honest reply quietly adds up. Opinionly turns them into a
             private picture — sentiment over time, the themes people keep
             noticing, and how you show up when you give feedback back.
           </p>
-          <p
-            style={{
-              fontSize: 18,
-              lineHeight: 1.55,
-              color: "var(--ink-soft)",
-              maxWidth: 460,
-              marginTop: 14,
-            }}
-          >
+          <p className="mt-3.5 max-w-[460px] text-lg leading-[1.55] text-ink-soft">
             Only you ever see it. No scores to perform for — just a clearer sense
             of how you land.
           </p>
         </div>
 
         {/* Phone */}
-        <div style={{ maxWidth: 340, margin: "0 auto" }}>
+        <div className="mx-auto w-full max-w-[340px]">
           <Image
             src={screenInsights}
             alt="A private view of how you're perceived over time in Opinionly"
-            style={{
-              width: "100%",
-              height: "auto",
-              borderRadius: 36,
-              boxShadow: "var(--shadow-md)",
-              display: "block",
-            }}
+            className="block h-auto w-full rounded-[36px] shadow-(--shadow-md)"
           />
         </div>
       </div>

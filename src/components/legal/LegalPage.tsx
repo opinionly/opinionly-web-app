@@ -10,40 +10,14 @@ export default function LegalPage(props: LegalPageProps) {
   } = props;
 
   return (
-    <div
-      className="legal-page"
-      style={{
-        background: "var(--cream)",
-        color: "var(--ink-soft)",
-        fontSize: 15,
-        lineHeight: 1.7,
-        margin: "0 auto",
-        maxWidth: 760,
-        minHeight: "100vh",
-        padding: "48px 32px 96px",
-      }}
-    >
-      <h1
-        style={{
-          color: "var(--ink)",
-          fontSize: 36,
-          fontWeight: 700,
-          letterSpacing: "-0.02em",
-          margin: "0 0 8px",
-        }}
-      >
+    <div className="legal-page mx-auto min-h-screen max-w-[760px] bg-cream px-5 pt-8 pb-16 text-[15px] leading-[1.7] text-ink-soft sm:px-8 sm:pt-12 sm:pb-24">
+      <h1 className="mb-2 text-[28px] font-bold tracking-[-0.02em] text-ink sm:text-4xl">
         {title}
       </h1>
       {dateRevised && (
-        <p
-          style={{
-            color: "var(--ink-faint)",
-            fontSize: "smaller",
-            margin: "0 0 40px",
-          }}
-        >
+        <p className="mb-10 text-[smaller] text-ink-faint">
           Revised{" "}
-          <span style={{ fontWeight: 600 }}>
+          <span className="font-semibold">
             <LocalDate iso={dateRevised} />
           </span>
         </p>

@@ -3,85 +3,28 @@ import TeamsCaptureForm from "./TeamsCaptureForm";
 export default function TeamsHero() {
   return (
     <section
+      className="relative overflow-hidden"
       style={{
         background: `
           radial-gradient(ellipse 1200px 600px at 25% 0%, rgba(227, 237, 251, 0.85) 0%, transparent 60%),
           radial-gradient(ellipse 800px 500px at 85% 40%, rgba(43, 126, 245, 0.10) 0%, transparent 60%),
           var(--cream)
         `,
-        overflow: "hidden",
-        position: "relative",
       }}
     >
-      <div
-        className="teams-hero"
-        style={{
-          maxWidth: 1200,
-          margin: "0 auto",
-          padding: "48px 32px 112px",
-          display: "grid",
-          gridTemplateColumns: "1.05fr 1fr",
-          gap: 56,
-          alignItems: "center",
-          minHeight: 600,
-        }}
-      >
+      <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-12 px-5 pt-8 pb-20 lg:min-h-[600px] lg:grid-cols-[1.05fr_1fr] lg:gap-14 lg:px-8 lg:pt-12 lg:pb-28">
         {/* Left: copy */}
-        <div>
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              fontSize: 13,
-              fontWeight: 500,
-              color: "var(--ink-soft)",
-              background: "rgba(255,255,255,0.7)",
-              backdropFilter: "blur(8px)",
-              padding: "7px 14px",
-              borderRadius: 999,
-              marginBottom: 28,
-              boxShadow: "var(--shadow-sm)",
-            }}
-          >
-            <span
-              style={{
-                width: 6,
-                height: 6,
-                borderRadius: "50%",
-                background: "var(--blue)",
-                display: "inline-block",
-                flexShrink: 0,
-              }}
-            />
+        <div className="min-w-0">
+          <div className="mb-7 inline-flex items-center gap-2 rounded-full bg-white/70 px-3.5 py-[7px] text-[13px] font-medium text-ink-soft shadow-(--shadow-sm) backdrop-blur-[8px]">
+            <span className="inline-block size-1.5 shrink-0 rounded-full bg-blue" />
             Pilot program · 2026
           </div>
 
-          <h1
-            style={{
-              fontSize: "clamp(42px, 5.5vw, 68px)",
-              fontWeight: 700,
-              lineHeight: 1.02,
-              letterSpacing: "-0.035em",
-              color: "var(--ink)",
-              marginBottom: 20,
-              maxWidth: 560,
-            }}
-          >
+          <h1 className="mb-5 max-w-[560px] text-[clamp(42px,5.5vw,68px)] leading-[1.02] font-bold tracking-[-0.035em] text-ink">
             An honest read on your team.
           </h1>
 
-          <p
-            className="teams-hero-sub"
-            style={{
-              fontSize: 22,
-              lineHeight: 1.4,
-              color: "var(--ink-soft)",
-              maxWidth: 480,
-              marginBottom: 36,
-              fontWeight: 400,
-            }}
-          >
+          <p className="mb-9 max-w-[480px] text-lg leading-[1.4] font-normal text-ink-soft lg:text-[22px]">
             Surfaced from how they already work — not from another survey no one wants to fill out.
           </p>
 
@@ -92,139 +35,42 @@ export default function TeamsHero() {
         </div>
 
         {/* Right: dashboard mock */}
-        <div
-          className="teams-dash-mock"
-          style={{
-            position: "relative",
-            width: "100%",
-            maxWidth: 520,
-            marginLeft: "auto",
-          }}
-        >
-          <div
-            style={{
-              background: "var(--card)",
-              borderRadius: 18,
-              boxShadow: "var(--shadow-lg)",
-              overflow: "hidden",
-              border: "1px solid var(--line)",
-            }}
-          >
+        <div className="relative w-full max-w-[520px] min-w-0 lg:ml-auto">
+          <div className="overflow-hidden rounded-[18px] border border-line bg-card shadow-(--shadow-lg)">
             {/* Chrome */}
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: 6,
-                padding: "12px 16px",
-                borderBottom: "1px solid var(--line)",
-                background: "#fdfcfa",
-              }}
-            >
+            <div className="flex items-center gap-1.5 border-b border-line bg-[#fdfcfa] px-4 py-3">
               {[0, 1, 2].map((i) => (
-                <div
-                  key={i}
-                  style={{
-                    width: 10,
-                    height: 10,
-                    borderRadius: "50%",
-                    background: "var(--line-strong)",
-                  }}
-                />
+                <div key={i} className="size-2.5 shrink-0 rounded-full bg-line-strong" />
               ))}
-              <div
-                style={{
-                  marginLeft: 14,
-                  fontSize: 12,
-                  color: "var(--ink-faint)",
-                  fontFamily: "inherit",
-                  background: "var(--cream)",
-                  padding: "4px 12px",
-                  borderRadius: 6,
-                }}
-              >
+              <div className="ml-3.5 min-w-0 truncate rounded-md bg-cream px-3 py-1 text-xs text-ink-faint">
                 teams.opinionly.io / your-company
               </div>
             </div>
 
             {/* Body */}
-            <div style={{ padding: "22px 24px 24px" }}>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "baseline",
-                  marginBottom: 18,
-                }}
-              >
-                <div style={{ fontSize: 15, fontWeight: 600, color: "var(--ink)" }}>
+            <div className="px-5 pt-[22px] pb-5 sm:px-6 sm:pb-6">
+              <div className="mb-[18px] flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                <div className="text-[15px] font-semibold text-ink">
                   Company pulse
                 </div>
-                <div style={{ fontSize: 11, color: "var(--ink-faint)" }}>
+                <div className="text-[11px] text-ink-faint">
                   Last 30 days · 142 people · 4,820 signals
                 </div>
               </div>
 
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "1.4fr 1fr",
-                  gap: 12,
-                }}
-              >
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-[1.4fr_1fr]">
                 {/* Sentiment trend (tall, left) */}
-                <div
-                  style={{
-                    background: "var(--cream)",
-                    borderRadius: 12,
-                    padding: "14px 16px 18px",
-                    gridRow: "span 2",
-                  }}
-                >
-                  <div
-                    style={{
-                      fontSize: 10,
-                      fontWeight: 600,
-                      color: "var(--ink-faint)",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.06em",
-                      marginBottom: 8,
-                    }}
-                  >
+                <div className="min-w-0 rounded-xl bg-cream px-4 pt-3.5 pb-[18px] sm:row-span-2">
+                  <div className="mb-2 text-[10px] font-semibold tracking-[0.06em] text-ink-faint uppercase">
                     Sentiment, trailing 90d
                   </div>
-                  <div
-                    style={{
-                      fontSize: 24,
-                      fontWeight: 700,
-                      color: "var(--ink)",
-                      letterSpacing: "-0.02em",
-                      lineHeight: 1,
-                    }}
-                  >
+                  <div className="text-2xl leading-none font-bold tracking-[-0.02em] text-ink">
                     +0.34
-                    <span
-                      style={{
-                        fontSize: 12,
-                        fontWeight: 500,
-                        color: "var(--ink-faint)",
-                        marginLeft: 4,
-                      }}
-                    >
+                    <span className="ml-1 text-xs font-medium text-ink-faint">
                       / 1.0
                     </span>
                   </div>
-                  <div
-                    style={{
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: 3,
-                      fontSize: 11,
-                      fontWeight: 600,
-                      color: "var(--green)",
-                      marginTop: 4,
-                    }}
-                  >
+                  <div className="mt-1 inline-flex items-center gap-[3px] text-[11px] font-semibold text-green">
                     <svg width="10" height="10" viewBox="0 0 10 10">
                       <path
                         d="M2 7 L5 3 L8 7"
@@ -240,7 +86,7 @@ export default function TeamsHero() {
                   <svg
                     viewBox="0 0 200 60"
                     preserveAspectRatio="none"
-                    style={{ width: "100%", height: 56, marginTop: 8 }}
+                    className="mt-2 h-14 w-full"
                   >
                     <defs>
                       <linearGradient id="sentGrad" x1="0" y1="0" x2="0" y2="1">
@@ -261,50 +107,17 @@ export default function TeamsHero() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <div
-                    style={{
-                      background: "var(--card)",
-                      borderLeft: "3px solid var(--amber)",
-                      padding: "10px 12px",
-                      borderRadius: 6,
-                      marginTop: 10,
-                      fontSize: 12,
-                      color: "var(--ink-soft)",
-                      lineHeight: 1.4,
-                    }}
-                  >
+                  <div className="mt-2.5 rounded-md border-l-[3px] border-amber bg-card px-3 py-2.5 text-xs leading-[1.4] text-ink-soft">
                     Sentiment has improved steadily since the new project rotation policy. Watch the engineering org — they&apos;re driving most of the lift.
                   </div>
                 </div>
 
                 {/* Themes (right top) */}
-                <div
-                  style={{
-                    background: "var(--cream)",
-                    borderRadius: 12,
-                    padding: "14px 16px",
-                  }}
-                >
-                  <div
-                    style={{
-                      fontSize: 10,
-                      fontWeight: 600,
-                      color: "var(--ink-faint)",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.06em",
-                      marginBottom: 8,
-                    }}
-                  >
+                <div className="min-w-0 rounded-xl bg-cream px-4 py-3.5">
+                  <div className="mb-2 text-[10px] font-semibold tracking-[0.06em] text-ink-faint uppercase">
                     Top themes
                   </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      flexWrap: "wrap",
-                      gap: 6,
-                      marginTop: 4,
-                    }}
-                  >
+                  <div className="mt-1 flex flex-wrap gap-1.5">
                     {[
                       { label: "growth", hot: false },
                       { label: "meeting load", hot: true },
@@ -313,15 +126,11 @@ export default function TeamsHero() {
                     ].map((t) => (
                       <span
                         key={t.label}
-                        style={{
-                          fontSize: 11,
-                          fontWeight: 500,
-                          background: t.hot ? "#fde9c8" : "var(--card)",
-                          color: t.hot ? "#8a5a10" : "var(--ink-soft)",
-                          padding: "4px 9px",
-                          borderRadius: 999,
-                          border: t.hot ? "1px solid transparent" : "1px solid var(--line)",
-                        }}
+                        className={`rounded-full px-[9px] py-1 text-[11px] font-medium ${
+                          t.hot
+                            ? "border border-transparent bg-[#fde9c8] text-[#8a5a10]"
+                            : "border border-line bg-card text-ink-soft"
+                        }`}
                       >
                         {t.label}
                       </span>
@@ -330,55 +139,17 @@ export default function TeamsHero() {
                 </div>
 
                 {/* Engagement (right bottom) */}
-                <div
-                  style={{
-                    background: "var(--cream)",
-                    borderRadius: 12,
-                    padding: "14px 16px",
-                  }}
-                >
-                  <div
-                    style={{
-                      fontSize: 10,
-                      fontWeight: 600,
-                      color: "var(--ink-faint)",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.06em",
-                      marginBottom: 8,
-                    }}
-                  >
+                <div className="min-w-0 rounded-xl bg-cream px-4 py-3.5">
+                  <div className="mb-2 text-[10px] font-semibold tracking-[0.06em] text-ink-faint uppercase">
                     Active employees
                   </div>
-                  <div
-                    style={{
-                      fontSize: 24,
-                      fontWeight: 700,
-                      color: "var(--ink)",
-                      letterSpacing: "-0.02em",
-                      lineHeight: 1,
-                    }}
-                  >
+                  <div className="text-2xl leading-none font-bold tracking-[-0.02em] text-ink">
                     87
-                    <span
-                      style={{
-                        fontSize: 12,
-                        fontWeight: 500,
-                        color: "var(--ink-faint)",
-                        marginLeft: 4,
-                      }}
-                    >
+                    <span className="ml-1 text-xs font-medium text-ink-faint">
                       %
                     </span>
                   </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      gap: 5,
-                      alignItems: "flex-end",
-                      height: 44,
-                      marginTop: 8,
-                    }}
-                  >
+                  <div className="mt-2 flex h-11 items-end gap-[5px]">
                     {[
                       { h: 60, muted: false },
                       { h: 75, muted: false },
@@ -389,13 +160,10 @@ export default function TeamsHero() {
                     ].map((b, i) => (
                       <div
                         key={i}
-                        style={{
-                          flex: 1,
-                          background: b.muted ? "var(--line-strong)" : "var(--blue)",
-                          borderRadius: "3px 3px 0 0",
-                          opacity: b.muted ? 1 : 0.85,
-                          height: `${b.h}%`,
-                        }}
+                        className={`flex-1 rounded-t-[3px] ${
+                          b.muted ? "bg-line-strong" : "bg-blue opacity-85"
+                        }`}
+                        style={{ height: `${b.h}%` }}
                       />
                     ))}
                   </div>
@@ -404,23 +172,7 @@ export default function TeamsHero() {
             </div>
           </div>
 
-          <div
-            style={{
-              position: "absolute",
-              bottom: -14,
-              right: 14,
-              background: "var(--ink)",
-              color: "white",
-              fontSize: 10,
-              fontWeight: 600,
-              letterSpacing: "0.06em",
-              textTransform: "uppercase",
-              padding: "6px 10px",
-              borderRadius: 6,
-              transform: "rotate(-2deg)",
-              boxShadow: "var(--shadow-md)",
-            }}
-          >
+          <div className="absolute right-3.5 -bottom-3.5 -rotate-2 rounded-md bg-ink px-2.5 py-1.5 text-[10px] font-semibold tracking-[0.06em] text-white uppercase shadow-(--shadow-md)">
             Concept · Not real data
           </div>
         </div>

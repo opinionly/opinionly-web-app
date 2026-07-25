@@ -1,92 +1,30 @@
 export default function TeamsNavbar() {
   return (
-    <div style={{ position: "relative", zIndex: 10 }}>
-      <nav
-        className="teams-nav"
-        style={{
-          maxWidth: 1200,
-          margin: "0 auto",
-          padding: "24px 32px",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <div
-          style={{
-            fontFamily: "var(--font-instrument-serif), serif",
-            fontWeight: 400,
-            fontStyle: "italic",
-            fontSize: 26,
-            letterSpacing: "-0.01em",
-            color: "var(--ink)",
-            display: "inline-flex",
-            alignItems: "baseline",
-            gap: 10,
-          }}
-        >
+    <div className="relative z-10">
+      <nav className="mx-auto flex max-w-[1200px] items-center justify-between px-5 py-[18px] md:px-8 md:py-6">
+        <div className="inline-flex items-baseline gap-2.5 font-serif text-[26px] font-normal tracking-[-0.01em] text-ink italic">
           Opinionly
-          <span
-            style={{
-              fontFamily: "var(--font-inter), sans-serif",
-              fontStyle: "normal",
-              fontSize: 11,
-              fontWeight: 600,
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              color: "var(--blue)",
-              background: "var(--blue-soft)",
-              padding: "3px 8px",
-              borderRadius: 6,
-              position: "relative",
-              top: -3,
-            }}
-          >
+          <span className="relative -top-[3px] rounded-md bg-blue-soft px-2 py-[3px] font-sans text-[11px] font-semibold tracking-[0.08em] text-blue uppercase not-italic">
             For teams
           </span>
         </div>
 
-        <div
-          className="teams-nav-links"
-          style={{ display: "flex", gap: 28, alignItems: "center" }}
-        >
+        <div className="flex items-center gap-7">
           <a
             href="#how"
-            style={{
-              fontSize: 14,
-              fontWeight: 500,
-              color: "var(--ink-soft)",
-              textDecoration: "none",
-              transition: "color 0.15s",
-            }}
+            className="hidden text-sm font-medium text-ink-soft transition-colors duration-150 hover:text-ink md:inline"
           >
             How it works
           </a>
           <a
             href="#privacy"
-            style={{
-              fontSize: 14,
-              fontWeight: 500,
-              color: "var(--ink-soft)",
-              textDecoration: "none",
-              transition: "color 0.15s",
-            }}
+            className="hidden text-sm font-medium text-ink-soft transition-colors duration-150 hover:text-ink md:inline"
           >
             Privacy
           </a>
           <a
             href="#pilot"
-            className="teams-nav-cta"
-            style={{
-              background: "var(--ink)",
-              color: "white",
-              padding: "9px 18px",
-              borderRadius: 999,
-              fontSize: 13,
-              fontWeight: 500,
-              textDecoration: "none",
-              transition: "background 0.15s",
-            }}
+            className="rounded-full bg-ink px-[18px] py-[9px] text-[13px] font-medium text-white transition-colors duration-150 hover:bg-[#3a3833]"
           >
             Request access
           </a>
