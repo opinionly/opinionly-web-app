@@ -16,7 +16,7 @@ export default function MechanicFlipSection() {
             How it works
           </div>
           <h2 className="mb-4 text-[34px] leading-[1.05] font-bold tracking-[-0.03em] text-ink md:text-[48px]">
-            The data is real because the app is.
+            Real conversations, not reported answers.
           </h2>
           <p className="text-lg leading-[1.55] text-ink-soft">
             Your team isn&apos;t filling out surveys. They&apos;re using
