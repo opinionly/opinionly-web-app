@@ -28,26 +28,27 @@ const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 export const metadata: Metadata = {
   description:
     "Honest feedback from the people who know you. Coming soon on iOS and Android.",
+  metadataBase: new URL("https://www.opinionly.io"),
   openGraph: {
     description:
       "From the people who know you. Coming soon on iOS and Android.",
     images: [
       {
-        url: "https://opinionly.io/og-consumer.png",
+        url: "https://www.opinionly.io/og-consumer.png",
         width: 1200,
         height: 630,
       },
     ],
     title: "Opinionly — The honest feedback you've been missing",
     type: "website",
-    url: "https://opinionly.io",
+    url: "https://www.opinionly.io",
   },
   title: "Opinionly — The honest feedback you've been missing",
   twitter: {
     card: "summary_large_image",
     description:
       "From the people who know you. Coming soon on iOS and Android.",
-    images: ["https://opinionly.io/og-consumer.png"],
+    images: ["https://www.opinionly.io/og-consumer.png"],
     title: "Opinionly — The honest feedback you've been missing",
   },
 };

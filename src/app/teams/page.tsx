@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "Opinionly for teams — An honest read on your team",
   description:
     "Surfaced from how your team already works — not from another survey. Pilot program 2026.",
+  // Served at both teams.opinionly.io (rewritten in proxy.ts) and /teams — the
+  // subdomain is the address we publish, so point every copy at it.
+  alternates: { canonical: "https://teams.opinionly.io" },
   openGraph: {
     type: "website",
     url: "https://teams.opinionly.io",

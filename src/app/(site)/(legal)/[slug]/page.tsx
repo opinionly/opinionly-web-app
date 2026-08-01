@@ -17,7 +17,12 @@ export async function generateMetadata({
   const { slug } = await params;
   if (!isLegalDoc(slug)) return {};
   const { metadata } = await getLegalContent(slug);
-  return { description: metadata.description, title: metadata.title };
+  return {
+    // Legal docs are also served on teams.opinionly.io; the www copy is canonical.
+    alternates: { canonical: `/${slug}` },
+    description: metadata.description,
+    title: metadata.title,
+  };
 }
 
 export default async function Page({ params }: { params: Params }) {
