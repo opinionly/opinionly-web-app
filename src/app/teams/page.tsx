@@ -21,19 +21,11 @@ export const metadata: Metadata = {
     title: "Opinionly for teams — An honest read on your team",
     description:
       "Surfaced from how they already work — not from another survey. Pilot program 2026.",
-    images: [
-      {
-        url: "https://teams.opinionly.io/og-teams.png",
-        width: 1200,
-        height: 630,
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Opinionly for teams — An honest read on your team",
     description: "Surfaced from how they already work — not from another survey.",
-    images: ["https://teams.opinionly.io/og-teams.png"],
   },
 };
 

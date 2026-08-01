@@ -29,16 +29,10 @@ export const metadata: Metadata = {
   description:
     "Honest feedback from the people who know you. Coming soon on iOS and Android.",
   metadataBase: new URL("https://www.opinionly.io"),
+  // Share images come from the opengraph-image routes, not from this object.
   openGraph: {
     description:
       "From the people who know you. Coming soon on iOS and Android.",
-    images: [
-      {
-        url: "https://www.opinionly.io/og-consumer.png",
-        width: 1200,
-        height: 630,
-      },
-    ],
     title: "Opinionly — The honest feedback you've been missing",
     type: "website",
     url: "https://www.opinionly.io",
@@ -48,7 +42,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     description:
       "From the people who know you. Coming soon on iOS and Android.",
-    images: ["https://www.opinionly.io/og-consumer.png"],
     title: "Opinionly — The honest feedback you've been missing",
   },
 };
