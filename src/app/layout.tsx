@@ -35,14 +35,17 @@ const organizationJsonLd = {
   sameAs: socialProfiles.map((s) => s.href),
 };
 
+// One string across search and every share surface, so the three can't drift
+// apart and ship a weaker line to social than to Google.
+const DESCRIPTION =
+  "Honest anonymous responses from the people who know you. Get answers you can act on. Coming soon on iOS and Android.";
+
 export const metadata: Metadata = {
-  description:
-    "Honest feedback from the people who know you. Coming soon on iOS and Android.",
+  description: DESCRIPTION,
   metadataBase: new URL("https://www.opinionly.io"),
   // Share images come from the opengraph-image routes, not from this object.
   openGraph: {
-    description:
-      "From the people who know you. Coming soon on iOS and Android.",
+    description: DESCRIPTION,
     title: "Opinionly — The honest feedback you've been missing",
     type: "website",
     url: "https://www.opinionly.io",
@@ -50,8 +53,7 @@ export const metadata: Metadata = {
   title: "Opinionly — The honest feedback you've been missing",
   twitter: {
     card: "summary_large_image",
-    description:
-      "From the people who know you. Coming soon on iOS and Android.",
+    description: DESCRIPTION,
     title: "Opinionly — The honest feedback you've been missing",
   },
 };
