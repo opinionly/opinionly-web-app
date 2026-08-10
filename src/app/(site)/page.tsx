@@ -5,6 +5,7 @@ import HonestRepliesSection from "@/components/HonestRepliesSection";
 import InsightsSection from "@/components/InsightsSection";
 import InTheMomentSection from "@/components/InTheMomentSection";
 import PrinciplesSection from "@/components/PrinciplesSection";
+import SocialSection from "@/components/SocialSection";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -19,6 +20,7 @@ export default function Home() {
       <InsightsSection />
       <GardenSection />
       <PrinciplesSection />
+      <SocialSection />
     </>
   );
 }
