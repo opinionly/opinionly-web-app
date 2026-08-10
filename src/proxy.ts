@@ -14,11 +14,13 @@ const SHARED_PATHS = new Set(LEGAL_DOCS.map((slug) => `/${slug}`));
 // renamed. Kept so the old address still resolves instead of 404ing.
 const RENAMED_PATHS = new Map([["/terms", "/terms-service"]]);
 
-// The teams host matching a given main host, so this still works off-domain.
-function teamsOrigin(host: string) {
-  const bare = host.replace(/^www\./, "");
-  return `${bare.startsWith("localhost") ? "http" : "https"}://teams.${bare}`;
-}
+// Main hosts that have a teams host provisioned alongside them. Preview
+// deploys don't, so they're absent here on purpose — see the redirect below.
+const TEAMS_ORIGINS = new Map([
+  ["opinionly.io", "https://teams.opinionly.io"],
+  ["www.opinionly.io", "https://teams.opinionly.io"],
+  ["localhost:3000", "http://teams.localhost:3000"],
+]);
 
 export function proxy(request: NextRequest) {
   const host = request.headers.get("host")?.toLowerCase() ?? "";
@@ -43,7 +45,13 @@ export function proxy(request: NextRequest) {
       return NextResponse.redirect(url, 308);
     }
 
-    return NextResponse.redirect(`${teamsOrigin(host)}${path}${url.search}`, 308);
+    const origin = TEAMS_ORIGINS.get(host);
+    if (origin) {
+      return NextResponse.redirect(`${origin}${path}${url.search}`, 308);
+    }
+
+    // A host with no teams counterpart, i.e. a preview deploy. Fall through so
+    // the page stays reachable at /teams rather than pointing at nothing.
   }
 
   if (isTeamsHost && !SHARED_PATHS.has(url.pathname)) {
