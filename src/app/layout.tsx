@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ReactQueryProvider } from "@/providers/query-client";
 import MetaPixelRouteTracker from "@/components/MetaPixelRouteTracker";
+import { socialProfiles } from "@/lib/socials";
 import "./globals.css";
 
 const inter = Inter({
@@ -24,6 +25,15 @@ const instrumentSerif = Instrument_Serif({
 
 const GA_MEASUREMENT_ID = "G-0LTL8FYB47";
 const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID;
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Opinionly",
+  url: "https://www.opinionly.io",
+  email: "hello@opinionly.io",
+  sameAs: socialProfiles.map((s) => s.href),
+};
 
 export const metadata: Metadata = {
   description:
@@ -58,6 +68,12 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body suppressHydrationWarning>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
           strategy="afterInteractive"

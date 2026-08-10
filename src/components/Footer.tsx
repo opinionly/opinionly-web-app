@@ -2,6 +2,8 @@
 
 import { PropsWithChildren } from "react";
 import NextLink, { type LinkProps } from "next/link";
+import { trackEvent } from "@/lib/analytics";
+import { socialProfiles } from "@/lib/socials";
 
 export default function Footer() {
   const footerLinks: Required<PropsWithChildren<Pick<LinkProps, "href">>>[] = [
@@ -27,6 +29,27 @@ export default function Footer() {
               className="text-ink-soft no-underline transition-colors duration-150 hover:text-ink"
               {...l}
             />
+          ))}
+        </div>
+
+        <div className="flex items-center gap-4">
+          {socialProfiles.map((s) => (
+            <a
+              key={s.name}
+              aria-label={`Opinionly on ${s.name}`}
+              className="text-ink-soft transition-colors duration-150 hover:text-ink"
+              href={s.href}
+              rel="noopener noreferrer"
+              target="_blank"
+              onClick={() =>
+                trackEvent("social_follow_click", {
+                  platform: s.name.toLowerCase(),
+                  location: "footer",
+                })
+              }
+            >
+              <s.Icon />
+            </a>
           ))}
         </div>
       </div>
