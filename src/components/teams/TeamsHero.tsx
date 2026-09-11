@@ -25,7 +25,7 @@ export default function TeamsHero() {
           </h1>
 
           <p className="mb-9 max-w-[480px] text-lg leading-[1.4] font-normal text-ink-soft lg:text-[22px]">
-            Surfaced from how they already work — not from another survey no one wants to fill out.
+            Surfaced from how they already work, not from another survey no one wants to fill out.
           </p>
 
           <TeamsCaptureForm
@@ -108,7 +108,7 @@ export default function TeamsHero() {
                     />
                   </svg>
                   <div className="mt-2.5 rounded-md border-l-[3px] border-amber bg-card px-3 py-2.5 text-xs leading-[1.4] text-ink-soft">
-                    Sentiment has improved steadily since the new project rotation policy. Watch the engineering org — they&apos;re driving most of the lift.
+                    Sentiment has improved steadily since the new project rotation policy. Watch the engineering org: they&apos;re driving most of the lift.
                   </div>
                 </div>
 

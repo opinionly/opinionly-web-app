@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { loadOgFonts, OgCard, OG_CONTENT_TYPE, OG_SIZE } from "@/lib/og";
 
-export const alt = "Opinionly for teams — An honest read on your team";
+export const alt = "Opinionly for teams. An honest read on your team";
 export const contentType = OG_CONTENT_TYPE;
 export const size = OG_SIZE;
 
@@ -21,7 +21,7 @@ export default async function Image() {
         eyebrow="Pilot program · 2026"
         forTeams
         headline="An honest read on your team."
-        sub="Surfaced from how they already work — not from another survey."
+        sub="Surfaced from how they already work, not from another survey."
         url="teams.opinionly.io"
       />
     ),

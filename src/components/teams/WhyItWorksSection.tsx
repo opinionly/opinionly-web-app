@@ -2,17 +2,17 @@ const rows = [
   {
     bad: "Quarterly surveys ask people to perform.",
     good: "Opinionly doesn’t ask anything extra.",
-    body: "Your team is already in the app — asking their own questions, replying to their friends, tending their goals. The signal you see in the dashboard is a byproduct of them using it for themselves. There’s no survey to ignore.",
+    body: "Your team is already in the app. They're asking their own questions, replying to their friends, tending their goals. The signal you see in the dashboard is a byproduct of them using it for themselves. There’s no survey to ignore.",
   },
   {
     bad: "Dashboards measure what’s easy to measure.",
     good: "We surface what people actually care about.",
-    body: "Engagement scores are easy. They’re also nearly meaningless. The dashboard surfaces the themes your team is genuinely circling — what they’re asking about, what they keep returning to, what’s shifting — because those are the things they chose to bring up.",
+    body: "Engagement scores are easy. They’re also nearly meaningless. The dashboard surfaces the themes your team is genuinely circling: what they’re asking about, what they keep returning to, what’s shifting. Those are the things they chose to bring up.",
   },
   {
     bad: "Annual reviews arrive too late to act on.",
     good: "The picture updates as it changes.",
-    body: "Concerns rise and fade in weeks, not quarters. By the time a yearly survey catches a problem, half the people who flagged it have already left. Opinionly’s signal moves at the speed of the team — which is the only speed that lets you do anything about it.",
+    body: "Concerns rise and fade in weeks, not quarters. By the time a yearly survey catches a problem, half the people who flagged it have already left. Opinionly’s signal moves at the speed of the team. That’s the only speed that lets you do anything about it.",
   },
 ];
 

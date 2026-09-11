@@ -5,7 +5,7 @@ const checklist = [
   { bold: "No cost.", faint: "No license, no per-seat fee, no commitment after." },
   {
     bold: "Your input shapes the product.",
-    faint: "The dashboard, the privacy rules, the reports — all open.",
+    faint: "The dashboard, the privacy rules, the reports. All open.",
   },
   {
     bold: "Direct line to the founders.",

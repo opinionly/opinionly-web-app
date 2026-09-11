@@ -15,11 +15,11 @@ export default function InsightsSection() {
           </h2>
           <p className="max-w-[460px] text-lg leading-[1.55] text-ink-soft">
             Every honest reply quietly adds up. Opinionly turns them into a
-            private picture — sentiment over time, the themes people keep
+            private picture: sentiment over time, the themes people keep
             noticing, and how you show up when you give feedback back.
           </p>
           <p className="mt-3.5 max-w-[460px] text-lg leading-[1.55] text-ink-soft">
-            Only you ever see it. No scores to perform for — just a clearer sense
+            Only you ever see it. No scores to perform for. Just a clearer sense
             of how you land.
           </p>
         </div>
