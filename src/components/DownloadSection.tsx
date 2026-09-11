@@ -33,13 +33,13 @@ export default function DownloadSection() {
 
           <h2 className="mb-4 text-[34px] leading-[1.05] font-bold tracking-[-0.03em] text-ink md:text-[48px]">
             {APP_LIVE
-              ? "Find out what they actually think."
+              ? "Start with one honest question."
               : "Be there when it opens."}
           </h2>
 
           <p className="mb-9 text-lg text-ink-soft">
             {APP_LIVE
-              ? "Ask a question. The people who know you answer anonymously — so you get the version they'd never say to your face."
+              ? "Ask the people who know you best. Their replies are anonymous, which is what lets them be straight with you."
               : "We're letting people in a handful at a time. Leave your email and we'll come find you."}
           </p>
 
