@@ -13,6 +13,9 @@ export default function Footer() {
     { children: "Guidelines", href: "/guidelines" },
     { children: "Cookies", href: "/cookies" },
     { children: "EULA", href: "/eula" },
+    // Play requires the deletion route to be reachable without signing in.
+    // The footer is the one surface on every page, so it lives here.
+    { children: "Delete account", href: "/delete-account" },
   ];
 
   return (

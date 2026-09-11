@@ -13,6 +13,9 @@ const TEAMS_HOSTS = new Set([
 const SHARED_PATHS = new Set([
   ...LEGAL_DOCS.map((slug) => `/${slug}`),
   "/download",
+  // Play requires this one to resolve for anyone who reaches it, and the
+  // footer carrying its link renders on the teams host too.
+  "/delete-account",
 ]);
 
 // Slugs that were live long enough for Google to crawl them before being
