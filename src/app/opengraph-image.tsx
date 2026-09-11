@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { loadOgFonts, OgCard, OG_CONTENT_TYPE, OG_SIZE } from "@/lib/og";
 
-export const alt = "Opinionly — The honest feedback you've been missing";
+export const alt = "Opinionly. The honest feedback you've been missing";
 export const contentType = OG_CONTENT_TYPE;
 export const size = OG_SIZE;
 

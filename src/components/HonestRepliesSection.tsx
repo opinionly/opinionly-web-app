@@ -15,8 +15,8 @@ export default function HonestRepliesSection() {
           </h2>
           <p className="max-w-[460px] text-lg leading-[1.55] text-ink-soft">
             Post a question to the people who actually know you. They see your
-            name. You don&apos;t see theirs. That asymmetry is the whole trick —
-            it&apos;s what makes the feedback honest enough to actually use.
+            name. You don&apos;t see theirs. That asymmetry is the whole trick.
+            It&apos;s what makes the feedback honest enough to actually use.
           </p>
           <p className="mt-3.5 max-w-[460px] text-lg leading-[1.55] text-ink-soft">
             You hear what they really think. Not the polite version they&apos;d

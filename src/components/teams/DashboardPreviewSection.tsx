@@ -158,7 +158,7 @@ export default function DashboardPreviewSection() {
         </div>
 
         <p className="mt-10 text-center text-[13px] text-ink-faint italic">
-          An early sketch. We&apos;re building the real thing with our pilot partners — what you see here will change.
+          An early sketch. We&apos;re building the real thing with our pilot partners. What you see here will change.
         </p>
       </div>
     </section>

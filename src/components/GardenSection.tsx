@@ -16,7 +16,7 @@ export default function GardenSection() {
             <em className="text-[#6b4f10] italic">No counts. No streaks.</em>
           </blockquote>
           <p className="mt-7 max-w-[420px] text-[15px] leading-[1.5] text-[#6b4f10]">
-            From the app&apos;s Garden — where the people you trust quietly help
+            From the app&apos;s Garden, where the people you trust quietly help
             you grow.
           </p>
         </div>

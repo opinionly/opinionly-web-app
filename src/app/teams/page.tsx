@@ -15,7 +15,7 @@ const DESCRIPTION =
   "An honest read on your team, surfaced from how they already work rather than surveys. Free pilots through 2026.";
 
 export const metadata: Metadata = {
-  title: "Opinionly for teams — An honest read on your team",
+  title: "Opinionly for teams. An honest read on your team",
   description: DESCRIPTION,
   // Served at both teams.opinionly.io (rewritten in proxy.ts) and /teams — the
   // subdomain is the address we publish, so point every copy at it.
@@ -23,12 +23,12 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://teams.opinionly.io",
-    title: "Opinionly for teams — An honest read on your team",
+    title: "Opinionly for teams. An honest read on your team",
     description: DESCRIPTION,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Opinionly for teams — An honest read on your team",
+    title: "Opinionly for teams. An honest read on your team",
     description: DESCRIPTION,
   },
 };

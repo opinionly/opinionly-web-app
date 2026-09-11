@@ -24,7 +24,7 @@ export default function InTheMomentSection() {
           </h2>
           <p className="max-w-[460px] text-lg leading-[1.55] text-ink-soft">
             Most feedback arrives too late, from the wrong people, in the wrong
-            tone. Opinionly is built for the small moments — the conversation
+            tone. Opinionly is built for the small moments: the conversation
             that felt off, the message you weren&apos;t sure about, the thing you
             can&apos;t stop thinking about on the walk home.
           </p>

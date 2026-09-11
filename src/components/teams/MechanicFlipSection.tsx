@@ -20,9 +20,9 @@ export default function MechanicFlipSection() {
           </h2>
           <p className="text-lg leading-[1.55] text-ink-soft">
             Your team isn&apos;t filling out surveys. They&apos;re using
-            Opinionly to ask their own questions and grow. You see the aggregate
-            — the patterns underneath, in plain words, without ever seeing who
-            said what.
+            Opinionly to ask their own questions and grow. You see the
+            aggregate: the patterns underneath, in plain words, without ever
+            seeing who said what.
           </p>
         </div>
 

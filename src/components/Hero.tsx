@@ -174,7 +174,7 @@ export default function Hero() {
 
             {/* Phone screen */}
             <Image
-              alt="The Opinionly feed — honest questions from people who know you"
+              alt="The Opinionly feed: honest questions from people who know you"
               className="absolute top-[30px] left-1/2 h-auto w-[230px] -translate-x-1/2 rounded-[30px] drop-shadow-[2px_4px_6px_var(--ink-faint)] lg:w-[250px]"
               height={609}
               loading="eager"

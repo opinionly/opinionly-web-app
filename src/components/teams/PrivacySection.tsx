@@ -25,7 +25,7 @@ const commitments = [
   },
   {
     title: "The team owns their participation.",
-    body: "Premium features are default-on when the company pays, but every employee can opt out, change what's shared, or use Opinionly purely as a personal tool. Your dashboard reflects who's in — never who's out.",
+    body: "Premium features are default-on when the company pays, but every employee can opt out, change what's shared, or use Opinionly purely as a personal tool. Your dashboard reflects who's in. Never who's out.",
     icon: (
       <svg viewBox="0 0 20 20" fill="none">
         <path
@@ -89,7 +89,7 @@ export default function PrivacySection() {
           <strong className="font-semibold text-white/70">
             Where we are honest:
           </strong>{" "}
-          these are early commitments. We&apos;re working out the specific policies — minimum-N thresholds, opt-out flows, retention rules — alongside our pilot partners, because the people whose trust matters most are the ones who&apos;ll be living with it. If this matters to you, that&apos;s a feature, not a bug.
+          these are early commitments. We&apos;re working out the specific policies: minimum-N thresholds, opt-out flows, retention rules. We&apos;re doing that alongside our pilot partners, because the people whose trust matters most are the ones who&apos;ll be living with it. If this matters to you, that&apos;s a feature, not a bug.
         </div>
       </div>
     </section>

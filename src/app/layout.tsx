@@ -70,7 +70,7 @@ export const metadata: Metadata = {
   // Share images come from the opengraph-image routes, not from this object.
   openGraph: {
     description: DESCRIPTION,
-    title: "Opinionly — The honest feedback you've been missing",
+    title: "Opinionly. The honest feedback you've been missing",
     type: "website",
     url: "https://www.opinionly.io",
   },
@@ -80,11 +80,11 @@ export const metadata: Metadata = {
   // `content="app-id=<id>"`; setting `other["apple-itunes-app"]` as well would
   // emit the tag twice, as the two paths don't dedupe.
   itunes: { appId: APP_STORE_ID },
-  title: "Opinionly — The honest feedback you've been missing",
+  title: "Opinionly. The honest feedback you've been missing",
   twitter: {
     card: "summary_large_image",
     description: DESCRIPTION,
-    title: "Opinionly — The honest feedback you've been missing",
+    title: "Opinionly. The honest feedback you've been missing",
   },
 };
 
