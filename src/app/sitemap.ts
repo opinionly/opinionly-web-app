@@ -20,6 +20,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
       url: TEAMS_URL,
     },
+    {
+      changeFrequency: "yearly",
+      lastModified,
+      priority: 0.3,
+      url: `${SITE_URL}/delete-account`,
+    },
     ...LEGAL_DOCS.map((slug) => ({
       changeFrequency: "yearly" as const,
       lastModified,
