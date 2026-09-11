@@ -11,19 +11,6 @@
 export const APP_STORE_ID = "6755163649";
 
 /**
- * The iOS release is approved but sits on manual release, so the product page
- * 404s until someone presses the button in App Store Connect. Flip this on
- * launch day — *after* `apps.apple.com/app/id<id>` actually resolves, which
- * lags the button press by a few hours as Apple propagates to every
- * storefront. Shipping it early points the hero and the Smart App Banner at a
- * dead page.
- */
-// Annotated `boolean` rather than left to infer the literal `false`, so the
-// compiler checks the launch-day branches now instead of the first time
-// someone flips it under time pressure.
-export const APP_LIVE: boolean = true;
-
-/**
  * Null until Google Play review clears. Kept as a typed null rather than an
  * empty string so a forgotten `if` fails the build instead of rendering a
  * badge that links nowhere.

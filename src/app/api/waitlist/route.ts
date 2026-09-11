@@ -13,11 +13,13 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
  * unknown value degrades to the generic label instead of being rejected.
  */
 const SOURCE_LABELS: Record<string, string> = {
-  waitlist: "New waitlist signup",
   android_notify: "Android notify-me signup",
+  // The site stopped sending this when the app shipped, but a browser holding
+  // an old JS bundle still can, so the label outlives the funnel.
+  waitlist: "New waitlist signup",
 };
 
-const DEFAULT_SOURCE_LABEL = SOURCE_LABELS.waitlist;
+const DEFAULT_SOURCE_LABEL = "New signup";
 
 export async function POST(request: Request) {
   const apiKey = process.env.RESEND_API_KEY;

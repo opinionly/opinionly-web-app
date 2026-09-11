@@ -6,7 +6,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ReactQueryProvider } from "@/providers/query-client";
 import MetaPixelRouteTracker from "@/components/MetaPixelRouteTracker";
-import { APP_LIVE, APP_STORE_ID, appStoreUrl } from "@/lib/app-links";
+import { APP_STORE_ID, appStoreUrl } from "@/lib/app-links";
 import { socialProfiles } from "@/lib/socials";
 import "./globals.css";
 
@@ -35,13 +35,8 @@ const organizationJsonLd = {
   name: "Opinionly",
   url: "https://www.opinionly.io",
   email: "hello@opinionly.io",
-  // The store listing is a profile of the same entity, so it belongs here —
-  // but only once it resolves, since sameAs pointing at a 404 is worse than a
-  // shorter list.
-  sameAs: [
-    ...socialProfiles.map((s) => s.href),
-    ...(APP_LIVE ? [APP_STORE_URL] : []),
-  ],
+  // The store listing is a profile of the same entity, so it belongs here.
+  sameAs: [...socialProfiles.map((s) => s.href), APP_STORE_URL],
 };
 
 // What earns the app rich result in search. Deliberately carries no
@@ -66,9 +61,8 @@ const appJsonLd = {
 
 // One string across search and every share surface, so the three can't drift
 // apart and ship a weaker line to social than to Google.
-const DESCRIPTION = APP_LIVE
-  ? "Honest anonymous responses from the people who know you. Get answers you can act on. Free on iPhone."
-  : "Honest anonymous responses from the people who know you. Get answers you can act on. Coming soon on iOS and Android.";
+const DESCRIPTION =
+  "Honest anonymous responses from the people who know you. Get answers you can act on. Free on iPhone.";
 
 export const metadata: Metadata = {
   description: DESCRIPTION,
@@ -84,9 +78,8 @@ export const metadata: Metadata = {
   // "GET" for a visitor without the app, "OPEN" for one who already has it.
   // `itunes` is the first-class field and renders exactly
   // `content="app-id=<id>"`; setting `other["apple-itunes-app"]` as well would
-  // emit the tag twice, as the two paths don't dedupe. Withheld until launch,
-  // because until then it renders a button to a 404.
-  ...(APP_LIVE ? { itunes: { appId: APP_STORE_ID } } : {}),
+  // emit the tag twice, as the two paths don't dedupe.
+  itunes: { appId: APP_STORE_ID },
   title: "Opinionly — The honest feedback you've been missing",
   twitter: {
     card: "summary_large_image",
@@ -113,14 +106,12 @@ export default function RootLayout({
             __html: JSON.stringify(organizationJsonLd).replace(/</g, "\\u003c"),
           }}
         />
-        {APP_LIVE && (
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(appJsonLd).replace(/</g, "\\u003c"),
-            }}
-          />
-        )}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(appJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
           strategy="afterInteractive"

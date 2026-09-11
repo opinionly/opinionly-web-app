@@ -7,11 +7,12 @@ interface Props {
   id?: string;
   /**
    * Which funnel this submission belongs to. Reaches the notification email's
-   * subject line so an "Android, tell me when it lands" signup can't be
-   * mistaken for the pre-launch waitlist it shares a form with. Must be a
-   * value the API's allow-list knows — see src/app/api/waitlist/route.ts.
+   * subject line. Required rather than defaulted so a new caller has to say
+   * what it is collecting instead of silently inheriting someone else's label.
+   * Must be a value the API's allow-list knows — see
+   * src/app/api/waitlist/route.ts.
    */
-  source?: string;
+  source: string;
   submitLabel?: string;
   successLabel?: string;
 }
@@ -20,9 +21,9 @@ type Status = "idle" | "submitting" | "error" | "success";
 
 export default function EmailCaptureForm({
   id,
-  source = "waitlist",
-  submitLabel = "Get early access",
-  successLabel = "You're on the list ✓",
+  source,
+  submitLabel = "Notify me",
+  successLabel = "We'll email you ✓",
 }: Props) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<Status>("idle");
