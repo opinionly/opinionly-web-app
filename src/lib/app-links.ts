@@ -21,7 +21,7 @@ export const APP_STORE_ID = "6755163649";
 // Annotated `boolean` rather than left to infer the literal `false`, so the
 // compiler checks the launch-day branches now instead of the first time
 // someone flips it under time pressure.
-export const APP_LIVE: boolean = false;
+export const APP_LIVE: boolean = true;
 
 /**
  * Null until Google Play review clears. Kept as a typed null rather than an
