@@ -1,4 +1,4 @@
-import { APP_LIVE, appStoreUrl } from "@/lib/app-links";
+import { APP_LIVE, appStoreUrl, CAMPAIGNS } from "@/lib/app-links";
 
 export default function TeamsNavbar() {
   return (
@@ -28,7 +28,7 @@ export default function TeamsNavbar() {
               primary action, since a pilot is a conversation, not an install. */}
           {APP_LIVE && (
             <a
-              href={appStoreUrl("teams_nav")}
+              href={appStoreUrl(CAMPAIGNS.teamsNav)}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden text-sm font-medium text-ink-soft transition-colors duration-150 hover:text-ink md:inline"

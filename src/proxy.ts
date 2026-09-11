@@ -7,8 +7,13 @@ const TEAMS_HOSTS = new Set([
 ]);
 
 // Every legal doc renders on the teams host too — derived so a new doc can't
-// be added to the site and 404 here.
-const SHARED_PATHS = new Set(LEGAL_DOCS.map((slug) => `/${slug}`));
+// be added to the site and 404 here. `/download` joins them because the point
+// of a single download address is that it resolves everywhere; without this the
+// teams host rewrites it to `/teams/download` and 404s.
+const SHARED_PATHS = new Set([
+  ...LEGAL_DOCS.map((slug) => `/${slug}`),
+  "/download",
+]);
 
 // Slugs that were live long enough for Google to crawl them before being
 // renamed. Kept so the old address still resolves instead of 404ing.
