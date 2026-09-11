@@ -1,4 +1,3 @@
-import { APP_LIVE } from "@/lib/app-links";
 import DownloadCta from "@/components/DownloadCta";
 
 /**
@@ -6,13 +5,8 @@ import DownloadCta from "@/components/DownloadCta";
  * wants to hold it before booking a call, and the consumer app is the cheapest
  * way to do that — but a team pilot is a conversation, not a download, so this
  * stays a step on the way to PilotCloseSection rather than a rival to it.
- *
- * Renders nothing until the app is actually installable, leaving the teams page
- * untouched pre-launch.
  */
 export default function TeamsDownloadSection() {
-  if (!APP_LIVE) return null;
-
   return (
     <section className="px-5 py-14 md:px-8 md:py-20">
       <div className="mx-auto flex max-w-[1080px] flex-col items-center gap-7 rounded-4xl bg-blue-tint px-7 py-12 text-center md:px-16">

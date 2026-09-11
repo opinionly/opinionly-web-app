@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { APP_LIVE } from "@/lib/app-links";
 import DownloadCta from "./DownloadCta";
 
 const repliers = [
@@ -27,9 +26,7 @@ export default function Hero() {
         <div className="min-w-0">
           <div className="mb-7 inline-flex items-center gap-2 rounded-full bg-white/70 px-3.5 py-[7px] text-[13px] font-medium text-ink-soft shadow-(--shadow-sm) backdrop-blur-[8px]">
             <span className="inline-block size-1.5 shrink-0 rounded-full bg-coral" />
-            {APP_LIVE
-              ? "Out now on iPhone · Android coming soon"
-              : "Coming soon · iOS and Android"}
+            Out now on iPhone &middot; Android coming soon
           </div>
 
           <h1 className="mb-5 max-w-[540px] text-[clamp(44px,5.5vw,68px)] leading-[1.02] font-bold tracking-[-0.035em] text-ink">
@@ -40,17 +37,9 @@ export default function Hero() {
             From the people who know you.
           </p>
 
-          {/* Keeps the public `#waitlist` anchor the navbar and shared links
-              already point at, rather than minting a new one. */}
-          <DownloadCta campaign="hero" formId="waitlist" showQr={false} />
-
-          {/* Post-launch the fine print belongs to whichever CTA rendered, so
-              DownloadCta carries its own and this line retires with the form. */}
-          {!APP_LIVE && (
-            <p className="mt-3.5 text-[13px] text-ink-faint">
-              We write infrequently. No spam. Unsubscribe anytime.
-            </p>
-          )}
+          {/* Fine print belongs to whichever CTA renders, so DownloadCta
+              carries its own. */}
+          <DownloadCta campaign="hero" showQr={false} />
         </div>
 
         {/* ── Right: Visual ── */}

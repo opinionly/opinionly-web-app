@@ -3,12 +3,7 @@
 import Image from "next/image";
 import { useSyncExternalStore } from "react";
 import { trackEvent, trackPixel } from "@/lib/analytics";
-import {
-  ANDROID_URL,
-  APP_LIVE,
-  appStoreUrl,
-  CAMPAIGNS,
-} from "@/lib/app-links";
+import { ANDROID_URL, appStoreUrl, CAMPAIGNS } from "@/lib/app-links";
 import EmailCaptureForm from "./EmailCaptureForm";
 
 /**
@@ -43,13 +38,6 @@ interface Props {
    * card there only repeats what the closing section does with more room.
    */
   showQr?: boolean;
-  /**
-   * DOM id for whichever email form this placement renders. Explicit because
-   * two DownloadCtas share the home page: if both fell back to "waitlist"
-   * pre-launch the document would carry a duplicate id and the navbar's
-   * `#waitlist` link would resolve by document order rather than intent.
-   */
-  formId?: string;
 }
 
 function detectPlatform(): Platform {
@@ -84,20 +72,11 @@ export default function DownloadCta({
   align = "left",
   androidNotify = false,
   showQr = true,
-  formId,
 }: Props) {
-  const waitlistId = formId ?? `${campaign}-waitlist`;
   // Null on the server and during hydration, where there is no user agent to
   // read. That renders the App Store badge — correct everywhere, just not yet
   // tailored — rather than guessing a platform and flashing the wrong CTA.
   const platform = usePlatform();
-
-  // Pre-launch the product page 404s, so the site keeps collecting emails and
-  // no download affordance appears anywhere. Flipping APP_LIVE swaps every
-  // placement at once. Once Android ships too, this branch can be deleted.
-  if (!APP_LIVE) {
-    return <EmailCaptureForm id={waitlistId} source="waitlist" />;
-  }
 
   const stack = align === "center" ? "items-center text-center" : "items-start";
 

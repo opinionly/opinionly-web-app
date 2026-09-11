@@ -1,10 +1,5 @@
 import { NextResponse, userAgent, type NextRequest } from "next/server";
-import {
-  ANDROID_URL,
-  APP_LIVE,
-  appStoreUrl,
-  CAMPAIGNS,
-} from "@/lib/app-links";
+import { ANDROID_URL, appStoreUrl, CAMPAIGNS } from "@/lib/app-links";
 
 export const runtime = "nodejs";
 
@@ -44,7 +39,7 @@ export async function GET(request: NextRequest) {
 
   let destination = FALLBACK;
 
-  if (APP_LIVE && isApplePhone(request)) {
+  if (isApplePhone(request)) {
     destination = appStoreUrl(campaign);
   } else if (ANDROID_URL && userAgent(request).os.name === "Android") {
     destination = ANDROID_URL;
