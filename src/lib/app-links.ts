@@ -38,12 +38,16 @@ export const ANDROID_URL: string | null = null;
 const APP_STORE_BASE = `https://apps.apple.com/app/id${APP_STORE_ID}`;
 
 /**
- * Apple only records campaign tokens when they arrive alongside the provider
- * token, which comes from App Store Connect → Analytics → Campaigns. Until
- * someone generates one there, appending `ct` alone would add query noise that
- * Apple silently discards, so `appStoreUrl()` leaves the URL clean instead.
+ * From App Store Connect → Analytics → Campaigns. Identifies the developer
+ * account and is constant across every campaign; only the `ct` below varies
+ * per placement. Apple discards a `ct` that arrives without it, so the helper
+ * returns a clean URL rather than query noise when this is null.
+ *
+ * Campaigns need roughly a day and a handful of taps before they appear in
+ * Analytics — an empty Campaigns page right after adding this is expected, not
+ * a sign it is wired up wrong.
  */
-const APP_STORE_PROVIDER_TOKEN: string | null = null;
+const APP_STORE_PROVIDER_TOKEN: string | null = "127271598";
 
 /**
  * App Store link for a given placement. `campaign` is the `ct` token that
@@ -62,5 +66,24 @@ export function appStoreUrl(campaign?: string): string {
     mt: "8",
   });
 
-  return `${APP_STORE_BASE}?${params.toString()}`;
+  // Apple documents campaign links against the `/app/apple-store/id<id>` form
+  // specifically. Both spellings resolve, but this is the one their analytics
+  // help describes, so attribution isn't resting on an undocumented variant.
+  return `https://apps.apple.com/app/apple-store/id${APP_STORE_ID}?${params.toString()}`;
 }
+
+/**
+ * Campaign tokens are free text, and a typo just silently splits a campaign in
+ * two. Placements pass these instead of string literals so the set stays
+ * enumerable and greppable. The `website_` prefix keeps site-driven installs
+ * separable from future ones (`instagram_bio`, `launch_email`) under the
+ * single `website` campaign created in App Store Connect.
+ */
+export const CAMPAIGNS = {
+  closing: "website_closing",
+  hero: "website_hero",
+  qr: "website_qr",
+  shortLink: "website_download_link",
+  teams: "website_teams",
+  teamsNav: "website_teams_nav",
+} as const;

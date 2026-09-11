@@ -3,7 +3,12 @@
 import Image from "next/image";
 import { useSyncExternalStore } from "react";
 import { trackEvent, trackPixel } from "@/lib/analytics";
-import { ANDROID_URL, APP_LIVE, appStoreUrl } from "@/lib/app-links";
+import {
+  ANDROID_URL,
+  APP_LIVE,
+  appStoreUrl,
+  CAMPAIGNS,
+} from "@/lib/app-links";
 import EmailCaptureForm from "./EmailCaptureForm";
 
 /**
@@ -18,11 +23,11 @@ type Platform = "ios" | "android" | "desktop";
 
 interface Props {
   /**
-   * Placement slug. Becomes the App Store `ct` campaign token and the analytics
-   * event label, so installs trace back to the surface that earned them rather
-   * than to "the website".
+   * Placement key. Resolves to the App Store `ct` token via CAMPAIGNS, so
+   * installs trace back to the surface that earned them rather than to "the
+   * website" — while DOM ids and analytics labels stay on the short name.
    */
-  campaign: string;
+  campaign: keyof typeof CAMPAIGNS;
   /** Full-width sections centre their stack; the hero stays left-aligned. */
   align?: "left" | "center";
   /**
@@ -118,7 +123,7 @@ export default function DownloadCta({
   return (
     <div className={`flex flex-col gap-4 ${stack}`}>
       <a
-        href={appStoreUrl(campaign)}
+        href={appStoreUrl(CAMPAIGNS[campaign])}
         target="_blank"
         rel="noopener noreferrer"
         className="inline-block transition-transform duration-150 hover:-translate-y-0.5"
@@ -143,15 +148,16 @@ export default function DownloadCta({
           on, so the QR moves them to the device that can install it. */}
       {showQr && platform === "desktop" && (
         <div className="flex items-center gap-3 rounded-2xl bg-card p-3 shadow-(--shadow-sm)">
-          {/* 37 modules wide. Below ~120px each module falls under 3 CSS px
-              and phone cameras stop resolving it, so this is a scan-threshold
-              floor, not a taste call. */}
+          {/* 41 modules wide, encoding /download rather than the store URL so
+              a printed or screenshotted code still works once Android ships.
+              Sized so each module clears ~3 CSS px; below that phone cameras
+              stop resolving it. A scan-threshold floor, not a taste call. */}
           <Image
-            alt="QR code linking to Opinionly on the App Store"
+            alt="QR code to download Opinionly"
             className="rounded-lg"
-            height={132}
+            height={148}
             src="/badges/app-store-qr.svg"
-            width={132}
+            width={148}
           />
           <span className="max-w-[150px] text-left text-[13px] leading-snug text-ink-soft">
             Point your phone&rsquo;s camera here to install.
