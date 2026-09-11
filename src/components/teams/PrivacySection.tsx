@@ -87,7 +87,7 @@ export default function PrivacySection() {
 
         <div className="max-w-[640px] border-l-2 border-white/15 pl-4 text-[13px] leading-[1.6] text-white/45">
           <strong className="font-semibold text-white/70">
-            Where we are honest:
+            Where we&apos;re honest:
           </strong>{" "}
           these are early commitments. We&apos;re working out the specific policies: minimum-N thresholds, opt-out flows, retention rules. We&apos;re doing that alongside our pilot partners, because the people whose trust matters most are the ones who&apos;ll be living with it. If this matters to you, that&apos;s a feature, not a bug.
         </div>

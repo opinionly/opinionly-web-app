@@ -19,7 +19,7 @@ export default function DashboardPreviewSection() {
             Built around the questions you&apos;d actually ask.
           </h2>
           <p className="text-lg leading-[1.55] text-ink-soft">
-            Not vanity metrics. Not engagement scores no one trusts. The patterns under the surface, in plain words.
+            Not vanity metrics. Not engagement scores no one trusts. Just what your team keeps coming back to.
           </p>
         </div>
 
