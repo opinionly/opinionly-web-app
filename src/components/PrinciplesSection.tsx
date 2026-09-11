@@ -87,7 +87,7 @@ export default function PrinciplesSection() {
             Built on three ideas.
           </h2>
           <p className="text-lg text-ink-soft">
-            The simple commitments that shape how Opinionly works.
+            Three things you can hold us to.
           </p>
         </div>
 

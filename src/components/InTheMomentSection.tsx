@@ -29,7 +29,7 @@ export default function InTheMomentSection() {
             can&apos;t stop thinking about on the walk home.
           </p>
           <p className="mt-3.5 max-w-[460px] text-lg leading-[1.55] text-ink-soft">
-            Ask the question. Get real answers. Move on.
+            Real answers, fast. Then you can stop turning it over.
           </p>
         </div>
       </div>

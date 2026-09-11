@@ -62,7 +62,7 @@ const appJsonLd = {
 // One string across search and every share surface, so the three can't drift
 // apart and ship a weaker line to social than to Google.
 const DESCRIPTION =
-  "Honest anonymous responses from the people who know you. Get answers you can act on. Free on iPhone.";
+  "Honest, anonymous replies from the people who know you. Get answers you can actually act on. Free on iPhone.";
 
 export const metadata: Metadata = {
   description: DESCRIPTION,
