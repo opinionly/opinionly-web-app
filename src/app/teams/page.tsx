@@ -5,6 +5,7 @@ import MechanicFlipSection from "@/components/teams/MechanicFlipSection";
 import DashboardPreviewSection from "@/components/teams/DashboardPreviewSection";
 import PrivacySection from "@/components/teams/PrivacySection";
 import WhyItWorksSection from "@/components/teams/WhyItWorksSection";
+import TeamsDownloadSection from "@/components/teams/TeamsDownloadSection";
 import PilotCloseSection from "@/components/teams/PilotCloseSection";
 import Footer from "@/components/Footer";
 
@@ -42,6 +43,7 @@ export default function TeamsPage() {
         <DashboardPreviewSection />
         <PrivacySection />
         <WhyItWorksSection />
+        <TeamsDownloadSection />
         <PilotCloseSection />
       </main>
       <Footer />

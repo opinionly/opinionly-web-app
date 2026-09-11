@@ -3,6 +3,7 @@
 import { PropsWithChildren } from "react";
 import NextLink, { type LinkProps } from "next/link";
 import { trackEvent } from "@/lib/analytics";
+import { APP_LIVE } from "@/lib/app-links";
 import { socialProfiles } from "@/lib/socials";
 
 export default function Footer() {
@@ -53,6 +54,17 @@ export default function Footer() {
           ))}
         </div>
       </div>
+
+      {/* Apple requires this credit exactly once per site, wherever the site
+          puts its legal notices, for any page showing the App Store badge.
+          Appears with the badge and retires with it. */}
+      {APP_LIVE && (
+        <div className="mx-auto max-w-[1140px] px-5 pb-10 text-[11px] leading-relaxed text-ink-faint sm:px-8">
+          Apple and the Apple logo are trademarks of Apple Inc., registered in
+          the U.S. and other countries. App Store is a service mark of Apple
+          Inc.
+        </div>
+      )}
     </footer>
   );
 }

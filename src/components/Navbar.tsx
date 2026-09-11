@@ -3,6 +3,7 @@
 import { ComponentProps } from "react";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
+import { APP_LIVE } from "@/lib/app-links";
 
 const logoClasses =
   "font-serif text-[26px] font-normal tracking-[-0.01em] text-ink italic";
@@ -29,11 +30,14 @@ export default function Navbar() {
           >
             How it works
           </NavLink>
+          {/* Points at the closing section rather than the App Store directly:
+              an Android visitor tapping "Get the app" needs the notify-me form
+              that lives there, not a badge for a phone they don't have. */}
           <NavLink
-            href="#waitlist"
+            href={APP_LIVE ? "#get-the-app" : "#waitlist"}
             className="rounded-full bg-ink px-[18px] py-[9px] leading-none text-white hover:bg-[#3a3833]"
           >
-            Join waitlist
+            {APP_LIVE ? "Get the app" : "Join waitlist"}
           </NavLink>
         </div>
       )}

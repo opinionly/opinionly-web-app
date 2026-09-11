@@ -1,3 +1,5 @@
+import { APP_LIVE, appStoreUrl } from "@/lib/app-links";
+
 export default function TeamsNavbar() {
   return (
     <div className="relative z-10">
@@ -22,6 +24,18 @@ export default function TeamsNavbar() {
           >
             Privacy
           </a>
+          {/* Secondary on purpose — "Request access" stays the teams funnel's
+              primary action, since a pilot is a conversation, not an install. */}
+          {APP_LIVE && (
+            <a
+              href={appStoreUrl("teams_nav")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden text-sm font-medium text-ink-soft transition-colors duration-150 hover:text-ink md:inline"
+            >
+              Get the app
+            </a>
+          )}
           <a
             href="#pilot"
             className="rounded-full bg-ink px-[18px] py-[9px] text-[13px] font-medium text-white transition-colors duration-150 hover:bg-[#3a3833]"
