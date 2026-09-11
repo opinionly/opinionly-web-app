@@ -113,8 +113,8 @@ export default function DownloadCta({
           successLabel="We'll email you ✓"
         />
         <p className="max-w-[440px] text-[13px] text-ink-faint">
-          Opinionly is on iPhone today. Android is on the way — we&rsquo;ll
-          email you the day it lands, and nothing else.
+          Opinionly is on iPhone today. Android is on the way. We&rsquo;ll email
+          you the day it lands, and nothing else.
         </p>
       </div>
     );
