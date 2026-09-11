@@ -5,6 +5,20 @@ export const runtime = "nodejs";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+/**
+ * The form posts a `source` so Android notify-me signups are distinguishable
+ * from the original pre-launch waitlist they share an endpoint with. It lands
+ * in a mail subject, so it is looked up rather than interpolated — an
+ * allow-list keeps a caller from writing their own subject line, and an
+ * unknown value degrades to the generic label instead of being rejected.
+ */
+const SOURCE_LABELS: Record<string, string> = {
+  waitlist: "New waitlist signup",
+  android_notify: "Android notify-me signup",
+};
+
+const DEFAULT_SOURCE_LABEL = SOURCE_LABELS.waitlist;
+
 export async function POST(request: Request) {
   const apiKey = process.env.RESEND_API_KEY;
   const notifyEmail = process.env.NOTIFY_EMAIL;
@@ -37,10 +51,15 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid email." }, { status: 400 });
   }
 
+  const rawSource = (body as { source?: unknown })?.source;
+  const label =
+    (typeof rawSource === "string" ? SOURCE_LABELS[rawSource] : undefined) ??
+    DEFAULT_SOURCE_LABEL;
+
   const resend = new Resend(apiKey);
-  const subject = "[Opinionly] New waitlist signup";
+  const subject = `[Opinionly] ${label}`;
   const html = `
-    <h2>New waitlist signup</h2>
+    <h2>${escapeHtml(label)}</h2>
     <p><strong>Email:</strong> ${escapeHtml(email)}</p>
     <p style="color:#888;font-size:12px;">Sent from opinionly.io waitlist form.</p>
   `;
@@ -62,7 +81,7 @@ export async function POST(request: Request) {
       );
     }
 
-    console.log("waitlist: signup");
+    console.log("waitlist: signup", { label });
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error("waitlist: unexpected error", err);

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import DownloadSection from "@/components/DownloadSection";
 import GardenSection from "@/components/GardenSection";
 import Hero from "@/components/Hero";
 import HonestRepliesSection from "@/components/HonestRepliesSection";
@@ -21,6 +22,7 @@ export default function Home() {
       <GardenSection />
       <PrinciplesSection />
       <SocialSection />
+      <DownloadSection />
     </>
   );
 }

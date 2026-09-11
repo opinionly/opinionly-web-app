@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { APP_LIVE } from "@/lib/app-links";
 import { loadOgFonts, OgCard, OG_CONTENT_TYPE, OG_SIZE } from "@/lib/og";
 
 export const alt = "Opinionly — The honest feedback you've been missing";
@@ -18,7 +19,9 @@ export default async function Image() {
       <OgCard
         accent="#f9a48a"
         background={BACKGROUND}
-        eyebrow="Coming soon · iOS and Android"
+        eyebrow={
+          APP_LIVE ? "Out now on iPhone" : "Coming soon · iOS and Android"
+        }
         headline="The honest feedback you’ve been missing."
         sub="From the people who know you."
         url="opinionly.io"
