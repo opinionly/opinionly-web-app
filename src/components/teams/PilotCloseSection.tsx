@@ -49,7 +49,7 @@ export default function PilotCloseSection() {
             Be one of our first companies.
           </h2>
           <p className="mb-7 max-w-[480px] text-[17px] leading-[1.55] text-ink-soft">
-            We&apos;re running pilots with a small number of teams through 2026. Free. No commitment. We work alongside you for eight to twelve weeks and shape the dashboard around what your company actually needs.
+            We&apos;re running pilots with a small number of teams through 2027. Free. No commitment. We work alongside you for eight to twelve weeks and shape the dashboard around what your company actually needs.
           </p>
           <TeamsCaptureForm
             id="pilot-close"

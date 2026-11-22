@@ -18,7 +18,7 @@ export default async function Image() {
       <OgCard
         accent="#2b7ef5"
         background={BACKGROUND}
-        eyebrow="Pilot program · 2026"
+        eyebrow="Pilot program · through 2027"
         forTeams
         headline="An honest read on your team."
         sub="Surfaced from how they already work, not from another survey."
