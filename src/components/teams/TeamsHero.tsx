@@ -17,7 +17,7 @@ export default function TeamsHero() {
         <div className="min-w-0">
           <div className="mb-7 inline-flex items-center gap-2 rounded-full bg-white/70 px-3.5 py-[7px] text-[13px] font-medium text-ink-soft shadow-(--shadow-sm) backdrop-blur-[8px]">
             <span className="inline-block size-1.5 shrink-0 rounded-full bg-blue" />
-            Pilot program · 2026
+            Pilot program · through 2027
           </div>
 
           <h1 className="mb-5 max-w-[560px] text-[clamp(42px,5.5vw,68px)] leading-[1.02] font-bold tracking-[-0.035em] text-ink">
