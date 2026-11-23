@@ -1,4 +1,4 @@
-import TeamsCaptureForm from "./TeamsCaptureForm";
+import SetupCompanyCta from "./SetupCompanyCta";
 
 export default function TeamsHero() {
   return (
@@ -17,7 +17,7 @@ export default function TeamsHero() {
         <div className="min-w-0">
           <div className="mb-7 inline-flex items-center gap-2 rounded-full bg-white/70 px-3.5 py-[7px] text-[13px] font-medium text-ink-soft shadow-(--shadow-sm) backdrop-blur-[8px]">
             <span className="inline-block size-1.5 shrink-0 rounded-full bg-blue" />
-            Pilot program · through 2027
+            Free for teams · through 2027
           </div>
 
           <h1 className="mb-5 max-w-[560px] text-[clamp(42px,5.5vw,68px)] leading-[1.02] font-bold tracking-[-0.035em] text-ink">
@@ -28,10 +28,7 @@ export default function TeamsHero() {
             Surfaced from how they already work, not from another survey no one wants to fill out.
           </p>
 
-          <TeamsCaptureForm
-            id="pilot-hero"
-            finePrint="Free pilot, no commitment. We respond within two business days."
-          />
+          <SetupCompanyCta finePrint="Free, no commitment. A work email is all it takes, and your team joins from the app." />
         </div>
 
         {/* Right: dashboard mock */}
@@ -43,7 +40,7 @@ export default function TeamsHero() {
                 <div key={i} className="size-2.5 shrink-0 rounded-full bg-line-strong" />
               ))}
               <div className="ml-3.5 min-w-0 truncate rounded-md bg-cream px-3 py-1 text-xs text-ink-faint">
-                teams.opinionly.io / your-company
+                dashboard.opinionly.io / your-company
               </div>
             </div>
 

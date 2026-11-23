@@ -3,8 +3,8 @@ import DownloadCta from "@/components/DownloadCta";
 /**
  * A deliberately quiet band. Someone evaluating Opinionly for their company
  * wants to hold it before booking a call, and the consumer app is the cheapest
- * way to do that — but a team pilot is a conversation, not a download, so this
- * stays a step on the way to PilotCloseSection rather than a rival to it.
+ * way to do that, and it is also how their people will join. Still a step on
+ * the way to setting up the company, not a rival to it.
  */
 export default function TeamsDownloadSection() {
   return (
@@ -19,8 +19,8 @@ export default function TeamsDownloadSection() {
           </h2>
           <p className="mx-auto max-w-[520px] text-[17px] leading-[1.55] text-ink-soft">
             The consumer app is the same honesty mechanic your team would use.
-            Take five minutes with it before you decide whether a pilot is worth
-            your time.
+            Take five minutes with it before you set up your company. It&apos;s
+            also the app your people will join from.
           </p>
         </div>
 
