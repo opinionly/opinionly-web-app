@@ -1,4 +1,5 @@
 import { appStoreUrl, CAMPAIGNS } from "@/lib/app-links";
+import { SetupCompanyLink } from "./SetupCompanyCta";
 
 export default function TeamsNavbar() {
   return (
@@ -24,8 +25,8 @@ export default function TeamsNavbar() {
           >
             Privacy
           </a>
-          {/* Secondary on purpose — "Request access" stays the teams funnel's
-              primary action, since a pilot is a conversation, not an install. */}
+          {/* Secondary on purpose: setting up the company is the teams funnel's
+              primary action; the consumer app is how their people join. */}
           <a
             href={appStoreUrl(CAMPAIGNS.teamsNav)}
             target="_blank"
@@ -34,12 +35,12 @@ export default function TeamsNavbar() {
           >
             Get the app
           </a>
-          <a
-            href="#pilot"
+          <SetupCompanyLink
+            placement="nav"
             className="rounded-full bg-ink px-[18px] py-[9px] text-[13px] font-medium text-white transition-colors duration-150 hover:bg-[#3a3833]"
           >
-            Request access
-          </a>
+            Set up your company
+          </SetupCompanyLink>
         </div>
       </nav>
     </div>

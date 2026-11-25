@@ -12,7 +12,7 @@ import Footer from "@/components/Footer";
 // One string across search and every share surface, so the three can't drift
 // apart the way they had.
 const DESCRIPTION =
-  "An honest read on your team, surfaced from how they already work rather than surveys. Free pilots through 2027.";
+  "An honest read on your team, surfaced from how they already work rather than surveys. Set up your company in minutes. Free through 2027.";
 
 export const metadata: Metadata = {
   title: "Opinionly for teams. An honest read on your team",

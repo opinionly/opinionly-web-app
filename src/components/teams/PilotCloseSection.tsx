@@ -43,13 +43,13 @@ export default function PilotCloseSection() {
       >
         <div className="min-w-0">
           <div className="mb-4 text-xs font-bold tracking-[0.12em] text-[#a04515] uppercase">
-            Pilot program
+            Prefer to talk to us first?
           </div>
           <h2 className="mb-[18px] text-[30px] leading-[1.05] font-bold tracking-[-0.03em] text-ink md:text-[44px]">
-            Be one of our first companies.
+            Or run a guided pilot with us.
           </h2>
           <p className="mb-7 max-w-[480px] text-[17px] leading-[1.55] text-ink-soft">
-            We&apos;re running pilots with a small number of teams through 2027. Free. No commitment. We work alongside you for eight to twelve weeks and shape the dashboard around what your company actually needs.
+            Setting up on your own takes minutes. If you&apos;d rather have us alongside, we&apos;re running guided pilots with a small number of teams through 2027. Free. No commitment. Eight to twelve weeks, shaping the dashboard around what your company actually needs.
           </p>
           <TeamsCaptureForm
             id="pilot-close"

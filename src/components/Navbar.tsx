@@ -29,6 +29,12 @@ export default function Navbar() {
           >
             How it works
           </NavLink>
+          <NavLink
+            href="https://teams.opinionly.io"
+            className="hidden text-ink-soft hover:text-ink sm:inline"
+          >
+            For teams
+          </NavLink>
           {/* Points at the closing section rather than the App Store directly:
               an Android visitor tapping "Get the app" needs the notify-me form
               that lives there, not a badge for a phone they don't have. */}
