@@ -5,7 +5,7 @@ import { Instrument_Serif } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ReactQueryProvider } from "@/providers/query-client";
-import MetaPixelRouteTracker from "@/components/MetaPixelRouteTracker";
+import AdPixelRouteTracker from "@/components/AdPixelRouteTracker";
 import { APP_STORE_ID, appStoreUrl } from "@/lib/app-links";
 import { socialProfiles } from "@/lib/socials";
 import "./globals.css";
@@ -26,6 +26,9 @@ const instrumentSerif = Instrument_Serif({
 
 const GA_MEASUREMENT_ID = "G-0LTL8FYB47";
 const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID;
+// LinkedIn Insight Tag partner ID (Campaign Manager account 548994120). Not a
+// secret: it ships in the page source like the GA measurement ID above.
+const LINKEDIN_PARTNER_ID = "10493620";
 
 const APP_STORE_URL = appStoreUrl();
 
@@ -154,7 +157,32 @@ export default function RootLayout({
             </noscript>
           </>
         )}
-        <MetaPixelRouteTracker />
+        <Script id="linkedin-insight" strategy="afterInteractive">
+          {`
+            _linkedin_partner_id = "${LINKEDIN_PARTNER_ID}";
+            window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+            window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+            (function(l) {
+            if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+            window.lintrk.q=[]}
+            var s = document.getElementsByTagName("script")[0];
+            var b = document.createElement("script");
+            b.type = "text/javascript";b.async = true;
+            b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+            s.parentNode.insertBefore(b, s);})(window.lintrk);
+          `}
+        </Script>
+        <noscript>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            alt=""
+            src={`https://px.ads.linkedin.com/collect/?pid=${LINKEDIN_PARTNER_ID}&fmt=gif`}
+          />
+        </noscript>
+        <AdPixelRouteTracker />
         <ReactQueryProvider>{children}</ReactQueryProvider>
         <Analytics />
         <SpeedInsights />
